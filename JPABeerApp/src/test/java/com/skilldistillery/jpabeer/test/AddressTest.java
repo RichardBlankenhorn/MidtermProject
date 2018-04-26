@@ -11,11 +11,10 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import com.skilldistillery.jpabeer.entities.Beer;
-import com.skilldistillery.jpabeer.entities.Brewery;
+import com.skilldistillery.jpabeer.entities.Address;
 
-class BeerTest {
-
+public class AddressTest {
+	
 	private EntityManagerFactory emf;
 	private EntityManager em;
 
@@ -25,22 +24,14 @@ class BeerTest {
 		em = emf.createEntityManager();
 	}
 
+	
 	@Test
-	@DisplayName("Test beer/brewery mappings")
-	void test_beer_brewery_mappings() {
-		Beer beer = em.find(Beer.class, 1);
-		Brewery b = beer.getBrewery();
-		assertEquals("Dry Dock", b.getName());
-	}
-
-	@Test
-	@DisplayName("Test category mapping for beer")
-	void test_category_mapping_for_beer() {
-		Beer beer = em.find(Beer.class, 5);
-		String c = beer.getCategory().getName();
-		assertEquals("Double IPA", c);
-		int i = beer.getCategory().getId();
-		assertEquals(2, i);
+	@DisplayName("Test address mapping")
+	void test_address_mappings() {
+		Address a = em.find(Address.class, 3);
+		assertEquals("CO", a.getState());
+		assertEquals("null", a.getStreet2());
+		assertEquals("303-007-8288", a.getPhone());
 		
 	}
 
