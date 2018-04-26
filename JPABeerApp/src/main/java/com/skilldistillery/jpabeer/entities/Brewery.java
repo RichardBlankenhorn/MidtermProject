@@ -1,11 +1,14 @@
 package com.skilldistillery.jpabeer.entities;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
 @Entity
@@ -30,14 +33,20 @@ public class Brewery {
 
 	@Column(name = "img_url")
 	private String imageUrl;
+	
+	@OneToMany(mappedBy="beer")
+	private List<BeerComments> beerComments;
+	
+	@OneToMany(mappedBy="beer")
+	private List<BeerRating> beerRatings;
 
 	// end of fields
 
 	public Brewery() {
 	}
 
-	public Brewery(int id, Address address, String name, String description, int rating, String webUrl,
-			String imageUrl) {
+	public Brewery(int id, Address address, String name, String description, int rating, String webUrl, String imageUrl,
+			List<BeerComments> beerComments, List<BeerRating> beerRatings) {
 		super();
 		this.id = id;
 		this.address = address;
@@ -46,6 +55,8 @@ public class Brewery {
 		this.rating = rating;
 		this.webUrl = webUrl;
 		this.imageUrl = imageUrl;
+		this.beerComments = beerComments;
+		this.beerRatings = beerRatings;
 	}
 
 	public Address getAddress() {
@@ -96,6 +107,22 @@ public class Brewery {
 		this.imageUrl = imageUrl;
 	}
 
+	public List<BeerComments> getBeerComments() {
+		return beerComments;
+	}
+
+	public void setBeerComments(List<BeerComments> beerComments) {
+		this.beerComments = beerComments;
+	}
+
+	public List<BeerRating> getBeerRatings() {
+		return beerRatings;
+	}
+
+	public void setBeerRatings(List<BeerRating> beerRatings) {
+		this.beerRatings = beerRatings;
+	}
+
 	public int getId() {
 		return id;
 	}
@@ -103,9 +130,10 @@ public class Brewery {
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
-		builder.append("Brewery [id=").append(id).append(", name=").append(name).append(", description=")
-				.append(description).append(", rating=").append(rating).append(", webUrl=").append(webUrl)
-				.append(", imageUrl=").append(imageUrl).append("]");
+		builder.append("Brewery [id=").append(id).append(", address=").append(address).append(", name=").append(name)
+				.append(", description=").append(description).append(", rating=").append(rating).append(", webUrl=")
+				.append(webUrl).append(", imageUrl=").append(imageUrl).append(", beerComments=").append(beerComments)
+				.append(", beerRatings=").append(beerRatings).append("]");
 		return builder.toString();
 	}
 
@@ -113,6 +141,9 @@ public class Brewery {
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
+		result = prime * result + ((address == null) ? 0 : address.hashCode());
+		result = prime * result + ((beerComments == null) ? 0 : beerComments.hashCode());
+		result = prime * result + ((beerRatings == null) ? 0 : beerRatings.hashCode());
 		result = prime * result + ((description == null) ? 0 : description.hashCode());
 		result = prime * result + id;
 		result = prime * result + ((imageUrl == null) ? 0 : imageUrl.hashCode());
@@ -131,6 +162,21 @@ public class Brewery {
 		if (getClass() != obj.getClass())
 			return false;
 		Brewery other = (Brewery) obj;
+		if (address == null) {
+			if (other.address != null)
+				return false;
+		} else if (!address.equals(other.address))
+			return false;
+		if (beerComments == null) {
+			if (other.beerComments != null)
+				return false;
+		} else if (!beerComments.equals(other.beerComments))
+			return false;
+		if (beerRatings == null) {
+			if (other.beerRatings != null)
+				return false;
+		} else if (!beerRatings.equals(other.beerRatings))
+			return false;
 		if (description == null) {
 			if (other.description != null)
 				return false;
@@ -157,6 +203,7 @@ public class Brewery {
 			return false;
 		return true;
 	}
+
 	
 	
 	
