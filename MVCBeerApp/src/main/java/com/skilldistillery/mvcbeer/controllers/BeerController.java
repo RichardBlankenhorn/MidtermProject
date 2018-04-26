@@ -19,11 +19,4 @@ public class BeerController {
 		mv.setViewName("WEB-INF/views/index.jsp");
 		return mv;
 	}
-	@RequestMapping(path="test.do", method=RequestMethod.GET)
-	public ModelAndView test() {
-		System.out.println("In Controller");
-		ModelAndView mv = new ModelAndView();
-	
-		return mv;
-	}
 }
