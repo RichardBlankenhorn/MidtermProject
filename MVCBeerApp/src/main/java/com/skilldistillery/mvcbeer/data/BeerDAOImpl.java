@@ -62,9 +62,8 @@ public class BeerDAOImpl implements BeerDAO {
 		try {
 			em.remove(b);
 			deleted = true;
-		}
-		catch(IllegalArgumentException iae){
-			System.out.println("Beer not found");
+		} catch (IllegalArgumentException iae) {
+			System.out.println("Beer not found.");
 		}
 		return deleted;
 	}
