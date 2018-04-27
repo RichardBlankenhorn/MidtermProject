@@ -374,3 +374,33 @@ USE `beerdb`;
 INSERT INTO `beer_comments` (`id`, `user_id`, `beer_id`, `description`) VALUES (1, 1, 1, 'hell yeah');
 
 COMMIT;
+
+
+-- -----------------------------------------------------
+-- Data for table `brewery_comments`
+-- -----------------------------------------------------
+START TRANSACTION;
+USE `beerdb`;
+INSERT INTO `brewery_comments` (`id`, `description`, `user_id`, `brewery_id`) VALUES (1, 'would hit it again', 2, 1);
+
+COMMIT;
+
+
+-- -----------------------------------------------------
+-- Data for table `beer_rating`
+-- -----------------------------------------------------
+START TRANSACTION;
+USE `beerdb`;
+INSERT INTO `beer_rating` (`id`, `rating`, `user_id`, `beer_id`) VALUES (1, 5, 2, 15);
+
+COMMIT;
+
+
+-- -----------------------------------------------------
+-- Data for table `brewery_rating`
+-- -----------------------------------------------------
+START TRANSACTION;
+USE `beerdb`;
+INSERT INTO `brewery_rating` (`id`, `user_id`, `brewery_id`, `rating`) VALUES (1, 2, 1, 4);
+
+COMMIT;
