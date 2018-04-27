@@ -49,4 +49,19 @@ public class BeerController {
 
 		return mv;
 	}
+	
+	@RequestMapping(path = "logout.do", method = RequestMethod.GET)
+	public ModelAndView logout(HttpSession session) {
+		ModelAndView mv = new ModelAndView();
+		session.removeAttribute("user");
+		mv.setViewName("WEB-INF/views/index.jsp");
+		return mv;
+	}
+	
+	@RequestMapping(path = "listBeers.do", method = RequestMethod.GET) 
+	public ModelAndView listBeers() {
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("WEB-INF/views/list_beers.jsp");
+		return mv;
+	}
 }
