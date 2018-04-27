@@ -18,4 +18,6 @@ public interface BeerDAO {
 	
 	public List<Beer> searchBeerByKeyword(String keyword);
 	
+	public List<Beer> searchBeerByCategeory(String keyword);
+	
 }
