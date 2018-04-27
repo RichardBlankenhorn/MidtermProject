@@ -4,9 +4,18 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>Create Account</title>
 </head>
 <body>
+
+<form action="createAccount.do">
+  Username: <br>
+  <input type="text" name="username" value="Username"><br>
+  Password:<br>
+  <input type="text" name="password" value="Password"><br><br>
+  <input type="submit" value="Create Account">
+</form>
+
 
 </body>
 </html>

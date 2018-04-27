@@ -17,5 +17,7 @@ public interface UserDAO {
 	
 	public boolean deleteUser(int id);
 	
+	public User retrieveByUsername(String username);
+	
 
 }

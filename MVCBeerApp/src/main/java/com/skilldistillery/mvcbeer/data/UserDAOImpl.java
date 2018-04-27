@@ -13,7 +13,7 @@ import com.skilldistillery.jpabeer.entities.User;
 @Transactional
 @Component
 public class UserDAOImpl implements UserDAO {
-	
+
 	@PersistenceContext
 	private EntityManager em;
 
@@ -41,10 +41,10 @@ public class UserDAOImpl implements UserDAO {
 		User u = em.find(User.class, id);
 		u.setUsername(user.getUsername());
 		u.setPassword(user.getPassword());
-		
+
 		em.persist(u);
 		em.flush();
-		
+
 		return u;
 	}
 
@@ -55,11 +55,18 @@ public class UserDAOImpl implements UserDAO {
 		try {
 			em.remove(u);
 			deleted = true;
-		}
-		catch(IllegalArgumentException iae) {
+		} catch (IllegalArgumentException iae) {
 			System.out.println("User not found.");
 		}
 		return deleted;
+	}
+
+	@Override
+	public User retrieveByUsername(String username) {
+		String query = "Select u from User u where u.username = :username";
+		User u = em.createQuery(query, User.class).setParameter("username", username).getResultList().get(0);
+
+		return u;
 	}
 
 }

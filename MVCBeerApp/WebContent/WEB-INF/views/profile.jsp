@@ -8,5 +8,8 @@
 </head>
 <body>
 
+${user.username}
+${failed}
+
 </body>
 </html>
