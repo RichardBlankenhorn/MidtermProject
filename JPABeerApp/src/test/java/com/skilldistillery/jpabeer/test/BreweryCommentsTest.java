@@ -1,6 +1,8 @@
 package com.skilldistillery.jpabeer.test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import java.util.Date;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -37,6 +39,17 @@ class BreweryCommentsTest {
 		int j = bc.getBrewery().getId();
 		assertEquals(1, j);
 
+	}
+	
+	
+	@Test
+	@DisplayName("Test timestamp for comment")
+	void test_timestamp_for_comment() {
+		
+		BreweryComments bc = em.find(BreweryComments.class, 1);
+		Date d = bc.getDateTime();
+		assertEquals("2018-04-27 10:10:02.0", d.toString());
+		
 	}
 
 	@AfterEach
