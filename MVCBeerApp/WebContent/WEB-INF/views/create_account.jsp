@@ -8,7 +8,7 @@
 </head>
 <body>
 
-<form action="createAccount.do">
+<form action="createAccount.do" method="POST">
   Username: <br>
   <input type="text" name="username" value="Username"><br>
   Password:<br>

@@ -64,7 +64,10 @@ public class UserDAOImpl implements UserDAO {
 	@Override
 	public User retrieveByUsername(String username) {
 		String query = "Select u from User u where u.username = :username";
-		User u = em.createQuery(query, User.class).setParameter("username", username).getResultList().get(0);
+		User u = null;
+		if(em.createQuery(query, User.class).setParameter("username", username).getResultList().size() != 0) {
+		u = em.createQuery(query, User.class).setParameter("username", username).getResultList().get(0);
+		}
 
 		return u;
 	}
