@@ -38,7 +38,7 @@
 	<form action="listBeersByCategory.do" method="GET">
 		<select name="category" size="5">
 			<c:forEach var="category" items="${categoryList }">
-				<option value="${category.id }">${category.name }</option>
+				<option value="${category.name }">${category.name }</option>
 			</c:forEach>
 		</select> <input type="submit" value="Search" />
 	</form>

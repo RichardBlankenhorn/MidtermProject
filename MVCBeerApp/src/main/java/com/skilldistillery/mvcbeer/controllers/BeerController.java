@@ -70,11 +70,10 @@ public class BeerController {
 	}
 	
 	@RequestMapping(path = "listBeersByCategory.do", params="category", method= RequestMethod.GET)
-	public ModelAndView listCategories(@RequestParam(name="category") Category category) {
+	public ModelAndView listCategories(@RequestParam(name="category") String category) {
 		ModelAndView mv = new ModelAndView();
-		//call dao method to return list of beers for a selected category
-		//List<Beer> listBeer = beerDAO.NAMEOFMETHOD();
-		//mv.addObject("listBeer", listBeer); 
+		List<Beer> listBeer = beerDao.searchBeerByCategeory(category); 
+		mv.addObject("listBeer", listBeer); 
 		mv.setViewName("WEB-INF/views/list_beers.jsp");
 		return mv;
 	}
