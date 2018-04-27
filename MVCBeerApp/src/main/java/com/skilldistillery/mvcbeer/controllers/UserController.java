@@ -52,12 +52,26 @@ public class UserController {
 	}
 
 	@RequestMapping(path = "createAccount.do", method = RequestMethod.POST)
-	public ModelAndView createAccount(@RequestParam(name = "username") String username,
-			@RequestParam(name = "password") String password) {
+	public ModelAndView createAccount(User user) {
 		ModelAndView mv = new ModelAndView();
-		mv.addObject("user", username);
-		mv.setViewName("WEB-INF/views/accountCreated.jsp");
+		User u = dao.retrieveByUsername(user.getUsername());
+		if (u == null) {
+			u = dao.create(user);
+			mv.addObject("user", u);
+			mv.setViewName("WEB-INF/views/accountCreated.jsp");			
+		}
+		else {
+			mv.addObject("failed", "Username is already taken.");
+			mv.setViewName("WEB-INF/views/create_account.jsp");
+		}
 
+		return mv;
+	}
+	@RequestMapping(path = "createAccount.do", method = RequestMethod.GET)
+	public ModelAndView createAccount1() {
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("WEB-INF/views/create_account.jsp");
+		
 		return mv;
 	}
 
