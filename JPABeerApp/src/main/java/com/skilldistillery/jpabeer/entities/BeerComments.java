@@ -1,5 +1,8 @@
 package com.skilldistillery.jpabeer.entities;
 
+import java.util.Date;
+
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -7,36 +10,43 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 @Entity
-@Table(name="beer_comments")
+@Table(name = "beer_comments")
 public class BeerComments {
-	
+
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
-	
+
 	@ManyToOne
-	@JoinColumn(name="user_id")
+	@JoinColumn(name = "user_id")
 	private User user;
-	
+
 	@ManyToOne
-	@JoinColumn(name="beer_id")
+	@JoinColumn(name = "beer_id")
 	private Beer beer;
-	
+
 	private String description;
-	
-	//end of fields
-	
+
+	@Temporal(value = TemporalType.TIMESTAMP)
+	@Column(name = "date_time")
+	private Date dateTime;
+
+	// end of fields
+
 	public BeerComments() {
 	}
 
-	public BeerComments(int id, User user, Beer beer, String description) {
+	public BeerComments(int id, User user, Beer beer, String description, Date dateTime) {
 		super();
 		this.id = id;
 		this.user = user;
 		this.beer = beer;
 		this.description = description;
+		this.dateTime = dateTime;
 	}
 
 	public User getUser() {
@@ -67,34 +77,33 @@ public class BeerComments {
 		return id;
 	}
 
-//	@Override
-//	public String toString() {
-//		StringBuilder builder = new StringBuilder();
-//		builder.append("BeerComments [id=").append(id).append(", user=").append(user).append(", beer=").append(beer)
-//				.append(", description=").append(description).append("]");
-//		return builder.toString();
-//	}
-	
-	
+	public Date getDateTime() {
+		return dateTime;
+	}
+
+	public void setDateTime(Date dateTime) {
+		this.dateTime = dateTime;
+	}
+
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
-		builder.append("BeerComments [id=").append(id).append(", description=").append(description).append("]");
+		builder.append("BeerComments [id=").append(id).append(", user=").append(user).append(", beer=").append(beer)
+				.append(", description=").append(description).append(", dateTime=").append(dateTime).append("]");
 		return builder.toString();
 	}
-	
 
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((beer == null) ? 0 : beer.hashCode());
+		result = prime * result + ((dateTime == null) ? 0 : dateTime.hashCode());
 		result = prime * result + ((description == null) ? 0 : description.hashCode());
 		result = prime * result + id;
 		result = prime * result + ((user == null) ? 0 : user.hashCode());
 		return result;
 	}
-
 
 	@Override
 	public boolean equals(Object obj) {
@@ -110,6 +119,11 @@ public class BeerComments {
 				return false;
 		} else if (!beer.equals(other.beer))
 			return false;
+		if (dateTime == null) {
+			if (other.dateTime != null)
+				return false;
+		} else if (!dateTime.equals(other.dateTime))
+			return false;
 		if (description == null) {
 			if (other.description != null)
 				return false;
@@ -124,6 +138,5 @@ public class BeerComments {
 			return false;
 		return true;
 	}
-	
-	
+
 }

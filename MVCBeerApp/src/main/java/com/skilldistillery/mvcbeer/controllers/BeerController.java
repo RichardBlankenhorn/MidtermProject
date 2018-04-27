@@ -64,4 +64,11 @@ public class BeerController {
 		mv.setViewName("WEB-INF/views/list_beers.jsp");
 		return mv;
 	}
+	
+	@RequestMapping(path = "listBrew.do", method = RequestMethod.GET)
+	public ModelAndView listBrew() {
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("WEB-INF/views/list_breweries.jsp");
+		return mv;
+	}
 }

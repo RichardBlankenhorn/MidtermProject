@@ -161,14 +161,15 @@ public class Beer {
 		return id;
 	}
 
+
+
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
 		builder.append("Beer [id=").append(id).append(", name=").append(name).append(", cost=").append(cost)
 				.append(", abv=").append(abv).append(", description=").append(description).append(", brewery=")
 				.append(brewery).append(", imageUrl=").append(imageUrl).append(", category=").append(category)
-				.append(", ibu=").append(ibu).append(", rating=").append(rating).append(", beerComments=")
-				.append(beerComments).append(", beerRatings=").append(beerRatings).append("]");
+				.append(", ibu=").append(ibu).append(", rating=").append(rating).append("]");
 		return builder.toString();
 	}
 
