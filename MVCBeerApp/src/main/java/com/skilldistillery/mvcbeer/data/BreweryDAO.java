@@ -15,5 +15,7 @@ public interface BreweryDAO {
 	public Brewery updateBrewery(int id, Brewery brewery);
 
 	public boolean deleteBrewery(int id);
+	
+	public List<Brewery> getBreweryByKeyword(String keyword);
 
 }

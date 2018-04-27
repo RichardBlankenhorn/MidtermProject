@@ -16,4 +16,6 @@ public interface BeerDAO {
 	
 	public boolean deleteBeer(int id);
 	
+	public List<Beer> searchBeerByKeyword(String keyword);
+	
 }

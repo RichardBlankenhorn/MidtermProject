@@ -8,6 +8,7 @@ import javax.persistence.PersistenceContext;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.skilldistillery.jpabeer.entities.Beer;
 import com.skilldistillery.jpabeer.entities.Brewery;
 
 @Transactional
@@ -48,7 +49,6 @@ public class BreweryDAOImpl implements BreweryDAO {
 
 		em.persist(b);
 		em.flush();
-
 		return b;
 	}
 
@@ -63,6 +63,13 @@ public class BreweryDAOImpl implements BreweryDAO {
 			System.out.println("Brewery not found.");
 		}
 		return deleted;
+	}
+
+	@Override
+	public List<Brewery> getBreweryByKeyword(String keyword) {
+		String query = "SELECT b from Brewery b WHERE b.name LIKE :keyword OR b.description LIKE :keyword";
+		List<Brewery> results = em.createQuery(query, Brewery.class).setParameter("keyword", "%"+keyword+"%").getResultList();
+		return results;
 	}
 
 }

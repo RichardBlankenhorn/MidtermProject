@@ -3,6 +3,8 @@ package com.skilldistillery.mvcbeer.data;
 import java.util.List;
 
 import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
 import javax.persistence.PersistenceContext;
 
 import org.springframework.stereotype.Component;
@@ -66,6 +68,13 @@ public class BeerDAOImpl implements BeerDAO {
 			System.out.println("Beer not found.");
 		}
 		return deleted;
+	}
+
+	@Override
+	public List<Beer> searchBeerByKeyword(String keyword) {
+		String query = "SELECT b from Beer b WHERE b.name LIKE :keyword OR b.description LIKE :keyword";
+		List<Beer> results = em.createQuery(query, Beer.class).setParameter("keyword", "%"+keyword+"%").getResultList();
+		return results;
 	}
 
 }

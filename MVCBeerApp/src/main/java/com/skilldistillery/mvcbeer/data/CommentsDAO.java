@@ -25,4 +25,6 @@ public interface CommentsDAO {
 	public BreweryComments updateBreweryComments(int id, BreweryComments breweryComment);
 	
 	public boolean deleteBreweryComment(int id);
+	
+	
 }
