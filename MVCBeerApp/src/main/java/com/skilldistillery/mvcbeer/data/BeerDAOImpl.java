@@ -77,4 +77,13 @@ public class BeerDAOImpl implements BeerDAO {
 		return results;
 	}
 
+	@Override
+	public List<Beer> searchBeerByCategeory(String keyword) {
+		String query = "SELECT b from Beer b WHERE b.category LIKE :keyword";
+		List<Beer>	results = em.createQuery(query, Beer.class).setParameter("keyword", "%"+keyword+"%").getResultList();
+		return results;
+	}
+	
+	
+
 }
