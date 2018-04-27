@@ -13,10 +13,10 @@ public interface CategoryDAO {
 
 	public List<Category> retrieveAllCategories();
 
-	public Category updateCategory(int id,Category category);
+	public Category updateCategory(int id, Category category);
 
-	public boolean deleteBrewery(int id);
+	public boolean deleteCategory(int id);
 	
-	public List<Category> getBreweryByKeyword(String keyword);
+	public List<Category> getCategoryByKeyword(String keyword);
 
 }

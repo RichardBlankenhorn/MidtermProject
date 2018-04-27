@@ -8,7 +8,6 @@ import javax.persistence.PersistenceContext;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.skilldistillery.jpabeer.entities.Beer;
 import com.skilldistillery.jpabeer.entities.Category;
 
 @Transactional
@@ -48,7 +47,7 @@ public class CategoryDAOImpl implements CategoryDAO {
 	}
 
 	@Override
-	public boolean deleteBrewery(int id) {
+	public boolean deleteCategory(int id) {
 		boolean deleted = false;
 		Category c = em.find(Category.class, id);
 		try {
@@ -61,7 +60,7 @@ public class CategoryDAOImpl implements CategoryDAO {
 	}
 
 	@Override
-	public List<Category> getBreweryByKeyword(String keyword) {
+	public List<Category> getCategoryByKeyword(String keyword) {
 		String query = "SELECT c FROM Category c WHERE c.name like :keyword";
 		List<Category> results = em.createQuery(query, Category.class).setParameter("keyword", "%"+keyword+"%").getResultList();
 		return results;
