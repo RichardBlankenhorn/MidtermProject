@@ -37,7 +37,6 @@
 	<h4>Search for beer by category</h4>
 	<form action="listBeersByCategory.do" method="GET">
 		<select name="category" size="5">
-				<option value="2">Double IPA</option><!-- delete this line later, just for testing -->
 			<c:forEach var="category" items="${categoryList }">
 				<option value="${category.id }">${category.name }</option>
 			</c:forEach>

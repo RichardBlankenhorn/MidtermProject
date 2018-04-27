@@ -29,20 +29,40 @@ public class BrewController {
 	public ModelAndView listBrew(@RequestParam(name="keyword") String keyword) {
 		ModelAndView mv = new ModelAndView();
 		if (keyword != "") {
-			//call dao method to retrieve list of breweries by name/keyword
-			//add list to model (call it brewList)
-			mv.setViewName("WEB-INF/views/list_breweries.jsp");
+			List<Brewery> brewList = dao.getBreweryByKeyword(keyword); 
+			if (brewList != null) {
+				mv.addObject("brewList", brewList); 
+				mv.setViewName("WEB-INF/views/list_breweries.jsp");
+			}
+			else {
+				mv.setViewName("WEB-INF/views/index.jsp");
+				//figure out how to send error message
+			}
 		} 
 		else {
 			List<Brewery> brewList = dao.retrieveAllBreweries(); 
 			if (brewList != null) {
-				mv.addObject(brewList); 
+				mv.addObject("brewList", brewList); 
 				mv.setViewName("WEB-INF/views/list_breweries.jsp");
 			}
 			else {
 				mv.setViewName("WEB-INF/views/index.jsp");
 				// figure out how to send error message
 			}
+		}
+		return mv;
+	}
+	@RequestMapping(path="brewery.do", params= "id", method=RequestMethod.GET)
+	public ModelAndView brewery(@RequestParam(name="id") int id) {
+		ModelAndView mv = new ModelAndView();
+		Brewery brewery = dao.retrieveById(id); 
+		if (brewery != null) {
+			mv.addObject("brewery", brewery); 
+			mv.setViewName("WEB-INF/views/brewery.jsp");
+		}
+		else {
+			mv.setViewName("WEB-INF/views/list_breweries.jsp");
+			//figure out how to send error message
 		}
 		return mv;
 	}

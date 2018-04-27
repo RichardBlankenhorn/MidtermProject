@@ -10,18 +10,32 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.skilldistillery.jpabeer.entities.Beer;
+import com.skilldistillery.jpabeer.entities.Category;
 import com.skilldistillery.mvcbeer.data.BeerDAO;
+import com.skilldistillery.mvcbeer.data.CategoryDAO;
 
 @Controller
 public class BeerController {
 	 @Autowired
-	 private BeerDAO dao;
+	 private BeerDAO beerDao;
+	 @Autowired
+	 private CategoryDAO catDao;
+
+	public BeerDAO getDao() {
+		return beerDao;
+	}
+
+
+	public void setDao(BeerDAO dao) {
+		this.beerDao = dao;
+	}
+
 
 	@RequestMapping(path = "index.do", method = RequestMethod.GET)
 	public ModelAndView index() {
 		ModelAndView mv = new ModelAndView();
-		//call dao method that returns list of categories
-		//mv.addObject(list of categories)
+		List<Category> categoryList = catDao.retrieveAllCategories(); 
+		mv.addObject("categoryList", categoryList);
 		mv.setViewName("WEB-INF/views/index.jsp");
 		return mv;
 	}
@@ -31,14 +45,20 @@ public class BeerController {
 	public ModelAndView listBeers(@RequestParam(name="keyword") String keyword) {
 		ModelAndView mv = new ModelAndView();
 		if (keyword != "") {
-			//call dao method to retrieve list of beers by name/keyword
-			// add list to model (call it listBeer)
-			mv.setViewName("WEB-INF/views/list_beers.jsp");
+			List<Beer> listBeer = beerDao.searchBeerByKeyword(keyword); 
+			if (listBeer != null) {
+				mv.addObject("listBeer", listBeer); 
+				mv.setViewName("WEB-INF/views/list_beers.jsp");
+			}
+			else {
+				mv.setViewName("WEB-INF/views/index.jsp");
+				//figure out how to send error messages
+			}
 		}
 		else {
-			List<Beer> listBeer = dao.retrieveAllBeer(); 
+			List<Beer> listBeer = beerDao.retrieveAllBeer(); 
 			if (listBeer != null) {
-				mv.addObject(listBeer); 
+				mv.addObject("listBeer", listBeer); 
 				mv.setViewName("WEB-INF/views/list_beers.jsp");
 			}
 			else {
@@ -49,12 +69,28 @@ public class BeerController {
 		return mv;
 	}
 	
-	@RequestMapping(path = "listBeersByCategory.do", method= RequestMethod.GET)
-	public ModelAndView listCategories() {
+	@RequestMapping(path = "listBeersByCategory.do", params="category", method= RequestMethod.GET)
+	public ModelAndView listCategories(@RequestParam(name="category") Category category) {
 		ModelAndView mv = new ModelAndView();
 		//call dao method to return list of beers for a selected category
-		//add list object to model (call it listBeer)
+		//List<Beer> listBeer = beerDAO.NAMEOFMETHOD();
+		//mv.addObject("listBeer", listBeer); 
 		mv.setViewName("WEB-INF/views/list_beers.jsp");
+		return mv;
+	}
+	@RequestMapping(path="beer.do", params= "id", method=RequestMethod.GET)
+	public ModelAndView beer(@RequestParam(name="id") int id) {
+		ModelAndView mv = new ModelAndView();
+		Beer beer = beerDao.retrieveById(id); 
+		if (beer != null) {
+			mv.addObject("beer", beer); 
+			mv.setViewName("WEB-INF/views/beer.jsp");
+		}
+		else {
+			mv.setViewName("WEB-INF/views/list_beers.jsp");
+			//figure out how to send error messages
+		}
+		
 		return mv;
 	}
 }
