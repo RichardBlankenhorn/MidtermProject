@@ -21,6 +21,8 @@ public class BeerController {
 	@RequestMapping(path = "index.do", method = RequestMethod.GET)
 	public ModelAndView index() {
 		ModelAndView mv = new ModelAndView();
+		//call dao method that returns list of categories
+		//mv.addObject(list of categories)
 		mv.setViewName("WEB-INF/views/index.jsp");
 		return mv;
 	}
@@ -69,6 +71,14 @@ public class BeerController {
 	public ModelAndView listBrew() {
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("WEB-INF/views/list_breweries.jsp");
+		return mv;
+	}
+	@RequestMapping(path = "listBeersByCategory.do", method= RequestMethod.GET)
+	public ModelAndView listCategories() {
+		ModelAndView mv = new ModelAndView();
+		//call dao method to return list of beers for a selected category
+		//add list object to view
+		mv.setViewName("WEB-INF/views/.jsp");
 		return mv;
 	}
 }
