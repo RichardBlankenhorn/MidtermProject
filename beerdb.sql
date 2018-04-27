@@ -140,6 +140,7 @@ CREATE TABLE IF NOT EXISTS `beer_comments` (
   `user_id` INT NOT NULL,
   `beer_id` INT NOT NULL,
   `description` VARCHAR(500) NULL,
+  `date_time` DATETIME NULL,
   PRIMARY KEY (`id`),
   INDEX `user_id_idx` (`user_id` ASC),
   INDEX `beer_id_idx` (`beer_id` ASC),
@@ -166,6 +167,7 @@ CREATE TABLE IF NOT EXISTS `brewery_comments` (
   `description` VARCHAR(500) NOT NULL,
   `user_id` INT NOT NULL,
   `brewery_id` INT NOT NULL,
+  `date_time` DATETIME NULL,
   PRIMARY KEY (`id`),
   INDEX `brewery_id_idx` (`brewery_id` ASC),
   INDEX `user_id_idx` (`user_id` ASC),
@@ -371,7 +373,7 @@ COMMIT;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `beerdb`;
-INSERT INTO `beer_comments` (`id`, `user_id`, `beer_id`, `description`) VALUES (1, 1, 1, 'hell yeah');
+INSERT INTO `beer_comments` (`id`, `user_id`, `beer_id`, `description`, `date_time`) VALUES (1, 1, 1, 'hell yeah', '2018-04-27 10:10:02');
 
 COMMIT;
 
@@ -381,7 +383,7 @@ COMMIT;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `beerdb`;
-INSERT INTO `brewery_comments` (`id`, `description`, `user_id`, `brewery_id`) VALUES (1, 'would hit it again', 2, 1);
+INSERT INTO `brewery_comments` (`id`, `description`, `user_id`, `brewery_id`, `date_time`) VALUES (1, 'would hit it again', 2, 1, '2018-04-27 10:10:02');
 
 COMMIT;
 
