@@ -10,30 +10,36 @@ import javax.persistence.OneToMany;
 
 @Entity
 public class User {
-	
+
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
-	
+
 	private String username;
-	
+
 	private String password;
-	
+
 	private boolean admin;
-	
-	@OneToMany(mappedBy="user")
+
+	@OneToMany(mappedBy = "user")
 	private List<BeerComments> beerComments;
-	
-	@OneToMany(mappedBy="user")
+
+	@OneToMany(mappedBy = "user")
 	private List<BeerRating> beerRatings;
-	
-	//end of fields
-	
+
+	@OneToMany(mappedBy = "user")
+	private List<BreweryComments> breweryComments;
+
+	@OneToMany(mappedBy = "user")
+	private List<BreweryRating> breweryRatings;
+
+	// end of fields
+
 	public User() {
 	}
 
 	public User(int id, String username, String password, boolean admin, List<BeerComments> beerComments,
-			List<BeerRating> beerRatings) {
+			List<BeerRating> beerRatings, List<BreweryComments> breweryComments, List<BreweryRating> breweryRatings) {
 		super();
 		this.id = id;
 		this.username = username;
@@ -41,6 +47,8 @@ public class User {
 		this.admin = admin;
 		this.beerComments = beerComments;
 		this.beerRatings = beerRatings;
+		this.breweryComments = breweryComments;
+		this.breweryRatings = breweryRatings;
 	}
 
 	public String getUsername() {
@@ -83,28 +91,33 @@ public class User {
 		this.beerRatings = beerRatings;
 	}
 
+	public List<BreweryComments> getBreweryComments() {
+		return breweryComments;
+	}
+
+	public void setBreweryComments(List<BreweryComments> breweryComments) {
+		this.breweryComments = breweryComments;
+	}
+
+	public List<BreweryRating> getBreweryRatings() {
+		return breweryRatings;
+	}
+
+	public void setBreweryRatings(List<BreweryRating> breweryRatings) {
+		this.breweryRatings = breweryRatings;
+	}
+
 	public int getId() {
 		return id;
 	}
 
-//	@Override
-//	public String toString() {
-//		StringBuilder builder = new StringBuilder();
-//		builder.append("User [id=").append(id).append(", username=").append(username).append(", password=")
-//				.append(password).append(", admin=").append(admin).append(", beerComments=").append(beerComments)
-//				.append(", beerRatings=").append(beerRatings).append("]");
-//		return builder.toString();
-//	}
-	
-	
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
 		builder.append("User [id=").append(id).append(", username=").append(username).append(", password=")
-		.append(password).append(", admin=").append(admin).append("]");
+				.append(password).append(", admin=").append(admin).append("]");
 		return builder.toString();
 	}
-	
 
 	@Override
 	public int hashCode() {
@@ -113,12 +126,13 @@ public class User {
 		result = prime * result + (admin ? 1231 : 1237);
 		result = prime * result + ((beerComments == null) ? 0 : beerComments.hashCode());
 		result = prime * result + ((beerRatings == null) ? 0 : beerRatings.hashCode());
+		result = prime * result + ((breweryComments == null) ? 0 : breweryComments.hashCode());
+		result = prime * result + ((breweryRatings == null) ? 0 : breweryRatings.hashCode());
 		result = prime * result + id;
 		result = prime * result + ((password == null) ? 0 : password.hashCode());
 		result = prime * result + ((username == null) ? 0 : username.hashCode());
 		return result;
 	}
-
 
 	@Override
 	public boolean equals(Object obj) {
@@ -141,6 +155,16 @@ public class User {
 				return false;
 		} else if (!beerRatings.equals(other.beerRatings))
 			return false;
+		if (breweryComments == null) {
+			if (other.breweryComments != null)
+				return false;
+		} else if (!breweryComments.equals(other.breweryComments))
+			return false;
+		if (breweryRatings == null) {
+			if (other.breweryRatings != null)
+				return false;
+		} else if (!breweryRatings.equals(other.breweryRatings))
+			return false;
 		if (id != other.id)
 			return false;
 		if (password == null) {
@@ -156,7 +180,4 @@ public class User {
 		return true;
 	}
 
-	
-
-	
 }
