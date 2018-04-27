@@ -27,58 +27,29 @@ public class BeerController {
 		return mv;
 	}
 
-	@RequestMapping(path = "login.do", method = RequestMethod.GET)
-	public ModelAndView login() {
+	
+	@RequestMapping(path = "listBeers.do", params="keyword", method = RequestMethod.GET) 
+	public ModelAndView listBeers(@RequestParam(name="keyword") String keyword) {
 		ModelAndView mv = new ModelAndView();
-		mv.setViewName("WEB-INF/views/login.jsp");
-		return mv;
-	}
-
-	@RequestMapping(path = "loginUser.do", method = RequestMethod.GET)
-	public ModelAndView loginUser(@RequestParam(name = "userName") String userName,
-			@RequestParam(name = "password") String password, HttpSession session) {
-		ModelAndView mv = new ModelAndView();
-		// Implement DAO to obtain user by username and password
-		List<User> user = new ArrayList<>();
-		if (user.size() > 0) {
-			session.setAttribute("user", user);
-			mv.setViewName("WEB-INF/views/profile.jsp");
-		} else {
-			String message = "Invalid Username and/or Password";
-			mv.addObject("message", message);
-			mv.setViewName("WEB-INF/views/login.jsp");
+		if (keyword != "") {
+			//call dao method to retrieve list of beers by name/keyword
+			// add list to model (call it beerList)
+			mv.setViewName("WEB-INF/views/list_beers.jsp");
 		}
-
+		else {
+			//call dao method to retrieve list of all beers
+			//add list to model (call it beerList)
+			mv.setViewName("WEB-INF/views/list_beers.jsp");
+		}
 		return mv;
 	}
 	
-	@RequestMapping(path = "logout.do", method = RequestMethod.GET)
-	public ModelAndView logout(HttpSession session) {
-		ModelAndView mv = new ModelAndView();
-		session.removeAttribute("user");
-		mv.setViewName("WEB-INF/views/index.jsp");
-		return mv;
-	}
-	
-	@RequestMapping(path = "listBeers.do", method = RequestMethod.GET) 
-	public ModelAndView listBeers() {
-		ModelAndView mv = new ModelAndView();
-		mv.setViewName("WEB-INF/views/list_beers.jsp");
-		return mv;
-	}
-	
-	@RequestMapping(path = "listBrew.do", method = RequestMethod.GET)
-	public ModelAndView listBrew() {
-		ModelAndView mv = new ModelAndView();
-		mv.setViewName("WEB-INF/views/list_breweries.jsp");
-		return mv;
-	}
 	@RequestMapping(path = "listBeersByCategory.do", method= RequestMethod.GET)
 	public ModelAndView listCategories() {
 		ModelAndView mv = new ModelAndView();
 		//call dao method to return list of beers for a selected category
-		//add list object to view
-		mv.setViewName("WEB-INF/views/.jsp");
+		//add list object to model (call it beerList)
+		mv.setViewName("WEB-INF/views/list_beers.jsp");
 		return mv;
 	}
 }

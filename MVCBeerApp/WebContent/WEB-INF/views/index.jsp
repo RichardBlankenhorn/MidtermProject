@@ -11,24 +11,37 @@
 
 	<h1>What's On Tap?</h1>
 	<br>
-	<h3>Search for brewery by name/keyword</h3>
+	<h2>Breweries</h2>
+		<form action="listBreweries.do" method="GET">
+			<input type="hidden" value="" name="keyword">
+			<input type="submit" value="View Full List" />
+		</form>
+	<h4>Search for brewery by name/keyword</h4>
 	<form action="listBreweries.do" method="GET">
-		<input type="text" name="keyword" /> <input type="submit"
-			value="Search" />
+		<input type="text" name="keyword" />
+		<input type="submit" value="Search" />
 	</form>
-	<h3>Search for beer by name/keyword</h3>
+	<form action="listBreweries.do" method="GET">
+	</form>
+	<br>
+	<h2>Beer</h2>
+		<form action="listBeers.do" method="GET">
+			<input type="hidden" value="" name="keyword">
+			<input type="submit" value="View Full List" />
+		</form>
+	<h4>Search for beer by name/keyword</h4>
 	<form action="listBeers.do" method="GET">
-		<input type="text" name="keyword" /> <input type="submit"
-			value="Search" />
+		<input type="text" name="keyword" /> 
+		<input type="submit" value="Search" />
 	</form>
-	<h3>Search for beer by category</h3>
+	<h4>Search for beer by category</h4>
 	<form action="listBeersByCategory.do" method="GET">
 		<select name="category" size="5">
-			<c:forEach var="category" items=${categoryList }>
+				<option value="2">Double IPA</option><!-- delete this line later, just for testing -->
+			<c:forEach var="category" items="${categoryList }">
 				<option value="${category.id }">${category.name }</option>
 			</c:forEach>
 		</select> <input type="submit" value="Search" />
 	</form>
-
 </body>
 </html>
