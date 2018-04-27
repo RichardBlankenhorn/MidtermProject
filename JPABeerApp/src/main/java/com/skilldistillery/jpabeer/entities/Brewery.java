@@ -127,13 +127,13 @@ public class Brewery {
 		return id;
 	}
 
+
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
 		builder.append("Brewery [id=").append(id).append(", address=").append(address).append(", name=").append(name)
 				.append(", description=").append(description).append(", rating=").append(rating).append(", webUrl=")
-				.append(webUrl).append(", imageUrl=").append(imageUrl).append(", beerComments=").append(beerComments)
-				.append(", beerRatings=").append(beerRatings).append("]");
+				.append(webUrl).append(", imageUrl=").append(imageUrl).append("]");
 		return builder.toString();
 	}
 
