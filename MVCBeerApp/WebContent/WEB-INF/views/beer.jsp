@@ -14,6 +14,19 @@
 	<p>${beer.brewery.name }</p>
 	<p>${beer.category.name }</p>
 	<p>${beer.ibu }</p>
+	
+	<form>
+	<div class="my-2 my-lg-0">
+						<ul class="list-inline main-nav-right">
+							<li class="list-inline-item"><a class="btn btn-link btn-sm"
+								href="updateBeer.do?id=${beer.id }">Update Beer</a></li>
+							<li class="list-inline-item"><a
+								class="btn btn-success btn-sm" href="createAccount.do">Delete Beer</a>
+							</li>
+						</ul>
+					</div>
+	
+	</form>
 		
 </body>
 </html>
