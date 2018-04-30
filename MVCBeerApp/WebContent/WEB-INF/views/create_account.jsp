@@ -155,7 +155,7 @@
 								</div>
 								<div class="form-group">
 									<label>Password <span class="text-danger">*</span></label> <input
-										type="email" class="form-control" placeholder="Enter Password"
+										type="password" class="form-control" placeholder="Enter Password"
 										name="password">
 								</div>
 								<button type="submit" class="btn btn-success btn-block">REGISTER</button>

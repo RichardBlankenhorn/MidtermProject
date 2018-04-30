@@ -66,6 +66,7 @@ public class BeerController {
 			beers = beerDao.searchBeerByBrewery(brewery);
 			mv.addObject("beers", beers);
 			mv.addObject("brewery", brewery);
+			mv.addObject("breweryId",beers.get(0).getBrewery().getId());
 		}
 		mv.setViewName("WEB-INF/views/css_index.jsp");
 		return mv;
