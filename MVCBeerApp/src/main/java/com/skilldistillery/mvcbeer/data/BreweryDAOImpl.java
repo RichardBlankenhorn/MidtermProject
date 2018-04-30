@@ -64,6 +64,8 @@ public class BreweryDAOImpl implements BreweryDAO {
 	public boolean deleteBrewery(int id) {
 		boolean deleted = false;
 		Brewery b = em.find(Brewery.class, id);
+		String query = "DELETE FROM Beer b where b.brewery.id = :id";
+		em.createQuery(query).setParameter("id", id).executeUpdate();
 		try {
 			em.remove(b);
 			deleted = true;

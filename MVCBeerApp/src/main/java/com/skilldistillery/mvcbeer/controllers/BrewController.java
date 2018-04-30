@@ -95,4 +95,13 @@ public class BrewController {
 		
 		return mv;
 	}
+	@RequestMapping(path="deleteBrewery.do", method = RequestMethod.POST)
+	public ModelAndView deleteBrewery(@RequestParam(name="id") int id) {
+		ModelAndView mv = new ModelAndView();
+		boolean b = dao.deleteBrewery(id);
+		mv.addObject("deleted", b);
+		mv.setViewName("WEB-INF/views/delete_brewery.jsp");
+		
+		return mv;
+	}
 }

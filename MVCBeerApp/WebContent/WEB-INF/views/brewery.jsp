@@ -21,6 +21,11 @@
 <input type="hidden" name="id" value="${brewery.id }"/>
     <input type="submit" value="Update"></input>
 </form>
+
+<form action="deleteBrewery.do" method="POST">
+<input type="hidden" name="id" value="${brewery.id }"/>
+						<input type="submit" value="Delete Brewery">
+						</form>
 	
 	
 	
