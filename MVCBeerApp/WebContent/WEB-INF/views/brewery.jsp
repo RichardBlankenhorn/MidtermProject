@@ -15,5 +15,14 @@
 	<p>${brewery.address.state }</p>
 	<p>${brewery.address.zip }</p>
 	<p>${brewery.address.phone }</p>
+	
+	
+<form action="editBrewery.do" method="GET">
+<input type="hidden" name="id" value="${brewery.id }"/>
+    <input type="submit" value="Update"></input>
+</form>
+	
+	
+	
 </body>
 </html>

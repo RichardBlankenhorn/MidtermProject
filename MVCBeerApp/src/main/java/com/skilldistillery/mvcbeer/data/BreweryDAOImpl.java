@@ -39,14 +39,21 @@ public class BreweryDAOImpl implements BreweryDAO {
 	}
 
 	@Override
-	public Brewery updateBrewery(int id, Brewery brewery) {
+	public Brewery updateBrewery(int id, AddressDTO dto) {
 		Brewery b = em.find(Brewery.class, id);
-		b.setWebUrl(brewery.getWebUrl());
-		b.setAddress(brewery.getAddress());
-		b.setName(brewery.getName());
-		b.setDescription(brewery.getDescription());
-		b.setRating(brewery.getRating());
-		b.setImageUrl(brewery.getImageUrl());
+		Address a = b.getAddress();
+		
+		a.setStreet(dto.getStreet());
+		a.setStreet2(dto.getStreet2());
+		a.setCity(dto.getCity());
+		a.setState(dto.getState());
+		a.setZip(dto.getZip());
+		a.setPhone(dto.getPhone());
+		
+		b.setName(dto.getName());
+		b.setDescription(dto.getDescription());
+		b.setRating(dto.getRating());
+		b.setAddress(a);
 
 		em.persist(b);
 		em.flush();

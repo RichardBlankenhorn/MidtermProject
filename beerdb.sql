@@ -28,32 +28,6 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `beer`
--- -----------------------------------------------------
-DROP TABLE IF EXISTS `beer` ;
-
-CREATE TABLE IF NOT EXISTS `beer` (
-  `id` INT NOT NULL AUTO_INCREMENT,
-  `name` VARCHAR(45) NOT NULL,
-  `cost` DOUBLE NULL,
-  `abv` DOUBLE NULL,
-  `description` VARCHAR(500) NULL,
-  `brewery_id` INT NULL,
-  `img_url` VARCHAR(100) NULL,
-  `category_id` INT NULL,
-  `ibu` DOUBLE NULL,
-  `rating` INT UNSIGNED NULL,
-  PRIMARY KEY (`id`),
-  INDEX `category_id_idx` (`category_id` ASC),
-  CONSTRAINT `fk_beer_category_id`
-    FOREIGN KEY (`category_id`)
-    REFERENCES `category` (`id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
 -- Table `address`
 -- -----------------------------------------------------
 DROP TABLE IF EXISTS `address` ;
@@ -90,6 +64,38 @@ CREATE TABLE IF NOT EXISTS `brewery` (
   CONSTRAINT `fk_brewery_address_id`
     FOREIGN KEY (`address_id`)
     REFERENCES `address` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `beer`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `beer` ;
+
+CREATE TABLE IF NOT EXISTS `beer` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(45) NOT NULL,
+  `cost` DOUBLE NULL,
+  `abv` DOUBLE NULL,
+  `description` VARCHAR(500) NULL,
+  `brewery_id` INT NULL,
+  `img_url` VARCHAR(100) NULL,
+  `category_id` INT NULL,
+  `ibu` DOUBLE NULL,
+  `rating` INT UNSIGNED NULL,
+  PRIMARY KEY (`id`),
+  INDEX `category_id_idx` (`category_id` ASC),
+  INDEX `fk_beer_brewery_id_idx` (`brewery_id` ASC),
+  CONSTRAINT `fk_beer_category_id`
+    FOREIGN KEY (`category_id`)
+    REFERENCES `category` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_beer_brewery_id`
+    FOREIGN KEY (`brewery_id`)
+    REFERENCES `brewery` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
@@ -285,6 +291,42 @@ COMMIT;
 
 
 -- -----------------------------------------------------
+-- Data for table `address`
+-- -----------------------------------------------------
+START TRANSACTION;
+USE `beerdb`;
+INSERT INTO `address` (`id`, `latitude`, `longitude`, `street`, `street2`, `city`, `state`, `zip`, `phone`) VALUES (1, 39.652665, -104.81204, '15120 E Hampden Ave', '', 'Aurora', 'CO', '80014', '303-400-5606');
+INSERT INTO `address` (`id`, `latitude`, `longitude`, `street`, `street2`, `city`, `state`, `zip`, `phone`) VALUES (2, 39.730621, -104.999277, '925 W 9th Ave', '', 'Denver', 'CO', '80204', '720-401-4089');
+INSERT INTO `address` (`id`, `latitude`, `longitude`, `street`, `street2`, `city`, `state`, `zip`, `phone`) VALUES (3, 39.761486, -104.981076, '2920 Larimer St', '', 'Denver', 'CO', '80205', '303-997-8288');
+INSERT INTO `address` (`id`, `latitude`, `longitude`, `street`, `street2`, `city`, `state`, `zip`, `phone`) VALUES (4, 39.737351, -105.015661, '1330 Zuni Street, Unit M', '', 'Denver', 'CO', '80204', '720-985-2337');
+INSERT INTO `address` (`id`, `latitude`, `longitude`, `street`, `street2`, `city`, `state`, `zip`, `phone`) VALUES (5, 39.761438, -105.0067, '2540 19th Street', '', 'Denver', 'CO', '80211', '303-729-1175');
+INSERT INTO `address` (`id`, `latitude`, `longitude`, `street`, `street2`, `city`, `state`, `zip`, `phone`) VALUES (6, 39.740381, -104.905731, '7101 E Colfax Ave', '', 'Denver', 'CO', '80220', '720-456-7163');
+INSERT INTO `address` (`id`, `latitude`, `longitude`, `street`, `street2`, `city`, `state`, `zip`, `phone`) VALUES (7, 39.679752, -104.990775, '2030 S Cherokee Street', '', 'Denver', 'CO', '80223', '303-955-7410');
+INSERT INTO `address` (`id`, `latitude`, `longitude`, `street`, `street2`, `city`, `state`, `zip`, `phone`) VALUES (8, 39.682566, -104.980782, '1875 S Pearl Street', '', 'Denver', 'CO', '80210', '303-993-4002');
+INSERT INTO `address` (`id`, `latitude`, `longitude`, `street`, `street2`, `city`, `state`, `zip`, `phone`) VALUES (9, 39.771248, -104.97973, '3501 Delgany Street', '', 'Denver', 'CO', '80216', '303-953-2058');
+
+COMMIT;
+
+
+-- -----------------------------------------------------
+-- Data for table `brewery`
+-- -----------------------------------------------------
+START TRANSACTION;
+USE `beerdb`;
+INSERT INTO `brewery` (`id`, `web_url`, `address_id`, `name`, `description`, `rating`, `img_url`) VALUES (1, 'https://drydockbrewing.com/', 1, 'Dry Dock', 'Brewery', 5, '');
+INSERT INTO `brewery` (`id`, `web_url`, `address_id`, `name`, `description`, `rating`, `img_url`) VALUES (2, 'http://renegadebrewing.com/', 2, 'Renegade', 'Brewery', 5, '');
+INSERT INTO `brewery` (`id`, `web_url`, `address_id`, `name`, `description`, `rating`, `img_url`) VALUES (3, 'http://ratiobeerworks.com/', 3, 'Ratio Beerworks', 'Brewery', 5, '');
+INSERT INTO `brewery` (`id`, `web_url`, `address_id`, `name`, `description`, `rating`, `img_url`) VALUES (4, 'http://strangecraft.com/', 4, 'Strange Craft', 'Brewery', 5, '');
+INSERT INTO `brewery` (`id`, `web_url`, `address_id`, `name`, `description`, `rating`, `img_url`) VALUES (5, 'https://prostbrewing.com/', 5, 'Prost', 'Brewery', 5, '');
+INSERT INTO `brewery` (`id`, `web_url`, `address_id`, `name`, `description`, `rating`, `img_url`) VALUES (6, 'http://www.fictionbeer.com/', 6, 'Fiction', 'Brewery', 5, '');
+INSERT INTO `brewery` (`id`, `web_url`, `address_id`, `name`, `description`, `rating`, `img_url`) VALUES (7, 'https://www.declarationbrewing.com/', 7, 'Declaration', 'Brewery', 5, '');
+INSERT INTO `brewery` (`id`, `web_url`, `address_id`, `name`, `description`, `rating`, `img_url`) VALUES (8, 'http://www.plattparkbrewing.com/', 8, 'Platt Park', 'Brewery', 5, '');
+INSERT INTO `brewery` (`id`, `web_url`, `address_id`, `name`, `description`, `rating`, `img_url`) VALUES (9, 'http://mockerybrewing.com/', 9, 'Mockery', 'Brewery', 5, '');
+
+COMMIT;
+
+
+-- -----------------------------------------------------
 -- Data for table `beer`
 -- -----------------------------------------------------
 START TRANSACTION;
@@ -356,42 +398,6 @@ INSERT INTO `beer` (`id`, `name`, `cost`, `abv`, `description`, `brewery_id`, `i
 INSERT INTO `beer` (`id`, `name`, `cost`, `abv`, `description`, `brewery_id`, `img_url`, `category_id`, `ibu`, `rating`) VALUES (65, 'Grenade', 6, 6, 'Tepache Inspired Blonde Ale', 9, '', 15, 17, 5);
 INSERT INTO `beer` (`id`, `name`, `cost`, `abv`, `description`, `brewery_id`, `img_url`, `category_id`, `ibu`, `rating`) VALUES (66, 'Wish You Were Here', 6, 5.6, 'Blonde Ale with Mango\'s & Pineapple', 9, '', 15, 11, 5);
 INSERT INTO `beer` (`id`, `name`, `cost`, `abv`, `description`, `brewery_id`, `img_url`, `category_id`, `ibu`, `rating`) VALUES (67, 'Schizophrenic Narcoleptic', 6, 10.2, 'B.A. Coffee Stout', 9, '', 6, 24, 5);
-
-COMMIT;
-
-
--- -----------------------------------------------------
--- Data for table `address`
--- -----------------------------------------------------
-START TRANSACTION;
-USE `beerdb`;
-INSERT INTO `address` (`id`, `latitude`, `longitude`, `street`, `street2`, `city`, `state`, `zip`, `phone`) VALUES (1, 39.652665, -104.81204, '15120 E Hampden Ave', '', 'Aurora', 'CO', '80014', '303-400-5606');
-INSERT INTO `address` (`id`, `latitude`, `longitude`, `street`, `street2`, `city`, `state`, `zip`, `phone`) VALUES (2, 39.730621, -104.999277, '925 W 9th Ave', '', 'Denver', 'CO', '80204', '720-401-4089');
-INSERT INTO `address` (`id`, `latitude`, `longitude`, `street`, `street2`, `city`, `state`, `zip`, `phone`) VALUES (3, 39.761486, -104.981076, '2920 Larimer St', '', 'Denver', 'CO', '80205', '303-997-8288');
-INSERT INTO `address` (`id`, `latitude`, `longitude`, `street`, `street2`, `city`, `state`, `zip`, `phone`) VALUES (4, 39.737351, -105.015661, '1330 Zuni Street, Unit M', '', 'Denver', 'CO', '80204', '720-985-2337');
-INSERT INTO `address` (`id`, `latitude`, `longitude`, `street`, `street2`, `city`, `state`, `zip`, `phone`) VALUES (5, 39.761438, -105.0067, '2540 19th Street', '', 'Denver', 'CO', '80211', '303-729-1175');
-INSERT INTO `address` (`id`, `latitude`, `longitude`, `street`, `street2`, `city`, `state`, `zip`, `phone`) VALUES (6, 39.740381, -104.905731, '7101 E Colfax Ave', '', 'Denver', 'CO', '80220', '720-456-7163');
-INSERT INTO `address` (`id`, `latitude`, `longitude`, `street`, `street2`, `city`, `state`, `zip`, `phone`) VALUES (7, 39.679752, -104.990775, '2030 S Cherokee Street', '', 'Denver', 'CO', '80223', '303-955-7410');
-INSERT INTO `address` (`id`, `latitude`, `longitude`, `street`, `street2`, `city`, `state`, `zip`, `phone`) VALUES (8, 39.682566, -104.980782, '1875 S Pearl Street', '', 'Denver', 'CO', '80210', '303-993-4002');
-INSERT INTO `address` (`id`, `latitude`, `longitude`, `street`, `street2`, `city`, `state`, `zip`, `phone`) VALUES (9, 39.771248, -104.97973, '3501 Delgany Street', '', 'Denver', 'CO', '80216', '303-953-2058');
-
-COMMIT;
-
-
--- -----------------------------------------------------
--- Data for table `brewery`
--- -----------------------------------------------------
-START TRANSACTION;
-USE `beerdb`;
-INSERT INTO `brewery` (`id`, `web_url`, `address_id`, `name`, `description`, `rating`, `img_url`) VALUES (1, 'https://drydockbrewing.com/', 1, 'Dry Dock', 'Brewery', 5, '');
-INSERT INTO `brewery` (`id`, `web_url`, `address_id`, `name`, `description`, `rating`, `img_url`) VALUES (2, 'http://renegadebrewing.com/', 2, 'Renegade', 'Brewery', 5, '');
-INSERT INTO `brewery` (`id`, `web_url`, `address_id`, `name`, `description`, `rating`, `img_url`) VALUES (3, 'http://ratiobeerworks.com/', 3, 'Ratio Beerworks', 'Brewery', 5, '');
-INSERT INTO `brewery` (`id`, `web_url`, `address_id`, `name`, `description`, `rating`, `img_url`) VALUES (4, 'http://strangecraft.com/', 4, 'Strange Craft', 'Brewery', 5, '');
-INSERT INTO `brewery` (`id`, `web_url`, `address_id`, `name`, `description`, `rating`, `img_url`) VALUES (5, 'https://prostbrewing.com/', 5, 'Prost', 'Brewery', 5, '');
-INSERT INTO `brewery` (`id`, `web_url`, `address_id`, `name`, `description`, `rating`, `img_url`) VALUES (6, 'http://www.fictionbeer.com/', 6, 'Fiction', 'Brewery', 5, '');
-INSERT INTO `brewery` (`id`, `web_url`, `address_id`, `name`, `description`, `rating`, `img_url`) VALUES (7, 'https://www.declarationbrewing.com/', 7, 'Declaration', 'Brewery', 5, '');
-INSERT INTO `brewery` (`id`, `web_url`, `address_id`, `name`, `description`, `rating`, `img_url`) VALUES (8, 'http://www.plattparkbrewing.com/', 8, 'Platt Park', 'Brewery', 5, '');
-INSERT INTO `brewery` (`id`, `web_url`, `address_id`, `name`, `description`, `rating`, `img_url`) VALUES (9, 'http://mockerybrewing.com/', 9, 'Mockery', 'Brewery', 5, '');
 
 COMMIT;
 

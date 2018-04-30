@@ -13,7 +13,7 @@ public interface BreweryDAO {
 
 	public List<Brewery> retrieveAllBreweries();
 
-	public Brewery updateBrewery(int id, Brewery brewery);
+	public Brewery updateBrewery(int id, AddressDTO dto);
 
 	public boolean deleteBrewery(int id);
 	

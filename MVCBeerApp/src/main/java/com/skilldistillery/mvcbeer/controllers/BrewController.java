@@ -77,4 +77,22 @@ public class BrewController {
 
 		return mv;
 	}
+	
+	@RequestMapping(path="editBrewery.do", method = RequestMethod.GET)
+	public ModelAndView showBreweryForm(@RequestParam(name="id") int id) {
+		ModelAndView mv = new ModelAndView();
+		mv.addObject("id", id);
+		mv.addObject("brewery", dao.retrieveById(id));
+		mv.setViewName("WEB-INF/views/edit_brewery.jsp");
+		
+		return mv;
+	}
+	@RequestMapping(path="editBreweryForm.do", method = RequestMethod.POST)
+	public ModelAndView editBrewery(@RequestParam(name="id") int id, AddressDTO dto) {
+		ModelAndView mv = new ModelAndView();
+		mv.addObject("brewery", dao.updateBrewery(id, dto));
+		mv.setViewName("WEB-INF/views/brewery.jsp");
+		
+		return mv;
+	}
 }
