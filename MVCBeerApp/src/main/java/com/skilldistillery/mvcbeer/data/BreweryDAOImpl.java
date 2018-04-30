@@ -8,7 +8,8 @@ import javax.persistence.PersistenceContext;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.skilldistillery.jpabeer.entities.Beer;
+import com.skilldistillery.jpabeer.entities.Address;
+import com.skilldistillery.jpabeer.entities.AddressDTO;
 import com.skilldistillery.jpabeer.entities.Brewery;
 
 @Transactional
@@ -70,6 +71,28 @@ public class BreweryDAOImpl implements BreweryDAO {
 		String query = "SELECT b from Brewery b WHERE b.name LIKE :keyword OR b.description LIKE :keyword";
 		List<Brewery> results = em.createQuery(query, Brewery.class).setParameter("keyword", "%"+keyword+"%").getResultList();
 		return results;
+	}
+
+	@Override
+	public Brewery createAddressAndBrewery(AddressDTO dto) {
+		Address a = new Address();
+		a.setStreet(dto.getStreet());
+		a.setStreet2(dto.getStreet2());
+		a.setCity(dto.getCity());
+		a.setState(dto.getState());
+		a.setZip(dto.getZip());
+		a.setPhone(dto.getPhone());
+		
+		Brewery b = new Brewery();
+		b.setName(dto.getName());
+		b.setDescription(dto.getDescription());
+		b.setRating(dto.getRating());
+		b.setAddress(a);
+		
+		em.persist(b);
+		em.flush();
+		
+		return b;
 	}
 
 }
