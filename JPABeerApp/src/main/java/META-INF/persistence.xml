@@ -12,6 +12,12 @@
         <class>com.skilldistillery.jpabeer.entities.Brewery</class>
         <class>com.skilldistillery.jpabeer.entities.Address</class>
         <class>com.skilldistillery.jpabeer.entities.Category</class>
+        <class>com.skilldistillery.jpabeer.entities.User</class>
+        <class>com.skilldistillery.jpabeer.entities.Profile</class>
+        <class>com.skilldistillery.jpabeer.entities.BeerComments</class>
+        <class>com.skilldistillery.jpabeer.entities.BeerRating</class>
+        <class>com.skilldistillery.jpabeer.entities.BreweryComments</class>
+        <class>com.skilldistillery.jpabeer.entities.BreweryRating</class>
 
         <properties>
             <property name="javax.persistence.jdbc.url"
@@ -22,8 +28,8 @@
             <property name="javax.persistence.jdbc.driver"
                 value="com.mysql.jdbc.Driver" />
 
-            <property name="hibernate.show_sql" value="false" />
-            <property name="hibernate.format_sql" value="false" />
+            <property name="hibernate.show_sql" value="true" />
+            <property name="hibernate.format_sql" value="true" />
 
             <property name="hibernate.dialect"
                 value="org.hibernate.dialect.MySQLDialect" />

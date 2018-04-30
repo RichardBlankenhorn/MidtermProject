@@ -56,22 +56,22 @@ public class UserController {
 		return mv;
 	}
 
-	@RequestMapping(path = "createAccount.do", method = RequestMethod.POST)
-	public ModelAndView createAccount(User user) {
-		ModelAndView mv = new ModelAndView();
-		User u = dao.retrieveByUsername(user.getUsername());
-		if (u == null) {
-			u = dao.create(user);
-			mv.addObject("user", u);
-			mv.setViewName("WEB-INF/views/accountCreated.jsp");
-		} else {
-			mv.addObject("failed", "Username is already taken.");
-			mv.setViewName("WEB-INF/views/create_account.jsp");
-		}
-
-		return mv;
-	}
-
+//	@RequestMapping(path = "createAccount.do", method = RequestMethod.POST)
+//	public ModelAndView createAccount(User user) {
+//		ModelAndView mv = new ModelAndView();
+//		User u = dao.retrieveByUsername(user.getUsername());
+//		if (u == null) {
+//			u = dao.create(user);
+//			mv.addObject("user", u);
+//			mv.setViewName("WEB-INF/views/accountCreated.jsp");
+//		} else {
+//			mv.addObject("failed", "Username is already taken.");
+//			mv.setViewName("WEB-INF/views/create_account.jsp");
+//		}
+//
+//		return mv;
+//	}
+//
 	@RequestMapping(path = "createAccount.do", method = RequestMethod.GET)
 	public ModelAndView createAccount1() {
 		ModelAndView mv = new ModelAndView();
@@ -80,7 +80,7 @@ public class UserController {
 		return mv;
 	}
 
-	@RequestMapping(path = "createAccount.do", method = RequestMethod.GET)
+	@RequestMapping(path = "createAccount.do", method = RequestMethod.POST)
 	public ModelAndView createUser(HttpSession session, UserDTO dto) {
 		ModelAndView mv = new ModelAndView();
 		if (dao.retrieveByUsername(dto.getUsername()) == null) {
@@ -91,7 +91,6 @@ public class UserController {
 			mv.addObject("failed", "Username is already taken.");
 			mv.setViewName("WEB-INF/views/create_account.jsp");
 		}
-
 		return mv;
 	}
 

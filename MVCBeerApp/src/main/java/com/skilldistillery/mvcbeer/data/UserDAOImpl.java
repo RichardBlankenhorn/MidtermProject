@@ -92,10 +92,10 @@ public class UserDAOImpl implements UserDAO {
 		p.setLastName(dto.getLastName());
 		p.setEmail(dto.getEmail());
 		p.setUser(u);
+		System.out.println(p);
 		
 		em.persist(p);
 		em.flush();
-		
 		return p;
 	}
 
