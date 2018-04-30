@@ -2,11 +2,14 @@ package com.skilldistillery.jpabeer.entities;
 
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 
 @Entity
 public class User {
@@ -32,6 +35,9 @@ public class User {
 
 	@OneToMany(mappedBy = "user")
 	private List<BreweryRating> breweryRatings;
+	
+//	@OneToOne(cascade=CascadeType.PERSIST)
+//	private Profile profile;
 
 	// end of fields
 
@@ -50,6 +56,15 @@ public class User {
 		this.breweryComments = breweryComments;
 		this.breweryRatings = breweryRatings;
 	}
+	
+
+//	public Profile getProfile() {
+//		return profile;
+//	}
+//
+//	public void setProfile(Profile profile) {
+//		this.profile = profile;
+//	}
 
 	public String getUsername() {
 		return username;

@@ -115,7 +115,7 @@ ENGINE = InnoDB;
 DROP TABLE IF EXISTS `profile` ;
 
 CREATE TABLE IF NOT EXISTS `profile` (
-  `id` INT NOT NULL,
+  `id` INT NOT NULL AUTO_INCREMENT,
   `email` VARCHAR(100) NOT NULL,
   `user_id` INT NOT NULL,
   `first_name` VARCHAR(45) NOT NULL,

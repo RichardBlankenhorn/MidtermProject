@@ -131,7 +131,7 @@
 					<div class="card padding-card">
 						<div class="card-body">
 							<h5 class="card-title mb-4">Create Account</h5>
-							<form>
+							<form action="createAccount.do" method="POST">
 								<div class="form-group">
 									<label>First Name <span class="text-danger">*</span></label> <input
 										type="text" class="form-control"
@@ -151,7 +151,7 @@
 								<div class="form-group">
 									<label>User Name <span class="text-danger">*</span></label> <input
 										type="text" class="form-control" placeholder="Enter User Name"
-										name="userName">
+										name="username">
 								</div>
 								<div class="form-group">
 									<label>Password <span class="text-danger">*</span></label> <input
