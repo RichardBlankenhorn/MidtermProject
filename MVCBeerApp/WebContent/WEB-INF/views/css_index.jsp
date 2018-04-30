@@ -188,7 +188,7 @@
 				<c:forEach var="beer" items="${beers }">
 					<div class="col-lg-4 col-md-4 d-flex align-items-stretch">
 						<div class="card card-list">
-							<a href="#"> <img class="card-img-top" src="img/porter.jpeg"
+							<a href="beer.do?id=${beer.id }"> <img class="card-img-top" src="img/porter.jpeg"
 								alt="Card image cap" id="image-fit">
 								<div class="card-body">
 									<h5 class="card-title">${beer.name }</h5>

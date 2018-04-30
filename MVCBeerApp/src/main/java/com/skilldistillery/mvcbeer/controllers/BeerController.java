@@ -127,4 +127,20 @@ public class BeerController {
 		mv.setViewName("WEB-INF/views/css_index.jsp");
 		return mv;
 	}
+	
+	@RequestMapping(path = "updateBeer.do", method = RequestMethod.GET)
+	public ModelAndView updateBeer(@RequestParam(name = "id") int id) {
+		ModelAndView mv = new ModelAndView();
+		Beer beer = beerDao.retrieveById(id);
+		mv.addObject("beer", beer);
+		mv.setViewName("WEB-INF/views/edit_beer.jsp");
+		return mv;
+	}
+	
+	@RequestMapping(path = "updateBeer.do", method = RequestMethod.POST)
+	public ModelAndView updateBeerDB(Beer beer) {
+		ModelAndView mv = new ModelAndView();
+		
+		return mv;
+	}
 }
