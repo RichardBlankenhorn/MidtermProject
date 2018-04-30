@@ -176,7 +176,7 @@
 				<h2>List of ${category} Beers for ${brewery}</h2>
 			</c:if>
 			<c:if test="${category == null && brewery != null }">
-				<a class="company-link" href="brewery.do?id=${breweryId} "><h2>Beers from ${brewery }</h2></a>
+				<h2>Beers from <a class="company-link" href="brewery.do?id=${breweryId} ">${brewery }</a></h2>
 			</c:if>
 			<p>- “Whoever drinks beer, he is quick to sleep; whoever sleeps
 				long, does not sin; whoever does not sin, enters Heaven! Thus, let
@@ -186,8 +186,8 @@
 		<div class="container">
 			<div class="row">
 				<c:forEach var="beer" items="${beers }">
-					<div class="col-lg-4 col-md-4 d-flex align-items-stretch">
-						<div class="card card-list">
+					<div class="col-lg-4 col-md-4 d-flex align-items-stretch" >
+						<div class="card card-list" style="min-width: 350px">
 							<a href="beer.do?id=${beer.id }"> <img class="card-img-top" src="img/porter.jpeg"
 								alt="Card image cap" id="image-fit">
 								<div class="card-body">

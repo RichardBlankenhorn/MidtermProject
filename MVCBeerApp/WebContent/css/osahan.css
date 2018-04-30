@@ -80,22 +80,22 @@ a {
 }
 
 a:hover {
-	/*transition: color 300ms ease 0s, background-color 300ms ease 0s;
-	color: #34495e; */
-	
-	color: red;
-	background-color: transparent;
-	text-decoration: underline !important;
+	transition: color 300ms ease 0s, background-color 300ms ease 0s;
+	color: #34495e;
 }
 
 .company-link {
+	color: #484848 !important;
+	text-decoration: underline !important;
+}
+
+.company-link:hover {
     color: green !important;
     background-color: transparent !important;
 }
 
 a, a:hover {
-	text-decoration: none;
-	
+	text-decoration: none;	
 }
 
 a:focus {
