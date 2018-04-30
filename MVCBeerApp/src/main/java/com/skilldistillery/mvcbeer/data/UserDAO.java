@@ -2,6 +2,7 @@ package com.skilldistillery.mvcbeer.data;
 
 import java.util.List;
 
+import com.skilldistillery.jpabeer.entities.Profile;
 import com.skilldistillery.jpabeer.entities.User;
 
 
@@ -19,5 +20,6 @@ public interface UserDAO {
 	
 	public User retrieveByUsername(String username);
 	
+	public List<Profile> retrieveProfileByUsername(String username);
 
 }

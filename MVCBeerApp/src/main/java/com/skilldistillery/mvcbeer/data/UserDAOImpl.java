@@ -8,6 +8,7 @@ import javax.persistence.PersistenceContext;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.skilldistillery.jpabeer.entities.Profile;
 import com.skilldistillery.jpabeer.entities.User;
 
 @Transactional
@@ -70,6 +71,13 @@ public class UserDAOImpl implements UserDAO {
 		}
 
 		return u;
+	}
+	
+	@Override
+	public List<Profile> retrieveProfileByUsername(String username) {
+		String query = "SELECT p FROM Profile p WHERE p.user.username = :username";
+		List<Profile> profile = em.createQuery(query, Profile.class).setParameter("username",username).getResultList();
+		return profile;
 	}
 
 }
