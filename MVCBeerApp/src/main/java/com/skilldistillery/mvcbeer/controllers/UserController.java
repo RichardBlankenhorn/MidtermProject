@@ -1,5 +1,7 @@
 package com.skilldistillery.mvcbeer.controllers;
 
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.skilldistillery.jpabeer.entities.Profile;
 import com.skilldistillery.jpabeer.entities.User;
 import com.skilldistillery.mvcbeer.data.UserDAO;
 
@@ -25,14 +28,16 @@ public class UserController {
 		return mv;
 	}
 
-	@RequestMapping(path = "loginUser.do", method = RequestMethod.GET)
+	@RequestMapping(path = "loginUser.do", method = RequestMethod.POST)
 	public ModelAndView loginUser(@RequestParam(name = "username") String username,
 			@RequestParam(name = "password") String password, HttpSession session) {
 		ModelAndView mv = new ModelAndView();
 		// Implement DAO to obtain user by username and password
 		User u = dao.retrieveByUsername(username);
 		if (u != null && u.getPassword().equals(password)) {
+			List<Profile> profile = dao.retrieveProfileByUsername(u.getUsername());
 			session.setAttribute("user", u);
+			session.setAttribute("profile", profile.get(0));
 			mv.setViewName("WEB-INF/views/profile.jsp");
 		}
 		else {

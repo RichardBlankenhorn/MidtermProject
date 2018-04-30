@@ -73,17 +73,32 @@ public class BeerDAOImpl implements BeerDAO {
 	@Override
 	public List<Beer> searchBeerByKeyword(String keyword) {
 		String query = "SELECT b from Beer b WHERE b.name LIKE :keyword OR b.description LIKE :keyword";
-		List<Beer> results = em.createQuery(query, Beer.class).setParameter("keyword", "%"+keyword+"%").getResultList();
+		List<Beer> results = em.createQuery(query, Beer.class).setParameter("keyword", "%" + keyword + "%")
+				.getResultList();
 		return results;
 	}
 
 	@Override
 	public List<Beer> searchBeerByCategeory(String keyword) {
 		String query = "SELECT b from Beer b WHERE b.category.name LIKE :keyword";
-		List<Beer>	results = em.createQuery(query, Beer.class).setParameter("keyword", "%"+keyword+"%").getResultList();
+		List<Beer> results = em.createQuery(query, Beer.class).setParameter("keyword", "%" + keyword + "%")
+				.getResultList();
 		return results;
 	}
-	
-	
+
+	@Override
+	public List<Beer> searchBeerByBrewery(String brewery) {
+		String query = "SELECT b from Beer b WHERE b.brewery.name = :brewery";
+		List<Beer> results = em.createQuery(query, Beer.class).setParameter("brewery", brewery).getResultList();
+		return results;
+	}
+
+	@Override
+	public List<Beer> searchBeerByBreweryAndCategory(String category, String brewery) {
+		String query = "SELECT b FROM Beer b WHERE b.brewery.name = :brewery AND b.category.name = :category";
+		List<Beer> results = em.createQuery(query, Beer.class).setParameter("brewery", brewery)
+				.setParameter("category", category).getResultList();
+		return results;
+	}
 
 }
