@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.skilldistillery.jpabeer.entities.Profile;
 import com.skilldistillery.jpabeer.entities.User;
+import com.skilldistillery.jpabeer.entities.UserDTO;
 
 
 public interface UserDAO {
@@ -21,5 +22,7 @@ public interface UserDAO {
 	public User retrieveByUsername(String username);
 	
 	public List<Profile> retrieveProfileByUsername(String username);
+	
+	public Profile createUser(UserDTO dto);
 
 }

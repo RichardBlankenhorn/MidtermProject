@@ -10,6 +10,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.skilldistillery.jpabeer.entities.Profile;
 import com.skilldistillery.jpabeer.entities.User;
+import com.skilldistillery.jpabeer.entities.UserDTO;
 
 @Transactional
 @Component
@@ -78,6 +79,24 @@ public class UserDAOImpl implements UserDAO {
 		String query = "SELECT p FROM Profile p WHERE p.user.username = :username";
 		List<Profile> profile = em.createQuery(query, Profile.class).setParameter("username",username).getResultList();
 		return profile;
+	}
+
+	@Override
+	public Profile createUser(UserDTO dto) {
+		User u = new User();
+		u.setUsername(dto.getUsername());
+		u.setPassword(dto.getPassword());
+		
+		Profile p = new Profile();
+		p.setFirstName(dto.getFirstName());
+		p.setLastName(dto.getLastName());
+		p.setEmail(dto.getEmail());
+		p.setUser(u);
+		
+		em.persist(p);
+		em.flush();
+		
+		return p;
 	}
 
 }
