@@ -176,7 +176,7 @@
 				<h2>List of ${category} Beers for ${brewery}</h2>
 			</c:if>
 			<c:if test="${category == null && brewery != null }">
-				<h2>Beers from ${brewery }</h2>
+				<h2>Beers from <a href="brewery.do?id=${breweryId ">${brewery }</h2></a>
 			</c:if>
 			<p>- “Whoever drinks beer, he is quick to sleep; whoever sleeps
 				long, does not sin; whoever does not sin, enters Heaven! Thus, let
