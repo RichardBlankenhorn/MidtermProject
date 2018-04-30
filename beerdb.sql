@@ -276,6 +276,10 @@ INSERT INTO `category` (`id`, `name`) VALUES (21, 'Imperial IPA');
 INSERT INTO `category` (`id`, `name`) VALUES (22, 'Barleywine');
 INSERT INTO `category` (`id`, `name`) VALUES (23, 'Kolsch');
 INSERT INTO `category` (`id`, `name`) VALUES (24, 'Helles');
+INSERT INTO `category` (`id`, `name`) VALUES (25, 'New England IPA');
+INSERT INTO `category` (`id`, `name`) VALUES (26, 'Schwarzbier');
+INSERT INTO `category` (`id`, `name`) VALUES (27, 'Scottish Ale');
+INSERT INTO `category` (`id`, `name`) VALUES (28, 'Cream Ale');
 
 COMMIT;
 
@@ -315,6 +319,43 @@ INSERT INTO `beer` (`id`, `name`, `cost`, `abv`, `description`, `brewery_id`, `i
 INSERT INTO `beer` (`id`, `name`, `cost`, `abv`, `description`, `brewery_id`, `img_url`, `category_id`, `ibu`, `rating`) VALUES (28, 'Pils', 6, 4.5, 'A pils pale gold in color and capped with a thick, brillantly white, dense collar of foam', 5, '', 11, 37, 5);
 INSERT INTO `beer` (`id`, `name`, `cost`, `abv`, `description`, `brewery_id`, `img_url`, `category_id`, `ibu`, `rating`) VALUES (29, 'Helles', 6, 5, 'Crisp, clean and refreshing, lightly hopped, with just a hint of sweetness', 5, '', 24, 17, 5);
 INSERT INTO `beer` (`id`, `name`, `cost`, `abv`, `description`, `brewery_id`, `img_url`, `category_id`, `ibu`, `rating`) VALUES (30, 'Keller Pils', 6, 4.6, 'Soft, light, dry. Unfiltered and naturally carbonated, this bier is cloudier and less effervescent than the pils', 5, '', 11, 37, 5);
+INSERT INTO `beer` (`id`, `name`, `cost`, `abv`, `description`, `brewery_id`, `img_url`, `category_id`, `ibu`, `rating`) VALUES (31, 'Madame Psychosis', 6, 6.5, 'Featuring Idaho 7, Mandarina Bavaria, Mosaic and Citra hops. Flavors of ripe papaya and mango with pineapple, orange zest and peach skin.', 6, '', 25, 78, 5);
+INSERT INTO `beer` (`id`, `name`, `cost`, `abv`, `description`, `brewery_id`, `img_url`, `category_id`, `ibu`, `rating`) VALUES (32, 'Old Bums & Beat Cowboys', 6, 4.9, 'A bright but subtle piney nose leads directly to a wealth of grapefruit and citrust flavor. Colorado grown and malty.', 6, '', 7, 35, 5);
+INSERT INTO `beer` (`id`, `name`, `cost`, `abv`, `description`, `brewery_id`, `img_url`, `category_id`, `ibu`, `rating`) VALUES (33, 'Alternate Present', 6, 5.2, 'Flavors of chocolate with a bit of roasted marshmellows up front, a slightly fruitier ester note in the middle with a malty finish.', 6, '', 26, 25, 5);
+INSERT INTO `beer` (`id`, `name`, `cost`, `abv`, `description`, `brewery_id`, `img_url`, `category_id`, `ibu`, `rating`) VALUES (34, 'The Falconer', 6, 5.8, 'Dry hopped saison', 6, '', 13, 30, 5);
+INSERT INTO `beer` (`id`, `name`, `cost`, `abv`, `description`, `brewery_id`, `img_url`, `category_id`, `ibu`, `rating`) VALUES (35, 'Sour Saison', 6, 7.1, 'Saison blended with Golden Sour', 6, '', 14, 24, 5);
+INSERT INTO `beer` (`id`, `name`, `cost`, `abv`, `description`, `brewery_id`, `img_url`, `category_id`, `ibu`, `rating`) VALUES (36, 'Waves and Ripples', 6, 4, 'Sour - Gose', 6, '', 14, 5, 5);
+INSERT INTO `beer` (`id`, `name`, `cost`, `abv`, `description`, `brewery_id`, `img_url`, `category_id`, `ibu`, `rating`) VALUES (37, 'Nothing Rhymes with Orange', 6, 5.9, 'Orange/Papaya Milkshake IPA', 6, '', 1, 70, 5);
+INSERT INTO `beer` (`id`, `name`, `cost`, `abv`, `description`, `brewery_id`, `img_url`, `category_id`, `ibu`, `rating`) VALUES (38, 'Beta Capsule', 6, 8.5, 'DDH Imperial New England IPA', 6, '', 25, 70, 5);
+INSERT INTO `beer` (`id`, `name`, `cost`, `abv`, `description`, `brewery_id`, `img_url`, `category_id`, `ibu`, `rating`) VALUES (39, 'King Kalu Koa\'e', 6, 9, 'Imperial India Pale Ale with a Rotating Hop. Golden color, lasting light white head', 7, '', 21, 74, 5);
+INSERT INTO `beer` (`id`, `name`, `cost`, `abv`, `description`, `brewery_id`, `img_url`, `category_id`, `ibu`, `rating`) VALUES (40, 'Purloined Pearl', 6, 4.5, 'Light golden color, brilliantly clear, creamy white head with citrus flavor', 7, '', 7, 37, 5);
+INSERT INTO `beer` (`id`, `name`, `cost`, `abv`, `description`, `brewery_id`, `img_url`, `category_id`, `ibu`, `rating`) VALUES (41, 'Impure Penelope Armstrong', 6, 6.6, 'Golden color, creamy white head. Piney nose with stront cents of citrus, especially lemon', 7, '', 1, 70, 5);
+INSERT INTO `beer` (`id`, `name`, `cost`, `abv`, `description`, `brewery_id`, `img_url`, `category_id`, `ibu`, `rating`) VALUES (42, 'Mile Highlander', 6, 8, 'Dark caramel color, transparent, light tan head with sweet caramel flavor', 7, '', 27, 25, 5);
+INSERT INTO `beer` (`id`, `name`, `cost`, `abv`, `description`, `brewery_id`, `img_url`, `category_id`, `ibu`, `rating`) VALUES (43, 'Veiled Vixen', 6, 4.6, 'Straw color, transparent with a light strawberry nose balanced with light malty sweetness', 7, '', 12, 30, 5);
+INSERT INTO `beer` (`id`, `name`, `cost`, `abv`, `description`, `brewery_id`, `img_url`, `category_id`, `ibu`, `rating`) VALUES (44, 'Hardtack Copper Ale', 6, 5.3, 'Copper colored, white head. Oasted barley, toast and a hint of chocolate and nut.', 7, '', 8, 55, 5);
+INSERT INTO `beer` (`id`, `name`, `cost`, `abv`, `description`, `brewery_id`, `img_url`, `category_id`, `ibu`, `rating`) VALUES (45, 'High Class Horchata', 6, 5.8, 'Spiced Mexican lager with caramel color and cinnamon, vanilla and sweet malt', 7, '', 9, 23, 5);
+INSERT INTO `beer` (`id`, `name`, `cost`, `abv`, `description`, `brewery_id`, `img_url`, `category_id`, `ibu`, `rating`) VALUES (46, 'Bus Stout', 6, 6, 'Transparent, black with a red hue at the edge. Coffe, chocolate and caramel aroma with a hint of citrus', 7, '', 6, 66, 5);
+INSERT INTO `beer` (`id`, `name`, `cost`, `abv`, `description`, `brewery_id`, `img_url`, `category_id`, `ibu`, `rating`) VALUES (47, 'Astronaut Amber', 6, 5.1, 'Amber Ale', 8, '', 8, 27, 5);
+INSERT INTO `beer` (`id`, `name`, `cost`, `abv`, `description`, `brewery_id`, `img_url`, `category_id`, `ibu`, `rating`) VALUES (48, 'Phaded Pale Ale', 6, 5.1, 'Pale Ale', 8, '', 7, 42, 5);
+INSERT INTO `beer` (`id`, `name`, `cost`, `abv`, `description`, `brewery_id`, `img_url`, `category_id`, `ibu`, `rating`) VALUES (49, 'Gump\'s Vienna Lager', 6, 4.9, 'Vienna style lager', 8, '', 9, 26, 5);
+INSERT INTO `beer` (`id`, `name`, `cost`, `abv`, `description`, `brewery_id`, `img_url`, `category_id`, `ibu`, `rating`) VALUES (50, 'Belgian Ambassador', 6, 6.6, 'Belgian Dubbel', 8, '', 17, 18, 5);
+INSERT INTO `beer` (`id`, `name`, `cost`, `abv`, `description`, `brewery_id`, `img_url`, `category_id`, `ibu`, `rating`) VALUES (51, 'Hop Religion: Chapter Three', 6, 7.1, 'Unfiltered IPA', 8, '', 1, 88, 5);
+INSERT INTO `beer` (`id`, `name`, `cost`, `abv`, `description`, `brewery_id`, `img_url`, `category_id`, `ibu`, `rating`) VALUES (52, 'Madagascar Dream', 6, 6.9, 'Nitro Vanilla Cream Ale', 8, '', 28, 18, 5);
+INSERT INTO `beer` (`id`, `name`, `cost`, `abv`, `description`, `brewery_id`, `img_url`, `category_id`, `ibu`, `rating`) VALUES (53, 'Tropical Snow Dance iPA', 6, 6.9, 'Mosaic Single Hop IPA', 8, '', 1, 90, 5);
+INSERT INTO `beer` (`id`, `name`, `cost`, `abv`, `description`, `brewery_id`, `img_url`, `category_id`, `ibu`, `rating`) VALUES (54, 'White Pear Berliner', 6, 4.2, 'Berliner Weisse', 8, '', 12, 5, 5);
+INSERT INTO `beer` (`id`, `name`, `cost`, `abv`, `description`, `brewery_id`, `img_url`, `category_id`, `ibu`, `rating`) VALUES (55, 'Pillow Fight Pilsner', 6, 5.3, 'Pilsner', 8, '', 11, 26, 5);
+INSERT INTO `beer` (`id`, `name`, `cost`, `abv`, `description`, `brewery_id`, `img_url`, `category_id`, `ibu`, `rating`) VALUES (56, 'Platt Park Porter', 6, 5.4, 'Kaladi Coffee Porter', 8, '', 5, 22, 5);
+INSERT INTO `beer` (`id`, `name`, `cost`, `abv`, `description`, `brewery_id`, `img_url`, `category_id`, `ibu`, `rating`) VALUES (57, 'Future Blind Sour Stout', 6, 6.8, 'Chocolate & Cherry Sour Stout - Barrel Aged', 8, '', 6, 5, 5);
+INSERT INTO `beer` (`id`, `name`, `cost`, `abv`, `description`, `brewery_id`, `img_url`, `category_id`, `ibu`, `rating`) VALUES (58, 'Blue Steel', 6, 5.8, 'Blonde Ale', 9, '', 15, 14, 5);
+INSERT INTO `beer` (`id`, `name`, `cost`, `abv`, `description`, `brewery_id`, `img_url`, `category_id`, `ibu`, `rating`) VALUES (59, 'Salted Scotch Ale', 6, 5.8, 'Scotch Ale', 9, '', 19, 14, 5);
+INSERT INTO `beer` (`id`, `name`, `cost`, `abv`, `description`, `brewery_id`, `img_url`, `category_id`, `ibu`, `rating`) VALUES (60, 'Parts Unknown', 6, 6.9, 'Tangerine Sour Ale', 9, '', 14, 5, 5);
+INSERT INTO `beer` (`id`, `name`, `cost`, `abv`, `description`, `brewery_id`, `img_url`, `category_id`, `ibu`, `rating`) VALUES (61, 'Rock the F*ck on Forever', 6, 6.5, 'IPA', 9, '', 1, 55, 5);
+INSERT INTO `beer` (`id`, `name`, `cost`, `abv`, `description`, `brewery_id`, `img_url`, `category_id`, `ibu`, `rating`) VALUES (62, 'Hopscylla', 6, 8.9, 'Double IPA', 9, '', 2, 90, 5);
+INSERT INTO `beer` (`id`, `name`, `cost`, `abv`, `description`, `brewery_id`, `img_url`, `category_id`, `ibu`, `rating`) VALUES (63, 'Born in Winter', 6, 5.8, 'Pale Ale', 9, '', 7, 5, 5);
+INSERT INTO `beer` (`id`, `name`, `cost`, `abv`, `description`, `brewery_id`, `img_url`, `category_id`, `ibu`, `rating`) VALUES (64, 'Malt Licker', 6, 10.5, 'B.A. Old Ale', 9, '', 17, 25, 5);
+INSERT INTO `beer` (`id`, `name`, `cost`, `abv`, `description`, `brewery_id`, `img_url`, `category_id`, `ibu`, `rating`) VALUES (65, 'Grenade', 6, 6, 'Tepache Inspired Blonde Ale', 9, '', 15, 17, 5);
+INSERT INTO `beer` (`id`, `name`, `cost`, `abv`, `description`, `brewery_id`, `img_url`, `category_id`, `ibu`, `rating`) VALUES (66, 'Wish You Were Here', 6, 5.6, 'Blonde Ale with Mango\'s & Pineapple', 9, '', 15, 11, 5);
+INSERT INTO `beer` (`id`, `name`, `cost`, `abv`, `description`, `brewery_id`, `img_url`, `category_id`, `ibu`, `rating`) VALUES (67, 'Schizophrenic Narcoleptic', 6, 10.2, 'B.A. Coffee Stout', 9, '', 6, 24, 5);
 
 COMMIT;
 
@@ -324,11 +365,15 @@ COMMIT;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `beerdb`;
-INSERT INTO `address` (`id`, `latitude`, `longitude`, `street`, `street2`, `city`, `state`, `zip`, `phone`) VALUES (1, 39.652665, -104.81204, '15120 E Hampden Ave', 'null', 'Aurora', 'CO', '80014', '303-400-5606');
-INSERT INTO `address` (`id`, `latitude`, `longitude`, `street`, `street2`, `city`, `state`, `zip`, `phone`) VALUES (2, 39.730621, -104.999277, '925 W 9th Ave', 'null', 'Denver', 'CO', '80204', '720-401-4089');
-INSERT INTO `address` (`id`, `latitude`, `longitude`, `street`, `street2`, `city`, `state`, `zip`, `phone`) VALUES (3, 39.761486, -104.981076, '2920 Larimer St', 'null', 'Denver', 'CO', '80205', '303-007-8288');
-INSERT INTO `address` (`id`, `latitude`, `longitude`, `street`, `street2`, `city`, `state`, `zip`, `phone`) VALUES (4, 39.737351, -105.015661, '1330 Zuni Street, Unit M', 'null', 'Denver', 'CO', '80204', '720-985-2337');
-INSERT INTO `address` (`id`, `latitude`, `longitude`, `street`, `street2`, `city`, `state`, `zip`, `phone`) VALUES (5, 39.761438, -105.0067, '2540 19th Street', 'null', 'Denver', 'CO', '80211', '303-729-1175');
+INSERT INTO `address` (`id`, `latitude`, `longitude`, `street`, `street2`, `city`, `state`, `zip`, `phone`) VALUES (1, 39.652665, -104.81204, '15120 E Hampden Ave', '', 'Aurora', 'CO', '80014', '303-400-5606');
+INSERT INTO `address` (`id`, `latitude`, `longitude`, `street`, `street2`, `city`, `state`, `zip`, `phone`) VALUES (2, 39.730621, -104.999277, '925 W 9th Ave', '', 'Denver', 'CO', '80204', '720-401-4089');
+INSERT INTO `address` (`id`, `latitude`, `longitude`, `street`, `street2`, `city`, `state`, `zip`, `phone`) VALUES (3, 39.761486, -104.981076, '2920 Larimer St', '', 'Denver', 'CO', '80205', '303-997-8288');
+INSERT INTO `address` (`id`, `latitude`, `longitude`, `street`, `street2`, `city`, `state`, `zip`, `phone`) VALUES (4, 39.737351, -105.015661, '1330 Zuni Street, Unit M', '', 'Denver', 'CO', '80204', '720-985-2337');
+INSERT INTO `address` (`id`, `latitude`, `longitude`, `street`, `street2`, `city`, `state`, `zip`, `phone`) VALUES (5, 39.761438, -105.0067, '2540 19th Street', '', 'Denver', 'CO', '80211', '303-729-1175');
+INSERT INTO `address` (`id`, `latitude`, `longitude`, `street`, `street2`, `city`, `state`, `zip`, `phone`) VALUES (6, 39.740381, -104.905731, '7101 E Colfax Ave', '', 'Denver', 'CO', '80220', '720-456-7163');
+INSERT INTO `address` (`id`, `latitude`, `longitude`, `street`, `street2`, `city`, `state`, `zip`, `phone`) VALUES (7, 39.679752, -104.990775, '2030 S Cherokee Street', '', 'Denver', 'CO', '80223', '303-955-7410');
+INSERT INTO `address` (`id`, `latitude`, `longitude`, `street`, `street2`, `city`, `state`, `zip`, `phone`) VALUES (8, 39.682566, -104.980782, '1875 S Pearl Street', '', 'Denver', 'CO', '80210', '303-993-4002');
+INSERT INTO `address` (`id`, `latitude`, `longitude`, `street`, `street2`, `city`, `state`, `zip`, `phone`) VALUES (9, 39.771248, -104.97973, '3501 Delgany Street', '', 'Denver', 'CO', '80216', '303-953-2058');
 
 COMMIT;
 
@@ -343,6 +388,10 @@ INSERT INTO `brewery` (`id`, `web_url`, `address_id`, `name`, `description`, `ra
 INSERT INTO `brewery` (`id`, `web_url`, `address_id`, `name`, `description`, `rating`, `img_url`) VALUES (3, 'http://ratiobeerworks.com/', 3, 'Ratio Beerworks', 'Brewery', 5, '');
 INSERT INTO `brewery` (`id`, `web_url`, `address_id`, `name`, `description`, `rating`, `img_url`) VALUES (4, 'http://strangecraft.com/', 4, 'Strange Craft', 'Brewery', 5, '');
 INSERT INTO `brewery` (`id`, `web_url`, `address_id`, `name`, `description`, `rating`, `img_url`) VALUES (5, 'https://prostbrewing.com/', 5, 'Prost', 'Brewery', 5, '');
+INSERT INTO `brewery` (`id`, `web_url`, `address_id`, `name`, `description`, `rating`, `img_url`) VALUES (6, 'http://www.fictionbeer.com/', 6, 'Fiction', 'Brewery', 5, '');
+INSERT INTO `brewery` (`id`, `web_url`, `address_id`, `name`, `description`, `rating`, `img_url`) VALUES (7, 'https://www.declarationbrewing.com/', 7, 'Declaration', 'Brewery', 5, '');
+INSERT INTO `brewery` (`id`, `web_url`, `address_id`, `name`, `description`, `rating`, `img_url`) VALUES (8, 'http://www.plattparkbrewing.com/', 8, 'Platt Park', 'Brewery', 5, '');
+INSERT INTO `brewery` (`id`, `web_url`, `address_id`, `name`, `description`, `rating`, `img_url`) VALUES (9, 'http://mockerybrewing.com/', 9, 'Mockery', 'Brewery', 5, '');
 
 COMMIT;
 
