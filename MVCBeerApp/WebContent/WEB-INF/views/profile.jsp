@@ -162,7 +162,7 @@
 	</section>
 	
 	<!-- User Profile -->
-	<section class="section-padding">
+<!-- 	<section class="section-padding">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-8 col-md-8 mx-auto">
@@ -197,7 +197,29 @@
 									<textarea rows="10" cols="100" class="form-control"></textarea>
 								</div>
 							</div>
-						</div>
+						</div> -->
+						<form action="addBrewery.do" method="POST">
+						name:
+						<input type ="text" name="name">
+						description:
+						<input type="text" name="description">
+						rating:
+						<input type="text" name="rating">
+						street
+						<input type="text" name="street">
+						street2
+						<input type="text" name="street2">
+						city
+						<input type="text" name="city">
+						state
+						<input type="text" name="state">
+						zip
+						<input type="text" name="zip">
+						phone
+						<input type="text" name="phone">
+						<button type="submit" class="btn btn-primary"> Create Brewery</button>
+						</form>
+						
 						<div class="card padding-card">
 							<div class="card-body">
 								<h5 class="card-title mb-4">Change Password</h5>

@@ -2,6 +2,7 @@ package com.skilldistillery.jpabeer.entities;
 
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -18,7 +19,7 @@ public class Brewery {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 
-	@OneToOne
+	@OneToOne(cascade= {CascadeType.PERSIST, CascadeType.REMOVE})
 	@JoinColumn(name = "address_id")
 	private Address address;
 
@@ -39,6 +40,7 @@ public class Brewery {
 	
 	@OneToMany(mappedBy="beer")
 	private List<BeerRating> beerRatings;
+	
 
 	// end of fields
 

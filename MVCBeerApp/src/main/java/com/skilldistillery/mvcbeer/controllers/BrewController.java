@@ -9,13 +9,18 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.skilldistillery.jpabeer.entities.Address;
 import com.skilldistillery.jpabeer.entities.Brewery;
+import com.skilldistillery.mvcbeer.data.AddressDAO;
 import com.skilldistillery.mvcbeer.data.BreweryDAO;
 
 @Controller
 public class BrewController {
 	@Autowired
 	private BreweryDAO dao;
+	
+	@Autowired
+	private AddressDAO adao;
 	
 	public BreweryDAO getDao() {
 		return dao;
@@ -64,6 +69,21 @@ public class BrewController {
 			mv.setViewName("WEB-INF/views/list_breweries.jsp");
 			//figure out how to send error message
 		}
+		return mv;
+	}
+	
+	
+	@RequestMapping(path="addBrewery.do", method=RequestMethod.POST)
+	public ModelAndView addBrewery(Brewery brewery, Address address) {
+		ModelAndView mv = new ModelAndView();
+		Brewery b = dao.create(brewery);
+		Address a = adao.create(address);
+		
+		mv.addObject("brewery", brewery);
+		mv.addObject("address", address);
+		
+		mv.setViewName("WEB-INF/views/add_brewery.jsp");
+		
 		return mv;
 	}
 }
