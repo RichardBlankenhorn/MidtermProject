@@ -157,7 +157,7 @@
 					<div class="col-lg-4 col-md-4 d-flex align-items-stretch">
 						<div class="card card-list" style="min-width: 350px">
 							<div class="card-body">
-								<h5 class="card-title">Comment for ${comment.beer.name } made by ${comment.user.id }</h5>
+								<h5 class="card-title">Comment for ${comment.beer.name } made by ${comment.user.username }</h5>
 								<h5 class="card-subtitle mb-2 text-muted">
 									<i class="mdi mdi-home-map-marker"></i>Brewery:
 									${comment.beer.brewery.name}
