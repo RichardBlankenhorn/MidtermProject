@@ -1,5 +1,6 @@
 package com.skilldistillery.mvcbeer.data;
 
+import java.util.Date;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -8,8 +9,10 @@ import javax.persistence.PersistenceContext;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.skilldistillery.jpabeer.entities.Beer;
 import com.skilldistillery.jpabeer.entities.BeerComments;
 import com.skilldistillery.jpabeer.entities.BreweryComments;
+import com.skilldistillery.jpabeer.entities.User;
 
 @Transactional
 @Component
@@ -19,11 +22,22 @@ public class CommentsDAOImpl implements CommentsDAO {
 	private EntityManager em;
 
 	@Override
-	public BeerComments createBeerComments(BeerComments beerComment) {
-		em.persist(beerComment);
+	public BeerComments createBeerComments(int id, int beerId, String beerComment) {
+		User u = em.find(User.class, id);
+		Beer b = em.find(Beer.class, beerId);
+		BeerComments bc = new BeerComments();
+		
+		bc.setUser(u);
+		bc.setBeer(b);
+		bc.setDescription(beerComment);
+		bc.setDateTime(new Date());
+		
+		em.persist(bc);
 		em.flush();
-		return beerComment;
+		
+		return bc;
 	}
+
 
 	@Override
 	public List<BeerComments> retrieveAllBeerComments() {
@@ -59,12 +73,6 @@ public class CommentsDAOImpl implements CommentsDAO {
 		return deleted;
 	}
 
-	@Override
-	public BreweryComments create(BreweryComments breweryComment) {
-		em.persist(breweryComment);
-		em.flush();
-		return breweryComment;
-	}
 
 	@Override
 	public List<BreweryComments> retrieveAllBreweryComments() {
@@ -73,6 +81,10 @@ public class CommentsDAOImpl implements CommentsDAO {
 		return allBreweryComments;
 	}
 
+
+
+
+	
 	@Override
 	public BreweryComments updateBreweryComments(int id, BreweryComments breweryComment) {
 		BreweryComments bc = em.find(BreweryComments.class, id);
@@ -86,7 +98,6 @@ public class CommentsDAOImpl implements CommentsDAO {
 		
 		return bc;
 	}
-
 	@Override
 	public boolean deleteBreweryComment(int id) {
 		boolean deleted = false;
@@ -98,6 +109,15 @@ public class CommentsDAOImpl implements CommentsDAO {
 			System.out.println("Brewery Comment not found.");
 		}
 		return deleted;
+		
+	}
 
+
+
+
+	@Override
+	public BreweryComments create(int id, int breweryId, String breweryComment) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }

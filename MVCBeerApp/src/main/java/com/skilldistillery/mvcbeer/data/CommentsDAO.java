@@ -9,7 +9,7 @@ import com.skilldistillery.jpabeer.entities.BreweryComments;
 public interface CommentsDAO {
 	
 	//beer
-	public BeerComments createBeerComments(BeerComments beerComment);
+	public BeerComments createBeerComments(int id, int beerId, String beerComment);
 	
 	public List<BeerComments> retrieveAllBeerComments();
 	
@@ -18,7 +18,7 @@ public interface CommentsDAO {
 	public boolean deleteBeerComment(int id);
 	
 	//breweries
-	public BreweryComments create(BreweryComments breweryComment);
+	public BreweryComments create(int id, int breweryId, String breweryComment);
 	
 	public List<BreweryComments> retrieveAllBreweryComments();
 	
