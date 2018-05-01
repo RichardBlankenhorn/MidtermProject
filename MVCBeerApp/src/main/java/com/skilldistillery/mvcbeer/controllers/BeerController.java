@@ -16,6 +16,7 @@ import com.skilldistillery.jpabeer.entities.Category;
 import com.skilldistillery.mvcbeer.data.BeerDAO;
 import com.skilldistillery.mvcbeer.data.BreweryDAO;
 import com.skilldistillery.mvcbeer.data.CategoryDAO;
+import com.skilldistillery.mvcbeer.data.CommentsDAO;
 
 @Controller
 public class BeerController {
@@ -25,6 +26,8 @@ public class BeerController {
 	private CategoryDAO catDao;
 	@Autowired
 	private BreweryDAO breweryDao;
+	@Autowired
+	private CommentsDAO commentsDao;
 
 	public BeerDAO getDao() {
 		return beerDao;
@@ -114,6 +117,7 @@ public class BeerController {
 		Beer beer = beerDao.retrieveById(id);
 		if (beer != null) {
 			mv.addObject("beer", beer);
+			mv.addObject("listComments", commentsDao.retrieveAllBeerComments(id));
 			mv.setViewName("WEB-INF/views/beer.jsp");
 		} else {
 			mv.setViewName("WEB-INF/views/list_beers.jsp");

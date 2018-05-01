@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.skilldistillery.jpabeer.entities.BeerComments;
+import com.skilldistillery.mvcbeer.data.BeerDAO;
 import com.skilldistillery.mvcbeer.data.CommentsDAO;
 
 @Controller
@@ -15,6 +16,9 @@ public class CommentsController {
 
 	@Autowired
 	private CommentsDAO commentsDAO;
+	
+	@Autowired
+	private BeerDAO beerDAO;
 
 	@RequestMapping(path = "addBeerComment.do", method = RequestMethod.POST)
 	public ModelAndView addComment(@RequestParam(name = "id") int id, @RequestParam(name = "beerId") int beerId,
@@ -24,6 +28,7 @@ public class CommentsController {
 		BeerComments bc = commentsDAO.createBeerComments(id, beerId, beerComment);
 		
 		
+		mv.addObject("beer", beerDAO.retrieveById(beerId));
 		mv.addObject("beerComment", bc);
 		mv.setViewName("WEB-INF/views/beer.jsp");
 		

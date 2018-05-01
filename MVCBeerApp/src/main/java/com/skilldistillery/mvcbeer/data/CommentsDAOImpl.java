@@ -40,9 +40,9 @@ public class CommentsDAOImpl implements CommentsDAO {
 
 
 	@Override
-	public List<BeerComments> retrieveAllBeerComments() {
-		String query = "SELECT bc FROM BeerComments bc";
-		List<BeerComments> allBeerComments = em.createQuery(query, BeerComments.class).getResultList();
+	public List<BeerComments> retrieveAllBeerComments(int beerId) {
+		String query = "SELECT bc FROM BeerComments bc WHERE bc.beer.id = :id";
+		List<BeerComments> allBeerComments = em.createQuery(query, BeerComments.class).setParameter("id", beerId).getResultList();
 		return allBeerComments;
 	}
 
