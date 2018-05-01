@@ -82,20 +82,24 @@ public class BeerController {
 		ModelAndView mv = new ModelAndView();
 		if (keyword != "") {
 			List<Beer> beers = beerDao.searchBeerByKeyword(keyword);
+			List<Brewery> breweries = breweryDao.retrieveAllBreweries();
+			List<Category> categories = catDao.retrieveAllCategories();
 			if (beers != null) {
 				mv.addObject("beers", beers);
+				mv.addObject("categories", categories); 
+				mv.addObject("breweries", breweries); 
 				mv.setViewName("WEB-INF/views/css_index.jsp");
 			} else {
 				mv.setViewName("redirect: index.do");
 				// figure out how to send error messages
 			}
 		} else {
-			List<Beer> listBeer = beerDao.retrieveAllBeer();
-			if (listBeer != null) {
-				mv.addObject("listBeer", listBeer);
-				mv.setViewName("WEB-INF/views/list_beers.jsp");
+			List<Beer> beers = beerDao.retrieveAllBeer();
+			if (beers != null) {
+				mv.addObject("beers", beers);
+				mv.setViewName("redirect: index.do");
 			} else {
-				mv.setViewName("WEB-INF/views/index.jsp");
+				mv.setViewName("redirect: index.do");
 				// figure out how to send error message
 			}
 		}
