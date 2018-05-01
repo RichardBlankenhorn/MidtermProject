@@ -48,15 +48,20 @@
 				<h3>${beerComment.description }</h3>
 				<h3>${beerComment.dateTime }</h3>
 				<h3>${beerComment.user } left comment</h3>
+				
 		
 		<form action="editBeerCommentForm.do" action="GET">
+		<c:if test="${user.id == beerComment.user.id }">
 			<input type="hidden" name="beerCommentId" value="${beerComment.id }">
 			<input type="submit" value="Update Comment">
+			</c:if>
 		</form>
 		<form action="deleteBeerComment.do" action="GET">
+		<c:if test="${user.id == beerComment.user.id }">
 			<input type="hidden" name="id" value="${beerComment.id }">
 			<input type="hidden" name="beerId" value="${beer.id }">
 			<input type="submit" value="Delete Comment">
+			</c:if>
 		</form>
 	</c:forEach>
 

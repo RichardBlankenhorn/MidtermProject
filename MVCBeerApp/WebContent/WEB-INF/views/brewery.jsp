@@ -54,16 +54,22 @@
 	<c:forEach var="breweryComment" items="${listComments }">
 		<h3>${breweryComment.description }</h3>
 		<h3>${breweryComment.dateTime }</h3>
-		<h3>${breweryComment.user }left comment</h3>
+		<h3>${breweryComment.user }</h3>
+
+			<%-- <c:if test="${user.id } == ${breweryComment.user.id }"> --%>
 
 		<form action="editBreweryCommentForm.do" action="GET">
+		<c:if test="${user.id == breweryComment.user.id }">
 			<input type="hidden" name="breweryCommentId" value="${breweryComment.id }">
 			<input type="submit" value="Update Comment">
+			</c:if>
 		</form>
 		<form action="deleteBreweryComment.do" action="GET">
+		<c:if test="${user.id == breweryComment.user.id }">
 			<input type="hidden" name="id" value="${breweryComment.id }"> <input
 				type="hidden" name="breweryId" value="${brewery.id }"> <input
 				type="submit" value="Delete Comment">
+				</c:if>
 		</form>
 	</c:forEach>
 	<br>
@@ -84,7 +90,7 @@
 
       function initMap() {
         var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 13,
+          zoom: 15,
           center: {lat: ${brewery.address.latitude}, lng: ${brewery.address.longitude}}
         });
 
