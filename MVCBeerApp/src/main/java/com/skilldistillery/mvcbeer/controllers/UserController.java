@@ -113,6 +113,27 @@ public class UserController {
 		return mv;
 	}
 
+	@RequestMapping(path = "updateProfile.do", method = RequestMethod.POST)
+	public ModelAndView updateProfile(@RequestParam(name = "firstName") String firstName,
+			@RequestParam(name = "lastName") String lastName, @RequestParam(name = "email") String email,
+			@RequestParam(name = "username") String username, HttpSession session) {
+		ModelAndView mv = new ModelAndView();
+		User u = (User) session.getAttribute("user");
+		Profile p = (Profile) session.getAttribute("profile");
+		String message = null;
+		List<Object> results = dao.updateProfile(u.getId(), p.getId(), firstName, lastName, email, username);
+		if (!results.isEmpty()) {
+			message = "Update Successful";
+			session.setAttribute("user", results.get(0));
+			session.setAttribute("profile", results.get(1));
+		} else {
+			message = "Update Unsuccessful";
+		}
+		mv.addObject("message", message);
+		mv.setViewName("WEB-INF/views/editProfile.jsp");
+		return mv;
+	}
+
 	@RequestMapping(path = "changePassword.do", method = RequestMethod.GET)
 	public ModelAndView changePassword() {
 		ModelAndView mv = new ModelAndView();
@@ -129,12 +150,10 @@ public class UserController {
 			User u = (User) session.getAttribute("user");
 			if (dao.updatePassword(u.getId(), password)) {
 				message = "Password Change Successful";
-			}
-			else {
+			} else {
 				message = "Password Change Not Successful";
 			}
-		}
-		else {
+		} else {
 			message = "Passwords Did Not Match";
 		}
 		mv.addObject("message", message);
