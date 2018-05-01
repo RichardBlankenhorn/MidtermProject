@@ -27,11 +27,23 @@
 		</div>
 
 	</form>
+	
+	
+		<form action="addBeerComment.do" method="POST">
+		<input type="hidden" name="beerId" value="${beer.id }">
+		<input type="hidden" name="id" value="${user.id }">
+		<input type="text" name="beerComment">
+		 <input
+			type="submit" value="Add Comment">
+	</form>
 
 	<form action="deleteBeer.do" method="POST">
 		<input type="hidden" name="id" value="${beer.id }"> <input
 			type="submit" value="Delete Beer">
 	</form>
+	
+	
+	<p> ${beerComment.description } </p>
 
 </body>
 </html>
