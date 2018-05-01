@@ -86,11 +86,12 @@ public class UserController {
 	}
 
 	@RequestMapping(path = "createAccount.do", method = RequestMethod.POST)
-	public ModelAndView createUser(HttpSession session, UserDTO dto) {
+	public ModelAndView createUser(UserDTO dto, HttpSession session) {
 		ModelAndView mv = new ModelAndView();
 		if (dao.retrieveByUsername(dto.getUsername()) == null) {
 			Profile p = dao.createUser(dto);
 			session.setAttribute("user", p.getUser());
+			session.setAttribute("profile", p);
 			mv.setViewName("WEB-INF/views/profile.jsp");
 		} else {
 			mv.addObject("failed", "Username is already taken.");
