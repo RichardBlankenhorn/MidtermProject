@@ -47,16 +47,11 @@ public class CommentsDAOImpl implements CommentsDAO {
 	}
 
 	@Override
-	public BeerComments updateBeerComments(int id, BeerComments beerComment) {
+	public BeerComments updateBeerComments(int id,BeerComments beerComment) {
 		BeerComments bc = em.find(BeerComments.class, id);
-		bc.setUser(beerComment.getUser());
-		bc.setBeer(beerComment.getBeer());
 		bc.setDescription(beerComment.getDescription());
-		bc.setDateTime(beerComment.getDateTime());
-
-		em.persist(bc);
-		em.flush();
-
+		bc.setDateTime(new Date());
+		
 		return bc;
 	}
 
@@ -119,5 +114,11 @@ public class CommentsDAOImpl implements CommentsDAO {
 	public BreweryComments create(int id, int breweryId, String breweryComment) {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+
+	@Override
+	public BeerComments retrieveBeerCommentById(int id) {
+		return em.find(BeerComments.class, id);
 	}
 }

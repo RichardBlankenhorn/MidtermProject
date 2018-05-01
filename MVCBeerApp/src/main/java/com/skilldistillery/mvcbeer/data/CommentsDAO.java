@@ -17,6 +17,8 @@ public interface CommentsDAO {
 	
 	public boolean deleteBeerComment(int id);
 	
+	public BeerComments retrieveBeerCommentById(int id);
+	
 	
 	
 	//breweries
