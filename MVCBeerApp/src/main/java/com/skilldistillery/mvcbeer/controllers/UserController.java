@@ -57,7 +57,7 @@ public class UserController {
 		ModelAndView mv = new ModelAndView();
 		session.removeAttribute("user");
 		session.removeAttribute("admin");
-		mv.setViewName("WEB-INF/views/css_index.jsp");
+		mv.setViewName("redirect:index.do");
 		return mv;
 	}
 
