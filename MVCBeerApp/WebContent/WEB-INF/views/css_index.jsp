@@ -56,13 +56,11 @@
 								aria-haspopup="true" aria-expanded="false"> My Account </a>
 								<div class="dropdown-menu"
 									aria-labelledby="navbarDropdownPortfolio">
-									<a class="dropdown-item" href="profile.do">User Profile</a> <a
-										class="dropdown-item" href="social-profiles.html">Social
-										Profiles</a> <a class="dropdown-item" href="my-properties.html">My
-										Properties</a> <a class="dropdown-item"
-										href="favorite-properties.html">Favorite Properties</a> <a
-										class="dropdown-item" href="add-property.html">Add
-										Property</a>
+									<a class="dropdown-item" href="profile.do">User Profile</a> 
+									<a class="dropdown-item" href="updateProfile.do">Update Profile</a> 
+									<a class="dropdown-item" href="changePassword.do">Change Password</a> 
+									<a class="dropdown-item" href="favorite-properties.html">My Comments & Ratings</a> 
+									<a class="dropdown-item" href="add-property.html">View Beers & Breweries</a>
 								</div></li>
 						</c:if>
 						<c:if test="${sessionScope.admin != null}">
@@ -87,10 +85,7 @@
 							aria-haspopup="true" aria-expanded="false"> Pages </a>
 							<div class="dropdown-menu"
 								aria-labelledby="navbarDropdownPortfolio">
-								<a class="dropdown-item" href="about.html">About Us</a> <a
-									class="dropdown-item" href="faq.html">FAQ</a> <a
-									class="dropdown-item" href="contact.html">Contact</a> <a
-									class="dropdown-item" href="not-found.html">404 Page</a>
+								<a class="dropdown-item" href="about.html">About Us</a>
 							</div></li>
 					</ul>
 					<div class="my-2 my-lg-0">

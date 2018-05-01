@@ -128,12 +128,12 @@
 			<div class="row">
 				<div class="col-lg-12">
 					<ul class="nav justify-content-center">
-						<li class="nav-item"><a class="nav-link active text-success"
-							href="user-profile.html">User Profile</a></li>
 						<li class="nav-item"><a class="nav-link"
+							href="profile.do">User Profile</a></li>
+						<li class="nav-item"><a class="nav-link active text-success"
 							href="updateProfile.do">Update Profile</a></li>
 						<li class="nav-item"><a class="nav-link"
-							href="my-properties.html">Change Password</a></li>
+							href="changePassword.do">Change Password</a></li>
 						<li class="nav-item"><a class="nav-link"
 							href="favorite-properties.html">My Comments & Ratings</a></li>
 						<li class="nav-item"><a class="nav-link"
@@ -152,18 +152,28 @@
 					<form>
 						<div class="card padding-card">
 							<div class="card-body">
-								<h5 class="card-title mb-4 text-center">Personal Details</h5>
+								<h5 class="card-title mb-4">Personal Details</h5>
 								<div class="form-group">
-									<label>First Name:  <span class="text-success">  ${profile.firstName } </span></label>
+									<label>First Name <span class="text-danger">*</span></label> <input
+										type="text" class="form-control"
+										placeholder="Enter First Name">
 								</div>
 								<div class="form-group">
-									<label>Last Name:  <span class="text-success">${profile.lastName }</span></label>
+									<label>Last Name <span class="text-danger">*</span></label> <input
+										type="text" class="form-control" placeholder="Enter Last Name">
 								</div>
 								<div class="form-group">
-									<label>Email Address: <span class="text-success">${profile.email }</span></label>
+									<label>Email Address <span class="text-danger">*</span></label>
+									<input type="email" class="form-control"
+										placeholder="Enter Email Address">
 								</div>
 								<div class="form-group">
-									<label>Username: <span class="text-success">${user.username }</span></label>
+									<label>Phone <span class="text-danger">*</span></label> <input
+										type="text" class="form-control" placeholder="Enter Phone">
+								</div>
+								<div class="form-group">
+									<label>Location <span class="text-danger">*</span></label> <input
+										type="text" class="form-control" placeholder="Enter Locations">
 								</div>
 								<div class="form-group">
 									<label>About Me <span class="text-danger">*</span></label>
@@ -171,7 +181,7 @@
 								</div>
 							</div>
 						</div> 
-						
+						<button type="submit" class="btn btn-success">SAVE EDITS</button>
 					</form>
 				</div>
 			</div>
