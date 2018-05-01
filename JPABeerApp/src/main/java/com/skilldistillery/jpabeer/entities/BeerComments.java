@@ -88,8 +88,7 @@ public class BeerComments {
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
-		builder.append("BeerComments [id=").append(id).append(", user=").append(user).append(", beer=").append(beer)
-				.append(", description=").append(description).append(", dateTime=").append(dateTime).append("]");
+		builder.append(user);
 		return builder.toString();
 	}
 

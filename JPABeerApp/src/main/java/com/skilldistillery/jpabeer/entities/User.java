@@ -129,8 +129,7 @@ public class User {
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
-		builder.append("User [id=").append(id).append(", username=").append(username).append(", password=")
-				.append(password).append(", admin=").append(admin).append("]");
+		builder.append(username);
 		return builder.toString();
 	}
 

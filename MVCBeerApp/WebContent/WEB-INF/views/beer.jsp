@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -27,23 +29,31 @@
 		</div>
 
 	</form>
-	
-	
-		<form action="addBeerComment.do" method="POST">
-		<input type="hidden" name="beerId" value="${beer.id }">
-		<input type="hidden" name="id" value="${user.id }">
-		<input type="text" name="beerComment">
-		 <input
-			type="submit" value="Add Comment">
+
+
+	<form action="addBeerComment.do" method="POST">
+		<input type="hidden" name="beerId" value="${beer.id }"> <input
+			type="hidden" name="id" value="${user.id }"> <input
+			type="text" name="beerComment"> <input type="submit"
+			value="Add Comment">
 	</form>
 
 	<form action="deleteBeer.do" method="POST">
 		<input type="hidden" name="id" value="${beer.id }"> <input
 			type="submit" value="Delete Beer">
 	</form>
-	
-	
-	<p> ${beerComment.description } </p>
+
+
+
+	<c:forEach var="beerComment" items="${listComments }">
+		<form action="beer.do" method="GET">
+			<input type="hidden" name="id" value="${beerComment.id }"> 
+				<h3>${beerComment.description }</h3>
+				<h3>${beerComment.dateTime }</h3>
+				<h3>${beerComment.user } left comment</h3>
+			</a> <br>
+		</form>
+	</c:forEach>
 
 </body>
 </html>

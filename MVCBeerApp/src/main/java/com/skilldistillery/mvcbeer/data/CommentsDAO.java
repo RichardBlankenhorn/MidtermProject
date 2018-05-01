@@ -11,11 +11,13 @@ public interface CommentsDAO {
 	//beer
 	public BeerComments createBeerComments(int id, int beerId, String beerComment);
 	
-	public List<BeerComments> retrieveAllBeerComments();
+	public List<BeerComments> retrieveAllBeerComments(int beerId);
 	
 	public BeerComments updateBeerComments(int id, BeerComments beerComment);
 	
 	public boolean deleteBeerComment(int id);
+	
+	
 	
 	//breweries
 	public BreweryComments create(int id, int breweryId, String breweryComment);
