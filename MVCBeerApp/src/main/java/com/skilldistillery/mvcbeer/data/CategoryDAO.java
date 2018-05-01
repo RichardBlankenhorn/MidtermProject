@@ -18,5 +18,8 @@ public interface CategoryDAO {
 	public boolean deleteCategory(int id);
 	
 	public List<Category> getCategoryByKeyword(String keyword);
+	
+	public Category getCategoryByName(String keyword);
+
 
 }

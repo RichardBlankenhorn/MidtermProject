@@ -65,5 +65,12 @@ public class CategoryDAOImpl implements CategoryDAO {
 		List<Category> results = em.createQuery(query, Category.class).setParameter("keyword", "%"+keyword+"%").getResultList();
 		return results;
 	}
+	@Override
+	public Category getCategoryByName(String keyword) {
+		System.out.println(keyword);
+		String query = "SELECT c FROM Category c WHERE c.name = :keyword";
+		Category result = em.createQuery(query, Category.class).setParameter("keyword", keyword).getResultList().get(0);
+		return result;
+	}
 
 }

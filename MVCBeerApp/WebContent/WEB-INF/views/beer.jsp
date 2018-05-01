@@ -23,6 +23,9 @@
 							<li class="list-inline-item"><a
 								class="btn btn-success btn-sm" href="createAccount.do">Delete Beer</a>
 							</li>
+							<li class="list-inline-item"><a
+								class="btn btn-success btn-sm" href="addBeerButton.do" >Add Beer</a>
+							</li>
 						</ul>
 					</div>
 	

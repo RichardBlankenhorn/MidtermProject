@@ -198,6 +198,10 @@
 								</div>
 							</div>
 						</div> -->
+						
+
+						
+						<!--  This is where functionality to add brewery begins -->
 						<form action="addBrewery.do" method="POST">
 						name:
 						<input type ="text" name="name">
@@ -219,6 +223,7 @@
 						<input type="text" name="phone">
 						<button type="submit" class="btn btn-primary"> Create Brewery</button>
 						</form>
+						<!--  This is where add brewery ends -->
 						
 						<div class="card padding-card">
 							<div class="card-body">

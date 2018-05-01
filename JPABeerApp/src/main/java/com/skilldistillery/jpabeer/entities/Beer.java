@@ -2,6 +2,7 @@ package com.skilldistillery.jpabeer.entities;
 
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -26,14 +27,14 @@ public class Beer {
 
 	private String description;
 
-	@ManyToOne
+	@ManyToOne(cascade= {CascadeType.PERSIST, CascadeType.REMOVE})
 	@JoinColumn(name = "brewery_id")
 	private Brewery brewery;
 
 	@Column(name = "img_url")
 	private String imageUrl;
 
-	@ManyToOne
+	@ManyToOne(cascade= {CascadeType.PERSIST, CascadeType.REMOVE})
 	@JoinColumn(name = "category_id")
 	private Category category;
 

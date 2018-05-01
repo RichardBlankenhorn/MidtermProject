@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.skilldistillery.jpabeer.entities.Beer;
+import com.skilldistillery.jpabeer.entities.BeerDTO;
 import com.skilldistillery.jpabeer.entities.Brewery;
 import com.skilldistillery.jpabeer.entities.Category;
 import com.skilldistillery.mvcbeer.data.BeerDAO;
@@ -36,14 +37,17 @@ public class BeerController {
 	}
 
 	@RequestMapping(path = "index.do", method = RequestMethod.GET)
-	public ModelAndView index(HttpSession session) {
+	public ModelAndView index() {
 		ModelAndView mv = new ModelAndView();
 		List<Beer> beers = beerDao.retrieveAllBeer();
 		List<Brewery> breweries = breweryDao.retrieveAllBreweries();
 		List<Category> categories = catDao.retrieveAllCategories();
-		session.setAttribute("categories", categories);
-		session.setAttribute("breweries", breweries);
-		session.setAttribute("beers", beers);
+		mv.addObject("categories", categories); 
+//		session.setAttribute("categories", categories);
+		mv.addObject("breweries", breweries); 
+//		session.setAttribute("breweries", breweries);
+		mv.addObject("beers", beers); 
+//		session.setAttribute("beers", beers);
 		mv.setViewName("WEB-INF/views/css_index.jsp");
 		return mv;
 	}
@@ -132,15 +136,41 @@ public class BeerController {
 	public ModelAndView updateBeer(@RequestParam(name = "id") int id) {
 		ModelAndView mv = new ModelAndView();
 		Beer beer = beerDao.retrieveById(id);
+		List<Category> categories = catDao.retrieveAllCategories();
+		mv.addObject("categoryList", categories); 
+//		session.setAttribute("categoryList", categories);
 		mv.addObject("beer", beer);
 		mv.setViewName("WEB-INF/views/edit_beer.jsp");
 		return mv;
 	}
 	
 	@RequestMapping(path = "updateBeer.do", method = RequestMethod.POST)
-	public ModelAndView updateBeerDB(Beer beer) {
+	public ModelAndView updateBeerDB(@RequestParam(name="id")int id, BeerDTO dto) {
 		ModelAndView mv = new ModelAndView();
-		
+		mv.addObject("beer", beerDao.updateBeer(id, dto)); 
+		mv.setViewName("WEB-INF/views/beer.jsp");
 		return mv;
 	}
+	
+	@RequestMapping( path= "addBeerButton.do", method = RequestMethod.GET) 
+	public ModelAndView addBeerGet() {
+		ModelAndView mv = new ModelAndView();
+		List<Category> categories = catDao.retrieveAllCategories();
+		List<Brewery> breweries = breweryDao.retrieveAllBreweries();
+		
+		mv.addObject("breweryList", breweries); 
+		mv.addObject("categoryList", categories); 
+		mv.setViewName("WEB-INF/views/add_beer.jsp");
+		return mv;
+	}
+	
+	@RequestMapping( path= "addBeer.do", method = RequestMethod.POST) 
+		public ModelAndView addBeerPost(BeerDTO dto) {
+			ModelAndView mv = new ModelAndView();
+			Beer beer = beerDao.createBeer(dto); 
+			mv.addObject("beer", beer); 
+			mv.setViewName("WEB-INF/views/beer.jsp");
+			return mv;
+		}
+	
 }
