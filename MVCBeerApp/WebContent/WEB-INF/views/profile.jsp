@@ -110,10 +110,10 @@
 					<div class="my-2 my-lg-0">
 						<ul class="list-inline main-nav-right">
 							<li class="list-inline-item"><a class="btn btn-link btn-sm"
-								href="index.do">Logout</a></li>
+								href="logout.do">Logout</a></li>
 							<li class="list-inline-item"><a
 								class="btn btn-success btn-sm" href="add-property.html"><i
-									class="mdi mdi-home-account"></i> ADD PROPERTY</a></li>
+									class="mdi mdi-home-account"></i> ADD BEER</a></li>
 						</ul>
 					</div>
 				</div>
