@@ -2,6 +2,7 @@ package com.skilldistillery.jpabeer.entities;
 
 import java.util.Date;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -21,11 +22,11 @@ public class BeerComments {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 
-	@ManyToOne
+	@ManyToOne(cascade= CascadeType.PERSIST)
 	@JoinColumn(name = "user_id")
 	private User user;
 
-	@ManyToOne
+	@ManyToOne(cascade= CascadeType.PERSIST)
 	@JoinColumn(name = "beer_id")
 	private Beer beer;
 

@@ -62,5 +62,18 @@ public class CommentsController {
 		return mv;
 		
 	}
+	
+	@RequestMapping(path = "deleteBeerComment.do", method = RequestMethod.GET)
+	public ModelAndView deleteComment(@RequestParam(name = "id") int id, @RequestParam(name = "beerId") int beerId) {
+		ModelAndView mv = new ModelAndView();
+		boolean b = commentsDAO.deleteBeerComment(id);
+		Beer beer = beerDAO.retrieveById(beerId);
+		mv.addObject("deletedComment", b);
+		mv.addObject("listComments", commentsDAO.retrieveAllBeerComments(beerId));
+		mv.addObject("beer", beer);
+		mv.setViewName("WEB-INF/views/beer.jsp");
+		return mv;
+		
+	}
 
 }

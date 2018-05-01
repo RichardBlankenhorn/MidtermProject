@@ -50,10 +50,13 @@
 				<h3>${beerComment.user } left comment</h3>
 		
 		<form action="editBeerCommentForm.do" action="GET">
-			<%-- <input type="hidden" name="id" value="${user.id }"> --%>
 			<input type="hidden" name="beerCommentId" value="${beerComment.id }">
-			<%-- <input type="hidden" name="beerId" value="${beer.id }"> --%>
 			<input type="submit" value="Update Comment">
+		</form>
+		<form action="deleteBeerComment.do" action="GET">
+			<input type="hidden" name="id" value="${beerComment.id }">
+			<input type="hidden" name="beerId" value="${beer.id }">
+			<input type="submit" value="Delete Comment">
 		</form>
 	</c:forEach>
 
