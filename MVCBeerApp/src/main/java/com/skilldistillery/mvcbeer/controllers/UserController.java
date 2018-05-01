@@ -93,5 +93,12 @@ public class UserController {
 		}
 		return mv;
 	}
+	
+	@RequestMapping(path = "profile.do", method = RequestMethod.GET)
+	public ModelAndView goToProfile() {
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("WEB-INF/views/profile.jsp");
+		return mv;
+	}
 
 }

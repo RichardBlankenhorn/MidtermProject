@@ -27,7 +27,7 @@
 	<header>
 		<nav class="navbar navbar-expand-lg navbar-light bg-light">
 			<div class="container">
-				<a class="navbar-brand text-success logo" href="index.html"><i
+				<a class="navbar-brand text-success logo" href="index.do"><i
 					class="mdi mdi-home-map-marker"></i> <strong>What's On Tap</strong></a>
 				<button class="navbar-toggler navbar-toggler-right" type="button"
 					data-toggle="collapse" data-target="#navbarResponsive"

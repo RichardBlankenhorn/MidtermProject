@@ -49,19 +49,22 @@
 									class="dropdown-item" href="index3.html">Home With Property
 									Info</a>
 							</div></li>
-						<li class="nav-item dropdown"><a
-							class="nav-link dropdown-toggle" href="#"
-							id="navbarDropdownPortfolio" data-toggle="dropdown"
-							aria-haspopup="true" aria-expanded="false"> My Account </a>
-							<div class="dropdown-menu"
-								aria-labelledby="navbarDropdownPortfolio">
-								<a class="dropdown-item" href="user-profile.html">User
-									Profile</a> <a class="dropdown-item" href="social-profiles.html">Social
-									Profiles</a> <a class="dropdown-item" href="my-properties.html">My
-									Properties</a> <a class="dropdown-item"
-									href="favorite-properties.html">Favorite Properties</a> <a
-									class="dropdown-item" href="add-property.html">Add Property</a>
-							</div></li>
+						<c:if test="${sessionScope.user != null }">
+							<li class="nav-item dropdown"><a
+								class="nav-link dropdown-toggle" href="#"
+								id="navbarDropdownPortfolio" data-toggle="dropdown"
+								aria-haspopup="true" aria-expanded="false"> My Account </a>
+								<div class="dropdown-menu"
+									aria-labelledby="navbarDropdownPortfolio">
+									<a class="dropdown-item" href="profile.do">User Profile</a> <a
+										class="dropdown-item" href="social-profiles.html">Social
+										Profiles</a> <a class="dropdown-item" href="my-properties.html">My
+										Properties</a> <a class="dropdown-item"
+										href="favorite-properties.html">Favorite Properties</a> <a
+										class="dropdown-item" href="add-property.html">Add
+										Property</a>
+								</div></li>
+						</c:if>
 						<li class="nav-item dropdown"><a
 							class="nav-link dropdown-toggle" href="#"
 							id="navbarDropdownPortfolio" data-toggle="dropdown"
@@ -76,11 +79,19 @@
 					</ul>
 					<div class="my-2 my-lg-0">
 						<ul class="list-inline main-nav-right">
-							<li class="list-inline-item"><a class="btn btn-link btn-sm"
-								href="login.do">Sign In</a></li>
-							<li class="list-inline-item"><a
-								class="btn btn-success btn-sm" href="createAccount.do">Sign Up</a>
-							</li>
+							<c:if test="${sessionScope.user == null }">
+								<li class="list-inline-item"><a class="btn btn-link btn-sm"
+									href="login.do">Sign In</a></li>
+							</c:if>
+							<c:if test="${sessionScope.user != null }">
+								<li class="list-inline-item"><a class="btn btn-link btn-sm"
+									href="logout.do">Logout</a></li>
+							</c:if>
+							<c:if test="${sessionScope.user == null }">
+								<li class="list-inline-item"><a
+									class="btn btn-success btn-sm" href="createAccount.do">Sign
+										Up</a></li>
+							</c:if>
 						</ul>
 					</div>
 				</div>
@@ -88,7 +99,7 @@
 		</nav>
 	</header>
 	<!-- End Navbar -->
-	
+
 	<!-- Main Slider With Form -->
 	<section class="osahan-slider">
 		<div id="osahanslider" class="carousel slide" data-ride="carousel">
@@ -176,7 +187,10 @@
 				<h2>List of ${category} Beers for ${brewery}</h2>
 			</c:if>
 			<c:if test="${category == null && brewery != null }">
-				<h2>Beers from <a class="company-link" href="brewery.do?id=${breweryId} ">${brewery }</a></h2>
+				<h2>
+					Beers from <a class="company-link"
+						href="brewery.do?id=${breweryId} ">${brewery }</a>
+				</h2>
 			</c:if>
 			<p>- “Whoever drinks beer, he is quick to sleep; whoever sleeps
 				long, does not sin; whoever does not sin, enters Heaven! Thus, let
@@ -186,10 +200,10 @@
 		<div class="container">
 			<div class="row">
 				<c:forEach var="beer" items="${beers }">
-					<div class="col-lg-4 col-md-4 d-flex align-items-stretch" >
+					<div class="col-lg-4 col-md-4 d-flex align-items-stretch">
 						<div class="card card-list" style="min-width: 350px">
-							<a href="beer.do?id=${beer.id }"> <img class="card-img-top" src="img/porter.jpeg"
-								alt="Card image cap" id="image-fit">
+							<a href="beer.do?id=${beer.id }"> <img class="card-img-top"
+								src="img/porter.jpeg" alt="Card image cap" id="image-fit">
 								<div class="card-body">
 									<h5 class="card-title">${beer.name }</h5>
 									<h5 class="card-subtitle mb-2 text-muted">
@@ -224,8 +238,8 @@
 			<div class="row">
 				<div class="col-lg-8 col-md-8">
 					<div class="card bg-dark text-white card-overlay">
-						<a href="#"> <img class="card-img" src="img/overlay/denver_skyline.jpg"
-							alt="Card image">
+						<a href="#"> <img class="card-img"
+							src="img/overlay/denver_skyline.jpg" alt="Card image">
 							<div class="card-img-overlay">
 								<h3 class="card-title text-white">Denver</h3>
 								<p class="card-text text-white">16 Properties</p>
