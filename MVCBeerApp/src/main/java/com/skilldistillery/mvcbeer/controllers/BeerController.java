@@ -171,4 +171,14 @@ public class BeerController {
 			return mv;
 		}
 	
+	@RequestMapping(path="deleteBeer.do", method = RequestMethod.POST)
+	public ModelAndView deleteBeer(@RequestParam(name="id") int id) {
+		ModelAndView mv = new ModelAndView();
+		boolean b = beerDao.deleteBeer(id);
+		mv.addObject("deleted", b);
+		mv.setViewName("WEB-INF/views/delete_beer.jsp");
+		
+		return mv;
+	}
+	
 }

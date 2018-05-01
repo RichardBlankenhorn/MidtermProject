@@ -47,6 +47,11 @@ public class BeerDAOImpl implements BeerDAO {
 	public boolean deleteBeer(int id) {
 		boolean deleted = false;
 		Beer b = em.find(Beer.class, id);
+		String query = "DELETE FROM BeerRating br where br.beer.id = :id";
+		String query2 = "DELETE FROM BeerComments bc where bc.beer.id = :id";
+				
+		em.createQuery(query).setParameter("id", id).executeUpdate();
+		em.createQuery(query2).setParameter("id", id).executeUpdate();
 		try {
 			em.remove(b);
 			deleted = true;
