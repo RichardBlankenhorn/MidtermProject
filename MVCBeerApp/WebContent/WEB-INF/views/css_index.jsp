@@ -49,7 +49,23 @@
 									class="dropdown-item" href="index3.html">Home With Property
 									Info</a>
 							</div></li>
-						<c:if test="${sessionScope.user != null }">
+						<c:if test="${sessionScope.user != null}">
+							<li class="nav-item dropdown"><a
+								class="nav-link dropdown-toggle" href="#"
+								id="navbarDropdownPortfolio" data-toggle="dropdown"
+								aria-haspopup="true" aria-expanded="false"> My Account </a>
+								<div class="dropdown-menu"
+									aria-labelledby="navbarDropdownPortfolio">
+									<a class="dropdown-item" href="profile.do">User Profile</a> <a
+										class="dropdown-item" href="social-profiles.html">Social
+										Profiles</a> <a class="dropdown-item" href="my-properties.html">My
+										Properties</a> <a class="dropdown-item"
+										href="favorite-properties.html">Favorite Properties</a> <a
+										class="dropdown-item" href="add-property.html">Add
+										Property</a>
+								</div></li>
+						</c:if>
+						<c:if test="${sessionScope.admin != null}">
 							<li class="nav-item dropdown"><a
 								class="nav-link dropdown-toggle" href="#"
 								id="navbarDropdownPortfolio" data-toggle="dropdown"
@@ -79,18 +95,26 @@
 					</ul>
 					<div class="my-2 my-lg-0">
 						<ul class="list-inline main-nav-right">
-							<c:if test="${sessionScope.user == null }">
+							<c:if test="${sessionScope.user == null}">
+							<c:if test="${sessionScope.admin == null }">
 								<li class="list-inline-item"><a class="btn btn-link btn-sm"
 									href="login.do">Sign In</a></li>
+							</c:if>
 							</c:if>
 							<c:if test="${sessionScope.user != null }">
 								<li class="list-inline-item"><a class="btn btn-link btn-sm"
 									href="logout.do">Logout</a></li>
 							</c:if>
+							<c:if test="${sessionScope.admin != null }">
+								<li class="list-inline-item"><a class="btn btn-link btn-sm"
+									href="logout.do">Logout</a></li>
+							</c:if>
 							<c:if test="${sessionScope.user == null }">
+							<c:if test="${sessionScope.admin == null }"> 
 								<li class="list-inline-item"><a
 									class="btn btn-success btn-sm" href="createAccount.do">Sign
 										Up</a></li>
+							</c:if>
 							</c:if>
 						</ul>
 					</div>

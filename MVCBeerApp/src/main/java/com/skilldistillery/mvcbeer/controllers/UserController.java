@@ -37,7 +37,11 @@ public class UserController {
 		User u = dao.retrieveByUsername(username);
 		if (u != null && u.getPassword().equals(password)) {
 			List<Profile> profile = dao.retrieveProfileByUsername(u.getUsername());
-			session.setAttribute("user", u);
+			if (u.isAdmin()) {
+				session.setAttribute("admin", u);
+			} else {
+				session.setAttribute("user", u);
+			}
 			session.setAttribute("profile", profile.get(0));
 			mv.setViewName("WEB-INF/views/profile.jsp");
 		} else {
@@ -52,26 +56,27 @@ public class UserController {
 	public ModelAndView logout(HttpSession session) {
 		ModelAndView mv = new ModelAndView();
 		session.removeAttribute("user");
-		mv.setViewName("WEB-INF/views/index.jsp");
+		session.removeAttribute("admin");
+		mv.setViewName("WEB-INF/views/css_index.jsp");
 		return mv;
 	}
 
-//	@RequestMapping(path = "createAccount.do", method = RequestMethod.POST)
-//	public ModelAndView createAccount(User user) {
-//		ModelAndView mv = new ModelAndView();
-//		User u = dao.retrieveByUsername(user.getUsername());
-//		if (u == null) {
-//			u = dao.create(user);
-//			mv.addObject("user", u);
-//			mv.setViewName("WEB-INF/views/accountCreated.jsp");
-//		} else {
-//			mv.addObject("failed", "Username is already taken.");
-//			mv.setViewName("WEB-INF/views/create_account.jsp");
-//		}
-//
-//		return mv;
-//	}
-//
+	// @RequestMapping(path = "createAccount.do", method = RequestMethod.POST)
+	// public ModelAndView createAccount(User user) {
+	// ModelAndView mv = new ModelAndView();
+	// User u = dao.retrieveByUsername(user.getUsername());
+	// if (u == null) {
+	// u = dao.create(user);
+	// mv.addObject("user", u);
+	// mv.setViewName("WEB-INF/views/accountCreated.jsp");
+	// } else {
+	// mv.addObject("failed", "Username is already taken.");
+	// mv.setViewName("WEB-INF/views/create_account.jsp");
+	// }
+	//
+	// return mv;
+	// }
+	//
 	@RequestMapping(path = "createAccount.do", method = RequestMethod.GET)
 	public ModelAndView createAccount1() {
 		ModelAndView mv = new ModelAndView();
@@ -93,7 +98,7 @@ public class UserController {
 		}
 		return mv;
 	}
-	
+
 	@RequestMapping(path = "profile.do", method = RequestMethod.GET)
 	public ModelAndView goToProfile() {
 		ModelAndView mv = new ModelAndView();
