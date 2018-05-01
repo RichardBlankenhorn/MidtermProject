@@ -125,66 +125,61 @@
 	</header>
 	<!-- End Navbar -->
 
-	<!-- ADD BEER BEGINS -->
+		<!--  This is where functionality to add brewery begins -->
+
 	<section class="section-padding">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-5 col-md-5 mx-auto">
 					<div class="card padding-card">
 						<div class="card-body">
-							<h5 class="card-title mb-4">Add Beer</h5>
-							<form action="addBeer.do" method="POST">
-								<input type="hidden" value="${beer.id }" name="id">
+							<h5 class="card-title mb-4">Add Brewery</h5>
+							<form action="addBrewery.do" method="POST">
+								<input type="hidden" value="${brewery.id }" name="id">
 								<div class="form-group">
+								
 									<label>Name <span class="text-danger">*</span></label> <input
-										type="text" class="form-control" value="${beer.name }"
-										name="beerName" required>
-								</div>
-					 			<div class="form-group">
-									<label>Cost <span class="text-danger">*</span></label> <input
-										type="number" step=".01" class="form-control" value="${beer.cost }"
-										name="cost">
-								</div>
-
-								<div class="form-group">
-									<label>ABV <span class="text-danger">*</span></label> <input
-										type="number" step=".1" class="form-control" value="${beer.abv }"
-										name="abv">
-								</div>
-								<div class="form-group">
-									<label>IBU <span class="text-danger">*</span></label> <input
-										type="number" step=".1" class="form-control" value="${beer.ibu }"
-										name="ibu">
+										type="text" class="form-control" placehold="Enter Name"
+										name="name" required>
 								</div>
 								<div class="form-group">
 									<label>Description <span class="text-danger">*</span></label>
 									<textarea cols="50" rows="4" class="form-control"
-										name="beerDescription" placeholder="${beer.description }"></textarea>
+										name="description" placeholder="Enter Description"></textarea>
+								</div>
+					 			<div class="form-group">
+									<label>Address<span class="text-danger">*</span></label> <input
+										type="text" step=".01" class="form-control" placeholder="Enter Line 1
+										name="street">
+								</div>
+
+								<div class="form-group">
+									<label>Address <span class="text-danger">*</span></label> <input
+										type="text" class="form-control" placeholder="Enter Line 2"
+										name="street2">
+								</div>
+								<div class="form-group">
+									<label>City <span class="text-danger">*</span></label> <input
+										type="text" class="form-control" placeholder="Enter City"
+										name="city">
+								</div>
+								<div class="form-group">
+									<label>State <span class="text-danger">*</span></label> <input
+										type="text" class="form-control" placeholder="Enter State"
+										name="state">
+								</div>
+								<div class="form-group">
+									<label>Zip Code<span class="text-danger">*</span></label> <input
+										type="text" class="form-control" placeholder="Enter Zip"
+										name="zip">
+								</div>
+								<div class="form-group">
+									<label>Phone <span class="text-danger">*</span></label> <input
+										type="text" class="form-control" placeholder="Enter Phone #"
+										name="phone">
 								</div>
 								
-								<div class="form-group">
-									<label>Category <span class="text-danger">*</span></label> <select
-										name="categoryName" size="5">
-										<c:forEach var="category" items="${categoryList }">
-											<option value="${category.name }">${category.name }</option>
-										</c:forEach>
-									</select>
-								</div>
-								<div class="form-group">
-									<label>Brewery <span class="text-danger">*</span></label> <select
-										name="breweryName" size="5">
-										<c:forEach var="brewery" items="${breweryList }">
-											<option value="${brewery.name }">${brewery.name }</option>
-										</c:forEach>
-									</select>
-								</div>
-								<div class="form-group">
-									<label>Image URL <span class="text-danger">*</span></label> <input
-										type="text" class="form-control" value="Enter Image URL"
-										name="imageUrl">
-								</div>
-								
-								<button type="submit" class="btn btn-success btn-block">ADD</button>
+								<button type="submit" class="btn btn-success">ADD</button>
 							</form>
 						</div>
 					</div>
@@ -192,7 +187,7 @@
 			</div>
 		</div>
 	</section>
-	<!-- End ADD BEER -->
+	<!--  This is where add brewery ends -->
 
 	<!-- Copyright -->
 	<section class="pt-4 pb-4 text-center">
@@ -218,8 +213,7 @@
 </body>
 </html>
 
-	<!--  This is where functionality to add brewery begins -->
-						<form action="addBrewery.do" method="POST">
+					<!--  	
 						name:
 						<input type ="text" name="name">
 						description:
@@ -237,7 +231,5 @@
 						zip
 						<input type="text" name="zip">
 						phone
-						<input type="text" name="phone">
-						<button type="submit" class="btn btn-primary"> Create Brewery</button>
-						</form>
-						<!--  This is where add brewery ends -->
+						<input type="text" name="phone"> -->
+						
