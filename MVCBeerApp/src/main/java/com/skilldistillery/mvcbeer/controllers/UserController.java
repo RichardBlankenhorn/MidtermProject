@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.skilldistillery.jpabeer.entities.BeerComments;
 import com.skilldistillery.jpabeer.entities.Profile;
 import com.skilldistillery.jpabeer.entities.User;
 import com.skilldistillery.jpabeer.entities.UserDTO;
@@ -161,5 +162,23 @@ public class UserController {
 		mv.setViewName("WEB-INF/views/changePassword.jsp");
 		return mv;
 	}
-
+	
+	@RequestMapping(path = "viewComments.do", method = RequestMethod.GET) 
+	public ModelAndView myComments(HttpSession session) {
+		ModelAndView mv = new ModelAndView();
+		User u = (User) session.getAttribute("user");
+		List<BeerComments> comments = dao.retrieveBeerCommentsByUser(u.getId());
+		mv.addObject("beercomments", comments);
+		mv.setViewName("WEB-INF/views/myComments.jsp");
+		return mv;
+	}
+	
+	@RequestMapping(path = "viewAllComments.do", method = RequestMethod.GET)
+	public ModelAndView allComments(HttpSession session) {
+		ModelAndView mv = new ModelAndView();
+		List<BeerComments> allComments = dao.retrieveAllBeerComments();
+		mv.addObject("allComments", allComments);
+		mv.setViewName("WEB-INF/views/allComments.jsp");
+		return mv;
+	}
 }

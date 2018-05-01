@@ -135,9 +135,9 @@
 						<li class="nav-item"><a class="nav-link active text-success"
 							href="changePassword.do">Change Password</a></li>
 						<li class="nav-item"><a class="nav-link"
-							href="favorite-properties.html">My Comments & Ratings</a></li>
+							href="viewComments.do">My Comments & Ratings</a></li>
 						<li class="nav-item"><a class="nav-link"
-							href="add-property.html">View Beers & Breweries</a></li>
+							href="add-property.html">View All Comments</a></li>
 					</ul>
 				</div>
 			</div>
@@ -173,11 +173,11 @@
 	
 	<!-- Copyright -->
 	<section class="pt-4 pb-4 text-center">
-		<p class="mt-0 mb-0">© Copyright 2018 OsahanLand. All Rights
+		<p class="mt-0 mb-0">© Copyright 2018 What's On Tap. All Rights
 			Reserved</p>
 		<small class="mt-0 mb-0"> Made with <i
 			class="mdi mdi-heart text-danger"></i> by <a class="text-dark"
-			target="_blank" href="https://askbootstrap.com/">Ask Bootstrap</a>
+			target="_blank" href="https://askbootstrap.com/">Megan, Mark, Alen and Richard</a>
 		</small>
 	</section>
 	<!-- End Copyright -->

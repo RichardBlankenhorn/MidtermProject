@@ -9,7 +9,7 @@
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="description" content="Askbootstrap">
 <meta name="author" content="Askbootstrap">
-<title>What's On Tap - Profile</title>
+<title>What's On Tap - My Comments</title>
 <!-- Favicon Icon -->
 <link rel="icon" type="image/png" href="images/favicon.png">
 <!-- Bootstrap core CSS -->
@@ -133,12 +133,12 @@
 					<ul class="nav justify-content-center">
 						<li class="nav-item"><a class="nav-link" href="profile.do">User
 								Profile</a></li>
-						<li class="nav-item"><a class="nav-link active text-success"
+						<li class="nav-item"><a class="nav-link"
 							href="updateProfile.do">Update Profile</a></li>
 						<li class="nav-item"><a class="nav-link"
 							href="changePassword.do">Change Password</a></li>
-						<li class="nav-item"><a class="nav-link"
-							href="viewComments.do">My Comments & Ratings</a></li>
+						<li class="nav-item"><a class="nav-link active text-success"
+							href="myComments.do">My Comments & Ratings</a></li>
 						<li class="nav-item"><a class="nav-link"
 							href="viewAllComments.do">View All Comments</a></li>
 					</ul>
@@ -147,45 +147,36 @@
 		</div>
 	</section>
 
-	<!-- User Profile -->
+	<!-- User Comments -->
 	<section class="section-padding">
+	<h4 class="text-center">My Comments</h4>
+	<br>
 		<div class="container">
 			<div class="row">
-				<div class="col-lg-8 col-md-8 mx-auto">
-					<form action="updateProfile.do" method="POST">
-						<div class="card padding-card">
+				<c:forEach var="comment" items="${beercomments }">
+					<div class="col-lg-4 col-md-4 d-flex align-items-stretch">
+						<div class="card card-list" style="min-width: 350px">
 							<div class="card-body">
-								<h5 class="card-title mb-4 text-center">Update Profile</h5>
-								<div class="form-group">
-									<label>First Name <span class="text-danger">*</span></label> <input
-										type="text" class="form-control" value="${profile.firstName }"
-										placeholder="Enter First Name" name="firstName">
-								</div>
-								<div class="form-group">
-									<label>Last Name <span class="text-danger">*</span></label> <input
-										type="text" class="form-control" value="${profile.lastName }"
-										placeholder="Enter Last Name" name="lastName">
-								</div>
-								<div class="form-group">
-									<label>Email Address <span class="text-danger">*</span></label>
-									<input type="email" class="form-control"
-										value="${profile.email }" placeholder="Enter Email Address"
-										name="email">
-								</div>
-								<div class="form-group">
-									<label>User Name <span class="text-danger">*</span></label> <input
-										type="text" class="form-control" value="${user.username }"
-										placeholder="Enter User Name" name="username">
-								</div>
+								<h5 class="card-title">Comment for ${comment.beer.name }</h5>
+								<h5 class="card-subtitle mb-2 text-muted">
+									<i class="mdi mdi-home-map-marker"></i>Brewery:
+									${comment.beer.brewery.name}
+								</h5>
+								<h6>${comment.description }</h6>
+								<h2 class="text-success mb-0 mt-3">
+									<small></small>
+								</h2>
+							</div>
+							<div class="card-footer">
+								<span><i class="mdi "></i> Date <strong>${comment.dateTime }</strong></span>
 							</div>
 						</div>
-						<button type="submit" class="btn btn-success">SAVE EDITS</button>
-					</form>
-				</div>
+					</div>
+				</c:forEach>
 			</div>
 		</div>
 	</section>
-	<!-- End User Profile -->
+	<!-- End User Comments -->
 
 	<!-- Copyright -->
 	<section class="pt-4 pb-4 text-center">
@@ -197,6 +188,7 @@
 		</small>
 	</section>
 	<!-- End Copyright -->
+	
 	<!-- Bootstrap core JavaScript -->
 	<script src="vendor/jquery/jquery.min.js"></script>
 	<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>

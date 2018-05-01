@@ -55,8 +55,9 @@
 							aria-haspopup="true" aria-expanded="false"> Search </a>
 							<div class="dropdown-menu"
 								aria-labelledby="navbarDropdownPortfolio">
-								<a class="dropdown-item" href="properties-grid.html">Search Beer by Keyword</a> 
-								<a class="dropdown-item" href="properties-list.html">Search Brewery by Keyword</a> 
+								<a class="dropdown-item" href="properties-grid.html">Search
+									Beer by Keyword</a> <a class="dropdown-item"
+									href="properties-list.html">Search Brewery by Keyword</a>
 							</div></li>
 						<li class="nav-item dropdown"><a
 							class="nav-link dropdown-toggle" href="#"
@@ -64,11 +65,13 @@
 							aria-haspopup="true" aria-expanded="false"> Beer & Brewery </a>
 							<div class="dropdown-menu"
 								aria-labelledby="navbarDropdownPortfolio">
-								<a class="dropdown-item" href="agency-list.html">Add Beer</a>
-								<a class="dropdown-item" href="agency-profile.html">Add Brewery</a> 
+								<a class="dropdown-item" href="agency-list.html">Add Beer</a> <a
+									class="dropdown-item" href="agency-profile.html">Add
+									Brewery</a>
 								<c:if test="${sessionScope.admin != null }">
 									<a class="dropdown-item" href="agents.html">Update Beer</a>
-									<a class="dropdown-item" href="agent-profile.html">Update Brewery</a>
+									<a class="dropdown-item" href="agent-profile.html">Update
+										Brewery</a>
 								</c:if>
 							</div></li>
 						<li class="nav-item dropdown"><a
@@ -90,7 +93,7 @@
 							aria-haspopup="true" aria-expanded="false"> Pages </a>
 							<div class="dropdown-menu"
 								aria-labelledby="navbarDropdownPortfolio">
-								<a class="dropdown-item" href="about.html">About Us</a> 
+								<a class="dropdown-item" href="about.html">About Us</a>
 							</div></li>
 					</ul>
 					<div class="my-2 my-lg-0">
@@ -104,7 +107,7 @@
 		</nav>
 	</header>
 	<!-- End Navbar -->
-	
+
 	<!-- Inner Header -->
 	<section class="section-padding bg-dark inner-header">
 		<div class="container">
@@ -122,7 +125,7 @@
 		</div>
 	</section>
 	<!-- End Inner Header -->
-	
+
 	<section class="tab-view">
 		<div class="container">
 			<div class="row">
@@ -135,15 +138,15 @@
 						<li class="nav-item"><a class="nav-link"
 							href="changePassword.do">Change Password</a></li>
 						<li class="nav-item"><a class="nav-link"
-							href="favorite-properties.html">My Comments & Ratings</a></li>
+							href="viewComments.do">My Comments</a></li>
 						<li class="nav-item"><a class="nav-link"
-							href="add-property.html">View Beers & Breweries</a></li>
+							href="viewAllComments.do">View All Comments</a></li>
 					</ul>
 				</div>
 			</div>
 		</div>
 	</section>
-	
+
 	<!-- User Profile -->
 	<section class="section-padding">
 		<div class="container">
@@ -154,10 +157,11 @@
 							<div class="card-body">
 								<h5 class="card-title mb-4 text-center">Personal Details</h5>
 								<div class="form-group">
-									<label>First Name:  <span class="text-success">  ${profile.firstName } </span></label>
+									<label>First Name: <span class="text-success">
+											${profile.firstName } </span></label>
 								</div>
 								<div class="form-group">
-									<label>Last Name:  <span class="text-success">${profile.lastName }</span></label>
+									<label>Last Name: <span class="text-success">${profile.lastName }</span></label>
 								</div>
 								<div class="form-group">
 									<label>Email Address: <span class="text-success">${profile.email }</span></label>
@@ -166,22 +170,22 @@
 									<label>Username: <span class="text-success">${user.username }</span></label>
 								</div>
 							</div>
-						</div> 
-						
+						</div>
+
 					</form>
 				</div>
 			</div>
 		</div>
 	</section>
 	<!-- End User Profile -->
-	
+
 	<!-- Copyright -->
 	<section class="pt-4 pb-4 text-center">
-		<p class="mt-0 mb-0">© Copyright 2018 OsahanLand. All Rights
+		<p class="mt-0 mb-0">© Copyright 2018 What's On Tap. All Rights
 			Reserved</p>
 		<small class="mt-0 mb-0"> Made with <i
 			class="mdi mdi-heart text-danger"></i> by <a class="text-dark"
-			target="_blank" href="https://askbootstrap.com/">Ask Bootstrap</a>
+			target="_blank" href="https://askbootstrap.com/">Megan, Mark, Alen and Richard</a>
 		</small>
 	</section>
 	<!-- End Copyright -->

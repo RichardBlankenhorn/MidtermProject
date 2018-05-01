@@ -2,6 +2,7 @@ package com.skilldistillery.mvcbeer.data;
 
 import java.util.List;
 
+import com.skilldistillery.jpabeer.entities.BeerComments;
 import com.skilldistillery.jpabeer.entities.Profile;
 import com.skilldistillery.jpabeer.entities.User;
 import com.skilldistillery.jpabeer.entities.UserDTO;
@@ -28,5 +29,9 @@ public interface UserDAO {
 	public boolean updatePassword(int id, String password);
 	
 	public List<Object> updateProfile(int userId, int profileId, String firstName, String lastName, String email, String username);
+	
+	public List<BeerComments> retrieveBeerCommentsByUser(int userId);
+	
+	public List<BeerComments> retrieveAllBeerComments();
 
 }
