@@ -27,14 +27,14 @@ public class Beer {
 
 	private String description;
 
-	@ManyToOne(cascade= {CascadeType.PERSIST, CascadeType.REMOVE})
+	@ManyToOne(cascade= {CascadeType.PERSIST})
 	@JoinColumn(name = "brewery_id")
 	private Brewery brewery;
 
 	@Column(name = "img_url")
 	private String imageUrl;
 
-	@ManyToOne(cascade= {CascadeType.PERSIST, CascadeType.REMOVE})
+	@ManyToOne(cascade= {CascadeType.PERSIST})
 	@JoinColumn(name = "category_id")
 	private Category category;
 
