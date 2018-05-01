@@ -149,21 +149,21 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-8 col-md-8 mx-auto">
-					<form>
+					<form action="changePassword.do" method="POST">
 						<div class="card padding-card">
 							<div class="card-body">
 								<h5 class="card-title mb-4">Change Password</h5>
 								<div class="form-group">
 									<label>Password <span class="text-danger">*</span></label> <input
-										type="password" class="form-control" placeholder="">
+										type="password" name="password" class="form-control" placeholder="" required>
 								</div>
 								<div class="form-group">
 									<label>Confirm Password <span class="text-danger">*</span></label>
-									<input type="password" class="form-control" placeholder="">
+									<input type="password" name="passwordconfirm" class="form-control" placeholder="" required>
 								</div>
 							</div>
 						</div>
-						<button type="submit" class="btn btn-success">SAVE EDITS</button>
+						<button type="submit" class="btn btn-success">SAVE EDITS</button><h6>${message }</h6>
 					</form>
 				</div>
 			</div>

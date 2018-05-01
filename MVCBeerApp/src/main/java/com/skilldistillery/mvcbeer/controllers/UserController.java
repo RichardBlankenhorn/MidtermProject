@@ -105,17 +105,39 @@ public class UserController {
 		mv.setViewName("WEB-INF/views/profile.jsp");
 		return mv;
 	}
-	
+
 	@RequestMapping(path = "updateProfile.do", method = RequestMethod.GET)
 	public ModelAndView updateProfile() {
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("WEB-INF/views/editProfile.jsp");
 		return mv;
 	}
-	
+
 	@RequestMapping(path = "changePassword.do", method = RequestMethod.GET)
 	public ModelAndView changePassword() {
 		ModelAndView mv = new ModelAndView();
+		mv.setViewName("WEB-INF/views/changePassword.jsp");
+		return mv;
+	}
+
+	@RequestMapping(path = "changePassword.do", method = RequestMethod.POST)
+	public ModelAndView changePassword(@RequestParam(name = "password") String password,
+			@RequestParam(name = "passwordconfirm") String passwordconfirm, HttpSession session) {
+		ModelAndView mv = new ModelAndView();
+		String message = null;
+		if (password.equals(passwordconfirm)) {
+			User u = (User) session.getAttribute("user");
+			if (dao.updatePassword(u.getId(), password)) {
+				message = "Password Change Successful";
+			}
+			else {
+				message = "Password Change Not Successful";
+			}
+		}
+		else {
+			message = "Passwords Did Not Match";
+		}
+		mv.addObject("message", message);
 		mv.setViewName("WEB-INF/views/changePassword.jsp");
 		return mv;
 	}

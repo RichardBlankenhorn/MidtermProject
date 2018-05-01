@@ -133,7 +133,7 @@
 						<li class="nav-item"><a class="nav-link"
 							href="updateProfile.do">Update Profile</a></li>
 						<li class="nav-item"><a class="nav-link"
-							href="my-properties.html">Change Password</a></li>
+							href="changePassword.do">Change Password</a></li>
 						<li class="nav-item"><a class="nav-link"
 							href="favorite-properties.html">My Comments & Ratings</a></li>
 						<li class="nav-item"><a class="nav-link"

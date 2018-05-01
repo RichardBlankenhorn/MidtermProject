@@ -81,12 +81,12 @@ public class BeerController {
 	public ModelAndView listBeers(@RequestParam(name = "keyword") String keyword) {
 		ModelAndView mv = new ModelAndView();
 		if (keyword != "") {
-			List<Beer> listBeer = beerDao.searchBeerByKeyword(keyword);
-			if (listBeer != null) {
-				mv.addObject("listBeer", listBeer);
-				mv.setViewName("WEB-INF/views/list_beers.jsp");
+			List<Beer> beers = beerDao.searchBeerByKeyword(keyword);
+			if (beers != null) {
+				mv.addObject("beers", beers);
+				mv.setViewName("WEB-INF/views/css_index.jsp");
 			} else {
-				mv.setViewName("WEB-INF/views/index.jsp");
+				mv.setViewName("redirect: index.do");
 				// figure out how to send error messages
 			}
 		} else {
@@ -99,6 +99,12 @@ public class BeerController {
 				// figure out how to send error message
 			}
 		}
+		return mv;
+	}
+	@RequestMapping(path="listBeersByKeyword.do", method = RequestMethod.GET)
+	public ModelAndView searchBeer() {
+		ModelAndView mv = new ModelAndView(); 
+		mv.setViewName("WEB-INF/views/search_beer.jsp");
 		return mv;
 	}
 
