@@ -31,24 +31,31 @@ public class BrewController {
 	public ModelAndView listBrew(@RequestParam(name = "keyword") String keyword) {
 		ModelAndView mv = new ModelAndView();
 		if (keyword != "") {
-			List<Brewery> brewList = dao.getBreweryByKeyword(keyword);
-			if (brewList != null) {
-				mv.addObject("brewList", brewList);
+			List<Brewery> breweries = dao.getBreweryByKeyword(keyword);
+			if (breweries != null) {
+				mv.addObject("breweries", breweries);
 				mv.setViewName("WEB-INF/views/list_breweries.jsp");
 			} else {
-				mv.setViewName("WEB-INF/views/index.jsp");
+				mv.setViewName("redirect: index.do");
 				// figure out how to send error message
 			}
 		} else {
-			List<Brewery> brewList = dao.retrieveAllBreweries();
-			if (brewList != null) {
-				mv.addObject("brewList", brewList);
+			List<Brewery> breweries = dao.retrieveAllBreweries();
+			if (breweries != null) {
+				mv.addObject("breweries", breweries);
 				mv.setViewName("WEB-INF/views/list_breweries.jsp");
 			} else {
-				mv.setViewName("WEB-INF/views/index.jsp");
+				mv.setViewName("redirect: index.do");
 				// figure out how to send error message
 			}
 		}
+		return mv;
+	}
+	
+	@RequestMapping(path="searchBreweriesByKeyword.do", method = RequestMethod.GET)
+	public ModelAndView searchBreweries() {
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("WEB-INF/views/search_breweries.jsp");
 		return mv;
 	}
 
@@ -60,7 +67,7 @@ public class BrewController {
 			mv.addObject("brewery", brewery);
 			mv.setViewName("WEB-INF/views/brewery.jsp");
 		} else {
-			mv.setViewName("WEB-INF/views/list_breweries.jsp");
+			mv.setViewName("redirect: index.do");
 			// figure out how to send error message
 		}
 		return mv;
@@ -79,8 +86,14 @@ public class BrewController {
 			Address address, AddressDTO dto) {
 		ModelAndView mv = new ModelAndView();
 		Brewery b = dao.createAddressAndBrewery(dto);
-		mv.addObject("brewery", b);
-		mv.setViewName("WEB-INF/views/brewery.jsp");
+		if (b != null) {
+			mv.addObject("brewery", b);
+			mv.setViewName("WEB-INF/views/brewery.jsp");
+		} 
+		else {
+			mv.setViewName("redirect: index.do");
+			//figure out how to send error message
+		}
 
 		return mv;
 	}
@@ -107,7 +120,7 @@ public class BrewController {
 		ModelAndView mv = new ModelAndView();
 		boolean b = dao.deleteBrewery(id);
 		mv.addObject("deleted", b);
-		mv.setViewName("WEB-INF/views/delete_brewery.jsp");
+		mv.setViewName("redirect: index.do");
 		
 		return mv;
 	}
