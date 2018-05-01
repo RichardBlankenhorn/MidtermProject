@@ -1,5 +1,6 @@
 package com.skilldistillery.mvcbeer.data;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -108,6 +109,28 @@ public class UserDAOImpl implements UserDAO {
 			return true;
 		} catch (Exception e) {
 			return false;
+		}
+	}
+
+	@Override
+	public List<Object> updateProfile(int userId, int profileId, String firstName, String lastName, String email,
+			String username) {
+		List<Object> results = new ArrayList<>();
+		try {
+			User u = em.find(User.class, userId);
+			Profile p = em.find(Profile.class, profileId);
+			u.setUsername(username);
+			p.setFirstName(firstName);
+			p.setLastName(lastName);
+			p.setEmail(email);
+			em.flush();
+			em.persist(u);
+			em.persist(p);
+			results.add(u);
+			results.add(p);
+			return results;
+		} catch (Exception e) {
+			return results;
 		}
 	}
 

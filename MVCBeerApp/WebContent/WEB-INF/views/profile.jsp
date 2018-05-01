@@ -165,10 +165,6 @@
 								<div class="form-group">
 									<label>Username: <span class="text-success">${user.username }</span></label>
 								</div>
-								<div class="form-group">
-									<label>About Me <span class="text-danger">*</span></label>
-									<textarea rows="10" cols="100" class="form-control"></textarea>
-								</div>
 							</div>
 						</div> 
 						

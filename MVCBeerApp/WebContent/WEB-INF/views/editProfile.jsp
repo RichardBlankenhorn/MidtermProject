@@ -55,8 +55,9 @@
 							aria-haspopup="true" aria-expanded="false"> Search </a>
 							<div class="dropdown-menu"
 								aria-labelledby="navbarDropdownPortfolio">
-								<a class="dropdown-item" href="properties-grid.html">Search Beer by Keyword</a> 
-								<a class="dropdown-item" href="properties-list.html">Search Brewery by Keyword</a> 
+								<a class="dropdown-item" href="properties-grid.html">Search
+									Beer by Keyword</a> <a class="dropdown-item"
+									href="properties-list.html">Search Brewery by Keyword</a>
 							</div></li>
 						<li class="nav-item dropdown"><a
 							class="nav-link dropdown-toggle" href="#"
@@ -64,11 +65,13 @@
 							aria-haspopup="true" aria-expanded="false"> Beer & Brewery </a>
 							<div class="dropdown-menu"
 								aria-labelledby="navbarDropdownPortfolio">
-								<a class="dropdown-item" href="agency-list.html">Add Beer</a>
-								<a class="dropdown-item" href="agency-profile.html">Add Brewery</a> 
+								<a class="dropdown-item" href="agency-list.html">Add Beer</a> <a
+									class="dropdown-item" href="agency-profile.html">Add
+									Brewery</a>
 								<c:if test="${sessionScope.admin != null }">
 									<a class="dropdown-item" href="agents.html">Update Beer</a>
-									<a class="dropdown-item" href="agent-profile.html">Update Brewery</a>
+									<a class="dropdown-item" href="agent-profile.html">Update
+										Brewery</a>
 								</c:if>
 							</div></li>
 						<li class="nav-item dropdown"><a
@@ -90,7 +93,7 @@
 							aria-haspopup="true" aria-expanded="false"> Pages </a>
 							<div class="dropdown-menu"
 								aria-labelledby="navbarDropdownPortfolio">
-								<a class="dropdown-item" href="about.html">About Us</a> 
+								<a class="dropdown-item" href="about.html">About Us</a>
 							</div></li>
 					</ul>
 					<div class="my-2 my-lg-0">
@@ -104,7 +107,7 @@
 		</nav>
 	</header>
 	<!-- End Navbar -->
-	
+
 	<!-- Inner Header -->
 	<section class="section-padding bg-dark inner-header">
 		<div class="container">
@@ -122,14 +125,14 @@
 		</div>
 	</section>
 	<!-- End Inner Header -->
-	
+
 	<section class="tab-view">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-12">
 					<ul class="nav justify-content-center">
-						<li class="nav-item"><a class="nav-link"
-							href="profile.do">User Profile</a></li>
+						<li class="nav-item"><a class="nav-link" href="profile.do">User
+								Profile</a></li>
 						<li class="nav-item"><a class="nav-link active text-success"
 							href="updateProfile.do">Update Profile</a></li>
 						<li class="nav-item"><a class="nav-link"
@@ -143,44 +146,39 @@
 			</div>
 		</div>
 	</section>
-	
+
 	<!-- User Profile -->
 	<section class="section-padding">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-8 col-md-8 mx-auto">
-					<form>
+					<form action="updateProfile.do" method="POST">
 						<div class="card padding-card">
 							<div class="card-body">
-								<h5 class="card-title mb-4">Personal Details</h5>
+								<h5 class="card-title mb-4 text-center">Update Profile</h5>
 								<div class="form-group">
 									<label>First Name <span class="text-danger">*</span></label> <input
-										type="text" class="form-control"
-										placeholder="Enter First Name">
+										type="text" class="form-control" value="${profile.firstName }"
+										placeholder="Enter First Name" name="firstName">
 								</div>
 								<div class="form-group">
 									<label>Last Name <span class="text-danger">*</span></label> <input
-										type="text" class="form-control" placeholder="Enter Last Name">
+										type="text" class="form-control" value="${profile.lastName }"
+										placeholder="Enter Last Name" name="lastName">
 								</div>
 								<div class="form-group">
 									<label>Email Address <span class="text-danger">*</span></label>
 									<input type="email" class="form-control"
-										placeholder="Enter Email Address">
+										value="${profile.email }" placeholder="Enter Email Address"
+										name="email">
 								</div>
 								<div class="form-group">
-									<label>Phone <span class="text-danger">*</span></label> <input
-										type="text" class="form-control" placeholder="Enter Phone">
-								</div>
-								<div class="form-group">
-									<label>Location <span class="text-danger">*</span></label> <input
-										type="text" class="form-control" placeholder="Enter Locations">
-								</div>
-								<div class="form-group">
-									<label>About Me <span class="text-danger">*</span></label>
-									<textarea rows="10" cols="100" class="form-control"></textarea>
+									<label>User Name <span class="text-danger">*</span></label> <input
+										type="text" class="form-control" value="${user.username }"
+										placeholder="Enter User Name" name="username">
 								</div>
 							</div>
-						</div> 
+						</div>
 						<button type="submit" class="btn btn-success">SAVE EDITS</button>
 					</form>
 				</div>
@@ -188,7 +186,7 @@
 		</div>
 	</section>
 	<!-- End User Profile -->
-	
+
 	<!-- Copyright -->
 	<section class="pt-4 pb-4 text-center">
 		<p class="mt-0 mb-0">© Copyright 2018 OsahanLand. All Rights

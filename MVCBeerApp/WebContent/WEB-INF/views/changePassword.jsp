@@ -152,7 +152,7 @@
 					<form action="changePassword.do" method="POST">
 						<div class="card padding-card">
 							<div class="card-body">
-								<h5 class="card-title mb-4">Change Password</h5>
+								<h5 class="card-title mb-4">Change Password </h5><span><c:if test="${message != null }"> ${message }</c:if></span>
 								<div class="form-group">
 									<label>Password <span class="text-danger">*</span></label> <input
 										type="password" name="password" class="form-control" placeholder="" required>
@@ -163,7 +163,7 @@
 								</div>
 							</div>
 						</div>
-						<button type="submit" class="btn btn-success">SAVE EDITS</button><h6>${message }</h6>
+						<button type="submit" class="btn btn-success">SAVE EDITS</button>
 					</form>
 				</div>
 			</div>

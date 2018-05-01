@@ -26,5 +26,7 @@ public interface UserDAO {
 	public Profile createUser(UserDTO dto);
 	
 	public boolean updatePassword(int id, String password);
+	
+	public List<Object> updateProfile(int userId, int profileId, String firstName, String lastName, String email, String username);
 
 }

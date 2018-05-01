@@ -101,7 +101,7 @@ public class BeerController {
 		}
 		return mv;
 	}
-	@RequestMapping(path="listBeersByKeyword.do", method = RequestMethod.GET)
+	@RequestMapping(path="searchBeerByKeyword.do", method = RequestMethod.GET)
 	public ModelAndView searchBeer() {
 		ModelAndView mv = new ModelAndView(); 
 		mv.setViewName("WEB-INF/views/search_beer.jsp");
