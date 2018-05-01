@@ -67,17 +67,17 @@ public class UserDAOImpl implements UserDAO {
 	public User retrieveByUsername(String username) {
 		String query = "Select u from User u where u.username = :username";
 		User u = null;
-		if(em.createQuery(query, User.class).setParameter("username", username).getResultList().size() != 0) {
-		u = em.createQuery(query, User.class).setParameter("username", username).getResultList().get(0);
+		if (em.createQuery(query, User.class).setParameter("username", username).getResultList().size() != 0) {
+			u = em.createQuery(query, User.class).setParameter("username", username).getResultList().get(0);
 		}
 
 		return u;
 	}
-	
+
 	@Override
 	public List<Profile> retrieveProfileByUsername(String username) {
 		String query = "SELECT p FROM Profile p WHERE p.user.username = :username";
-		List<Profile> profile = em.createQuery(query, Profile.class).setParameter("username",username).getResultList();
+		List<Profile> profile = em.createQuery(query, Profile.class).setParameter("username", username).getResultList();
 		return profile;
 	}
 
@@ -86,16 +86,29 @@ public class UserDAOImpl implements UserDAO {
 		User u = new User();
 		u.setUsername(dto.getUsername());
 		u.setPassword(dto.getPassword());
-		
+
 		Profile p = new Profile();
 		p.setFirstName(dto.getFirstName());
 		p.setLastName(dto.getLastName());
 		p.setEmail(dto.getEmail());
 		p.setUser(u);
-		
+
 		em.persist(p);
 		em.flush();
 		return p;
+	}
+
+	@Override
+	public boolean updatePassword(int id, String password) {
+		try {
+			User u = em.find(User.class, id);
+			u.setPassword(password);
+			em.flush();
+			em.persist(u);
+			return true;
+		} catch (Exception e) {
+			return false;
+		}
 	}
 
 }
