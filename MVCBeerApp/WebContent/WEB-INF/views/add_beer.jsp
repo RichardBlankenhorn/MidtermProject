@@ -10,7 +10,7 @@
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="description" content="Askbootstrap">
 <meta name="author" content="Askbootstrap">
-<title>What's On Tap - Update Beer</title>
+<title>What's On Tap - Add Beer</title>
 <!-- Favicon Icon -->
 <link rel="icon" type="image/png" href="images/favicon.png">
 <!-- Bootstrap core CSS -->
@@ -137,29 +137,29 @@
 								<input type="hidden" value="${beer.id }" name="id">
 								<div class="form-group">
 									<label>Name <span class="text-danger">*</span></label> <input
-										type="text" class="form-control" value="${beer.name }"
+										type="text" class="form-control" placeholder="Enter Name"
 										name="beerName" required>
 								</div>
 					 			<div class="form-group">
 									<label>Cost <span class="text-danger">*</span></label> <input
-										type="number" step=".01" class="form-control" value="${beer.cost }"
+										type="number" step=".01" class="form-control" placeholder="Enter Cost"
 										name="cost">
 								</div>
 
 								<div class="form-group">
 									<label>ABV <span class="text-danger">*</span></label> <input
-										type="number" step=".1" class="form-control" value="${beer.abv }"
+										type="number" step=".1" class="form-control" placeholder="Enter ABV"
 										name="abv">
 								</div>
 								<div class="form-group">
 									<label>IBU <span class="text-danger">*</span></label> <input
-										type="number" step=".1" class="form-control" value="${beer.ibu }"
+										type="number" step=".1" class="form-control" placeholder="Enter IBU"
 										name="ibu">
 								</div>
 								<div class="form-group">
 									<label>Description <span class="text-danger">*</span></label>
 									<textarea cols="50" rows="4" class="form-control"
-										name="beerDescription" placeholder="${beer.description }"></textarea>
+										name="beerDescription" placeholder="Enter Description"></textarea>
 								</div>
 								
 								<div class="form-group">
@@ -180,7 +180,7 @@
 								</div>
 								<div class="form-group">
 									<label>Image URL <span class="text-danger">*</span></label> <input
-										type="text" class="form-control" value="Enter Image URL"
+										type="text" class="form-control" placeholder="Enter Image URL"
 										name="imageUrl">
 								</div>
 								

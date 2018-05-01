@@ -66,14 +66,21 @@ public class BrewController {
 		return mv;
 	}
 
+	@RequestMapping(path = "addBrewery.do", method = RequestMethod.GET)
+	public ModelAndView addBreweryGet() {
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("WEB-INF/views/add_brewery.jsp");
+		
+		return mv;
+	}
 	@RequestMapping(path = "addBrewery.do", method = RequestMethod.POST)
 	public ModelAndView addBrewery(@RequestParam(name = "name") String name,
-			@RequestParam(name = "description") String description, @RequestParam(name = "rating") int rating,
+			@RequestParam(name = "description") String description, 
 			Address address, AddressDTO dto) {
 		ModelAndView mv = new ModelAndView();
 		Brewery b = dao.createAddressAndBrewery(dto);
-		mv.addObject("brewery", b.getAddress());
-		mv.setViewName("WEB-INF/views/add_brewery.jsp");
+		mv.addObject("brewery", b);
+		mv.setViewName("WEB-INF/views/brewery.jsp");
 
 		return mv;
 	}
