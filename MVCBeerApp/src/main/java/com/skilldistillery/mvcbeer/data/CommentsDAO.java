@@ -22,13 +22,15 @@ public interface CommentsDAO {
 	
 	
 	//breweries
-	public BreweryComments create(int id, int breweryId, String breweryComment);
+	public BreweryComments createBreweryComments(int id, int breweryId, String breweryComment);
 	
-	public List<BreweryComments> retrieveAllBreweryComments();
+	public List<BreweryComments> retrieveAllBreweryComments(int breweryId);
 	
 	public BreweryComments updateBreweryComments(int id, BreweryComments breweryComment);
 	
 	public boolean deleteBreweryComment(int id);
+	
+	public BreweryComments retrieveBreweryCommentById(int id);
 	
 	
 }

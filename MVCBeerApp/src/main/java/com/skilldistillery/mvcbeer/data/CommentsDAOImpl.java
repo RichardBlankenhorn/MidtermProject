@@ -11,6 +11,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.skilldistillery.jpabeer.entities.Beer;
 import com.skilldistillery.jpabeer.entities.BeerComments;
+import com.skilldistillery.jpabeer.entities.Brewery;
 import com.skilldistillery.jpabeer.entities.BreweryComments;
 import com.skilldistillery.jpabeer.entities.User;
 
@@ -69,22 +70,17 @@ public class CommentsDAOImpl implements CommentsDAO {
 	}
 
 	@Override
-	public List<BreweryComments> retrieveAllBreweryComments() {
-		String query = "SELECT bc FROM BreweryComments bc";
-		List<BreweryComments> allBreweryComments = em.createQuery(query, BreweryComments.class).getResultList();
+	public List<BreweryComments> retrieveAllBreweryComments(int breweryId) {
+		String query = "SELECT bc FROM BreweryComments bc WHERE bc.brewery.id = :id";
+		List<BreweryComments> allBreweryComments = em.createQuery(query, BreweryComments.class).setParameter("id", breweryId).getResultList();
 		return allBreweryComments;
 	}
 
 	@Override
 	public BreweryComments updateBreweryComments(int id, BreweryComments breweryComment) {
 		BreweryComments bc = em.find(BreweryComments.class, id);
-		bc.setUser(breweryComment.getUser());
-		bc.setBrewery(breweryComment.getBrewery());
 		bc.setDescription(breweryComment.getDescription());
-		bc.setDateTime(breweryComment.getDateTime());
-
-		em.persist(bc);
-		em.flush();
+		bc.setDateTime(new Date());
 
 		return bc;
 	}
@@ -104,13 +100,31 @@ public class CommentsDAOImpl implements CommentsDAO {
 	}
 
 	@Override
-	public BreweryComments create(int id, int breweryId, String breweryComment) {
-		// TODO Auto-generated method stub
-		return null;
+	public BreweryComments createBreweryComments(int id, int breweryId, String breweryComment) {
+		User u = em.find(User.class, id);
+		Brewery b = em.find(Brewery.class, breweryId);
+		BreweryComments bc = new BreweryComments();
+		
+		bc.setUser(u);
+		bc.setBrewery(b);
+		bc.setDescription(breweryComment);
+		bc.setDateTime(new Date());
+		
+		em.persist(bc);
+		em.flush();
+		
+		return bc;
 	}
 
 	@Override
 	public BeerComments retrieveBeerCommentById(int id) {
 		return em.find(BeerComments.class, id);
+	}
+
+
+
+	@Override
+	public BreweryComments retrieveBreweryCommentById(int id) {
+		return em.find(BreweryComments.class, id);
 	}
 }
