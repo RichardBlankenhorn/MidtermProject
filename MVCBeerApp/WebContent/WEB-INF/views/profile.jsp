@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -52,27 +51,36 @@
 						<li class="nav-item dropdown"><a
 							class="nav-link dropdown-toggle" href="#"
 							id="navbarDropdownPortfolio" data-toggle="dropdown"
-							aria-haspopup="true" aria-expanded="false"> Search </a>
+							aria-haspopup="true" aria-expanded="false"> Properties </a>
 							<div class="dropdown-menu"
 								aria-labelledby="navbarDropdownPortfolio">
-								<a class="dropdown-item" href="properties-grid.html">Search
-									Beer by Keyword</a> <a class="dropdown-item"
-									href="properties-list.html">Search Brewery by Keyword</a>
+								<a class="dropdown-item" href="properties-grid.html">Properties
+									Grid</a> <a class="dropdown-item" href="properties-list.html">Properties
+									List</a> <a class="dropdown-item"
+									href="property-single-slider.html">Property Single Slider</a> <a
+									class="dropdown-item" href="property-single-gallery.html">Property
+									Single Gallery</a>
 							</div></li>
 						<li class="nav-item dropdown"><a
 							class="nav-link dropdown-toggle" href="#"
 							id="navbarDropdownPortfolio" data-toggle="dropdown"
-							aria-haspopup="true" aria-expanded="false"> Beer & Brewery </a>
+							aria-haspopup="true" aria-expanded="false"> Agency </a>
 							<div class="dropdown-menu"
 								aria-labelledby="navbarDropdownPortfolio">
-								<a class="dropdown-item" href="agency-list.html">Add Beer</a> <a
-									class="dropdown-item" href="agency-profile.html">Add
-									Brewery</a>
-								<c:if test="${sessionScope.admin != null }">
-									<a class="dropdown-item" href="agency-profile.html">Delete
-										Brewery</a>
-								</c:if>
-
+								<a class="dropdown-item" href="agency-list.html">Agency List</a>
+								<a class="dropdown-item" href="agency-profile.html">Agency
+									Profile</a> <a class="dropdown-item" href="agents.html">Agents</a>
+								<a class="dropdown-item" href="agent-profile.html">Agent
+									Profile</a>
+							</div></li>
+						<li class="nav-item dropdown"><a
+							class="nav-link dropdown-toggle" href="#"
+							id="navbarDropdownPortfolio" data-toggle="dropdown"
+							aria-haspopup="true" aria-expanded="false"> Blog </a>
+							<div class="dropdown-menu"
+								aria-labelledby="navbarDropdownPortfolio">
+								<a class="dropdown-item" href="blog.html">Blog</a> <a
+									class="dropdown-item" href="blog-single.html">Blog Single</a>
 							</div></li>
 						<li class="nav-item dropdown"><a
 							class="nav-link dropdown-toggle" href="#"
@@ -93,13 +101,19 @@
 							aria-haspopup="true" aria-expanded="false"> Pages </a>
 							<div class="dropdown-menu"
 								aria-labelledby="navbarDropdownPortfolio">
-								<a class="dropdown-item" href="about.html">About Us</a>
+								<a class="dropdown-item" href="about.html">About Us</a> <a
+									class="dropdown-item" href="faq.html">FAQ</a> <a
+									class="dropdown-item" href="contact.html">Contact</a> <a
+									class="dropdown-item" href="not-found.html">404 Page</a>
 							</div></li>
 					</ul>
 					<div class="my-2 my-lg-0">
 						<ul class="list-inline main-nav-right">
 							<li class="list-inline-item"><a class="btn btn-link btn-sm"
 								href="logout.do">Logout</a></li>
+							<li class="list-inline-item"><a
+								class="btn btn-success btn-sm" href="add-property.html"><i
+									class="mdi mdi-home-account"></i> ADD BEER</a></li>
 						</ul>
 					</div>
 				</div>
@@ -107,7 +121,7 @@
 		</nav>
 	</header>
 	<!-- End Navbar -->
-
+	
 	<!-- Inner Header -->
 	<section class="section-padding bg-dark inner-header">
 		<div class="container">
@@ -125,7 +139,7 @@
 		</div>
 	</section>
 	<!-- End Inner Header -->
-
+	
 	<section class="tab-view">
 		<div class="container">
 			<div class="row">
@@ -146,9 +160,9 @@
 			</div>
 		</div>
 	</section>
-
+	
 	<!-- User Profile -->
-	<!-- 	<section class="section-padding">
+<!-- 	<section class="section-padding">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-8 col-md-8 mx-auto">
@@ -184,43 +198,29 @@
 								</div>
 							</div>
 						</div> -->
-
-
-
-	<!--  This is where functionality to add brewery begins -->
-	<form action="addBrewery.do" method="POST">
-		name: <input type="text" name="name"> description: <input
-			type="text" name="description"> rating: <input type="text"
-			name="rating"> street <input type="text" name="street">
-		street2 <input type="text" name="street2"> city <input
-			type="text" name="city"> state <input type="text"
-			name="state"> zip <input type="text" name="zip">
-		phone <input type="text" name="phone">
-		<button type="submit" class="btn btn-primary">Create Brewery</button>
-	</form>
-	<!--  This is where add brewery ends -->
-
-	<div class="card padding-card">
-		<div class="card-body">
-			<h5 class="card-title mb-4">Change Password</h5>
-			<div class="form-group">
-				<label>Password <span class="text-danger">*</span></label> <input
-					type="password" class="form-control" placeholder="">
-			</div>
-			<div class="form-group">
-				<label>Confirm Password <span class="text-danger">*</span></label> <input
-					type="password" class="form-control" placeholder="">
+						
+						
+						<div class="card padding-card">
+							<div class="card-body">
+								<h5 class="card-title mb-4">Change Password</h5>
+								<div class="form-group">
+									<label>Password <span class="text-danger">*</span></label> <input
+										type="password" class="form-control" placeholder="">
+								</div>
+								<div class="form-group">
+									<label>Confirm Password <span class="text-danger">*</span></label>
+									<input type="password" class="form-control" placeholder="">
+								</div>
+							</div>
+						</div>
+						<button type="submit" class="btn btn-success">SAVE EDITS</button>
+					</form>
+				</div>
 			</div>
 		</div>
-	</div>
-	<button type="submit" class="btn btn-success">SAVE EDITS</button>
-	</form>
-	</div>
-	</div>
-	</div>
 	</section>
 	<!-- End User Profile -->
-
+	
 	<!-- Copyright -->
 	<section class="pt-4 pb-4 text-center">
 		<p class="mt-0 mb-0">© Copyright 2018 OsahanLand. All Rights
