@@ -193,7 +193,7 @@
 
 	<!-- User Comments -->
 	<section>
-		<h4 class="text-center text-success">${beer.name }Comments</h4>
+		<h4 class="text-center text-success">${beer.name } Comments</h4>
 		<br>
 		<c:if test="${listComments.isEmpty() }">
 			<h6 class="text-center">No Comments At This Time</h6>
