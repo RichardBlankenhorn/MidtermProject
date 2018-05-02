@@ -58,8 +58,7 @@
 									Beer by Keyword</a> <a class="dropdown-item"
 									href="searchBreweriesByKeyword.do">Search Brewery by Keyword</a>
 							</div></li>
-							<c:if test="${sessionScope.user != null}">
-							<li class="nav-item dropdown"><a
+						<li class="nav-item dropdown"><a
 							class="nav-link dropdown-toggle" href="#"
 							id="navbarDropdownPortfolio" data-toggle="dropdown"
 							aria-haspopup="true" aria-expanded="false"> Beer & Brewery </a>
@@ -68,48 +67,18 @@
 								<a class="dropdown-item" href="addBeerButton.do">Add Beer</a> <a
 									class="dropdown-item" href="addBrewery.do">Add
 									Brewery</a>
-							</div></li>	
-							</c:if>
-							<c:if test="${sessionScope.admin != null}">
-							<li class="nav-item dropdown"><a
+							</div></li>
+						<li class="nav-item dropdown"><a
 							class="nav-link dropdown-toggle" href="#"
 							id="navbarDropdownPortfolio" data-toggle="dropdown"
-							aria-haspopup="true" aria-expanded="false"> Beer & Brewery </a>
-							<div class="dropdown-menu"
-								aria-labelledby="navbarDropdownPortfolio">
-								<a class="dropdown-item" href="addBeerButton.do">Add Beer</a> <a
-									class="dropdown-item" href="addBrewery.do">Add
-									Brewery</a>
-							</div></li>	
-							</c:if>
-						<c:if test="${sessionScope.user != null}">
-							<li class="nav-item dropdown"><a
-								class="nav-link dropdown-toggle" href="#"
-								id="navbarDropdownPortfolio" data-toggle="dropdown"
-								aria-haspopup="true" aria-expanded="false"> My Account </a>
-								<div class="dropdown-menu"
-									aria-labelledby="navbarDropdownPortfolio">
-									<a class="dropdown-item" href="profile.do">User Profile</a> 
-									<a class="dropdown-item" href="updateProfile.do">Update Profile</a> 
-									<a class="dropdown-item" href="changePassword.do">Change Password</a> 
-									<a class="dropdown-item" href="viewComments.do">My Comments</a> 
-									<a class="dropdown-item" href="viewAllComments.do">All Comments</a>
-								</div></li>
-						</c:if>
-						<c:if test="${sessionScope.admin != null}">
-							<li class="nav-item dropdown"><a
-								class="nav-link dropdown-toggle" href="#"
-								id="navbarDropdownPortfolio" data-toggle="dropdown"
-								aria-haspopup="true" aria-expanded="false"> My Account </a>
-								<div class="dropdown-menu"
-									aria-labelledby="navbarDropdownPortfolio">
-									<a class="dropdown-item" href="profile.do">User Profile</a> 
-									<a class="dropdown-item" href="updateProfile.do">Update Profile</a> 
-									<a class="dropdown-item" href="changePassword.do">Change Password</a> 
-									<a class="dropdown-item" href="viewComments.do">My Comments</a> 
-									<a class="dropdown-item" href="viewAllComments.do">All Comments</a>
-								</div></li>
-						</c:if>
+							aria-haspopup="true" aria-expanded="false"> My Account </a>
+							<div class="dropdown-menu" aria-labelledby="navbarDropdownPortfolio">
+								<a class="dropdown-item" href="profile.do">User Profile</a> 
+								<a class="dropdown-item" href="updateProfile.do">Update Profile</a> 
+								<a class="dropdown-item" href="changePassword.do">Change Password</a> 
+								<a class="dropdown-item" href="viewComments.do">My Comments</a> 
+								<a class="dropdown-item" href="viewAllComments.do">All Comments</a>
+							</div></li>
 						<li class="nav-item dropdown"><a
 							class="nav-link dropdown-toggle" href="#"
 							id="navbarDropdownPortfolio" data-toggle="dropdown"
@@ -121,27 +90,8 @@
 					</ul>
 					<div class="my-2 my-lg-0">
 						<ul class="list-inline main-nav-right">
-							<c:if test="${sessionScope.user == null}">
-								<c:if test="${sessionScope.admin == null }">
-									<li class="list-inline-item"><a
-										class="btn btn-link btn-sm" href="login.do">Sign In</a></li>
-								</c:if>
-							</c:if>
-							<c:if test="${sessionScope.user != null }">
-								<li class="list-inline-item"><a class="btn btn-link btn-sm"
-									href="logout.do">Logout</a></li>
-							</c:if>
-							<c:if test="${sessionScope.admin != null }">
-								<li class="list-inline-item"><a class="btn btn-link btn-sm"
-									href="logout.do">Logout</a></li>
-							</c:if>
-							<c:if test="${sessionScope.user == null }">
-								<c:if test="${sessionScope.admin == null }">
-									<li class="list-inline-item"><a
-										class="btn btn-success btn-sm" href="createAccount.do">Sign
-											Up</a></li>
-								</c:if>
-							</c:if>
+							<li class="list-inline-item"><a class="btn btn-link btn-sm"
+								href="logout.do">Logout</a></li>
 						</ul>
 					</div>
 				</div>
