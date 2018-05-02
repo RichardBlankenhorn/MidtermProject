@@ -187,7 +187,7 @@
 	<section class="section-padding bg-white">
 		<div class="section-title text-center mb-5">
 			<h2>Breweries By City</h2>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+			<p></p>
 		</div>
 		<div class="container">
 			<div class="row">
@@ -197,7 +197,7 @@
 							src="img/overlay/denver_skyline.jpg" alt="Card image">
 							<div class="card-img-overlay">
 								<h3 class="card-title text-white">Denver</h3>
-								<p class="card-text text-white">16 Properties</p>
+								<p class="card-text text-white">31 Breweries</p>
 							</div>
 						</a>
 					</div>
@@ -208,7 +208,7 @@
 							alt="Card image">
 							<div class="card-img-overlay">
 								<h3 class="card-title text-white">Los Angeles</h3>
-								<p class="card-text text-white">265 Properties</p>
+								<p class="card-text text-white">22 Breweries</p>
 							</div>
 						</a>
 					</div>
@@ -221,7 +221,7 @@
 							alt="Card image">
 							<div class="card-img-overlay">
 								<h3 class="card-title text-white">Chicago</h3>
-								<p class="card-text text-white">620 Properties</p>
+								<p class="card-text text-white">20 Breweries</p>
 							</div>
 						</a> .
 					</div>
@@ -232,7 +232,7 @@
 							alt="Card image">
 							<div class="card-img-overlay">
 								<h3 class="card-title text-white">Philadelphia</h3>
-								<p class="card-text text-white">28 Properties</p>
+								<p class="card-text text-white">18 Breweries</p>
 							</div>
 						</a>
 					</div>
@@ -242,67 +242,18 @@
 	</section>
 	<!-- End Properties by City -->
 
-	<!-- Trusted Agents -->
-	<section class="section-padding">
-		<div class="section-title text-center mb-5">
-			<h2>Trusted Agents</h2>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-		</div>
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-4 col-md-4">
-					<div class="agents-card text-center">
-						<img class="img-fluid mb-4" src="img/user/1.jpg" alt="">
-						<p class="mb-4">Lorem Ipsum is simply dummy text of the
-							printing and typesetting industry. Lorem Ipsum has been.</p>
-						<h6 class="mb-0 text-success">- Stave Martin</h6>
-						<small>Buying Agent</small>
-					</div>
-				</div>
-				<div class="col-lg-4 col-md-4">
-					<div class="agents-card text-center">
-						<img class="img-fluid mb-4" src="img/user/2.jpg" alt="">
-						<p class="mb-4">Lorem Ipsum is simply dummy text of the
-							printing and typesetting industry. Lorem Ipsum has been.</p>
-						<h6 class="mb-0 text-success">- Mark Smith</h6>
-						<small>Selling Agent</small>
-					</div>
-				</div>
-				<div class="col-lg-4 col-md-4">
-					<div class="agents-card text-center">
-						<img class="img-fluid mb-4" src="img/user/3.jpg" alt="">
-						<p class="mb-4">Lorem Ipsum is simply dummy text of the
-							printing and typesetting industry. Lorem Ipsum has been.</p>
-						<h6 class="mb-0 text-success">- Ryan Printz</h6>
-						<small>Real Estate Broker</small>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!-- End Trusted Agents -->
+	
 
-	<!-- Join Team -->
-	<section class="section-padding bg-dark text-center">
-		<h2 class="text-white mt-0">
-			Join our professional team & agents<br>to start selling your
-			house
-		</h2>
-		<p class="text-white mb-4">Lorem ipsum dolor sit amet, consectetur
-			adipisicing elit.</p>
-		<button type="button" class="btn btn-success">Contact Us</button>
-		<button type="button" class="btn btn-outline-success">Read
-			More</button>
-	</section>
-	<!-- End Join Team -->
+	
 
 	<!-- Copyright -->
 	<section class="pt-4 pb-4 text-center">
-		<p class="mt-0 mb-0">© Copyright 2018 OsahanLand. All Rights
+		<p class="mt-0 mb-0">© Copyright 2018 What's On Tap. All Rights
 			Reserved</p>
 		<small class="mt-0 mb-0"> Made with <i
 			class="mdi mdi-heart text-danger"></i> by <a class="text-dark"
-			target="_blank" href="https://askbootstrap.com/">Ask Bootstrap</a>
+			target="_blank" href="https://askbootstrap.com/">Megan, Mark,
+				Alan and Richard</a>
 		</small>
 	</section>
 	<!-- End Copyright -->
