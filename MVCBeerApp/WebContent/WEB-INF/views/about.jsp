@@ -26,7 +26,7 @@
 <body>
 
 
-		<!-- Navbar -->
+	<!-- Navbar -->
 	<header>
 		<nav class="navbar navbar-expand-lg navbar-light bg-light">
 			<div class="container">
@@ -56,32 +56,31 @@
 								aria-labelledby="navbarDropdownPortfolio">
 								<a class="dropdown-item" href="searchBeerByKeyword.do">Search
 									Beer by Keyword</a> <a class="dropdown-item"
-									href="searchBreweriesByKeyword.do">Search Brewery by Keyword</a>
+									href="searchBreweriesByKeyword.do">Search Brewery by
+									Keyword</a>
 							</div></li>
-							<c:if test="${sessionScope.user != null}">
+						<c:if test="${sessionScope.user != null}">
 							<li class="nav-item dropdown"><a
-							class="nav-link dropdown-toggle" href="#"
-							id="navbarDropdownPortfolio" data-toggle="dropdown"
-							aria-haspopup="true" aria-expanded="false"> Beer & Brewery </a>
-							<div class="dropdown-menu"
-								aria-labelledby="navbarDropdownPortfolio">
-								<a class="dropdown-item" href="addBeerButton.do">Add Beer</a> <a
-									class="dropdown-item" href="addBrewery.do">Add
-									Brewery</a>
-							</div></li>	
-							</c:if>
-							<c:if test="${sessionScope.admin != null}">
+								class="nav-link dropdown-toggle" href="#"
+								id="navbarDropdownPortfolio" data-toggle="dropdown"
+								aria-haspopup="true" aria-expanded="false"> Beer & Brewery </a>
+								<div class="dropdown-menu"
+									aria-labelledby="navbarDropdownPortfolio">
+									<a class="dropdown-item" href="addBeerButton.do">Add Beer</a> <a
+										class="dropdown-item" href="addBrewery.do">Add Brewery</a>
+								</div></li>
+						</c:if>
+						<c:if test="${sessionScope.admin != null}">
 							<li class="nav-item dropdown"><a
-							class="nav-link dropdown-toggle" href="#"
-							id="navbarDropdownPortfolio" data-toggle="dropdown"
-							aria-haspopup="true" aria-expanded="false"> Beer & Brewery </a>
-							<div class="dropdown-menu"
-								aria-labelledby="navbarDropdownPortfolio">
-								<a class="dropdown-item" href="addBeerButton.do">Add Beer</a> <a
-									class="dropdown-item" href="addBrewery.do">Add
-									Brewery</a>
-							</div></li>	
-							</c:if>
+								class="nav-link dropdown-toggle" href="#"
+								id="navbarDropdownPortfolio" data-toggle="dropdown"
+								aria-haspopup="true" aria-expanded="false"> Beer & Brewery </a>
+								<div class="dropdown-menu"
+									aria-labelledby="navbarDropdownPortfolio">
+									<a class="dropdown-item" href="addBeerButton.do">Add Beer</a> <a
+										class="dropdown-item" href="addBrewery.do">Add Brewery</a>
+								</div></li>
+						</c:if>
 						<c:if test="${sessionScope.user != null}">
 							<li class="nav-item dropdown"><a
 								class="nav-link dropdown-toggle" href="#"
@@ -89,11 +88,12 @@
 								aria-haspopup="true" aria-expanded="false"> My Account </a>
 								<div class="dropdown-menu"
 									aria-labelledby="navbarDropdownPortfolio">
-									<a class="dropdown-item" href="profile.do">User Profile</a> 
-									<a class="dropdown-item" href="updateProfile.do">Update Profile</a> 
-									<a class="dropdown-item" href="changePassword.do">Change Password</a> 
-									<a class="dropdown-item" href="viewComments.do">My Comments</a> 
-									<a class="dropdown-item" href="viewAllComments.do">All Comments</a>
+									<a class="dropdown-item" href="profile.do">User Profile</a> <a
+										class="dropdown-item" href="updateProfile.do">Update
+										Profile</a> <a class="dropdown-item" href="changePassword.do">Change
+										Password</a> <a class="dropdown-item" href="viewComments.do">My
+										Comments</a> <a class="dropdown-item" href="viewAllComments.do">All
+										Comments</a>
 								</div></li>
 						</c:if>
 						<c:if test="${sessionScope.admin != null}">
@@ -103,11 +103,12 @@
 								aria-haspopup="true" aria-expanded="false"> My Account </a>
 								<div class="dropdown-menu"
 									aria-labelledby="navbarDropdownPortfolio">
-									<a class="dropdown-item" href="profile.do">User Profile</a> 
-									<a class="dropdown-item" href="updateProfile.do">Update Profile</a> 
-									<a class="dropdown-item" href="changePassword.do">Change Password</a> 
-									<a class="dropdown-item" href="viewComments.do">My Comments</a> 
-									<a class="dropdown-item" href="viewAllComments.do">All Comments</a>
+									<a class="dropdown-item" href="profile.do">User Profile</a> <a
+										class="dropdown-item" href="updateProfile.do">Update
+										Profile</a> <a class="dropdown-item" href="changePassword.do">Change
+										Password</a> <a class="dropdown-item" href="viewComments.do">My
+										Comments</a> <a class="dropdown-item" href="viewAllComments.do">All
+										Comments</a>
 								</div></li>
 						</c:if>
 						<li class="nav-item dropdown"><a
@@ -178,19 +179,18 @@
 						alt="Card image cap">
 				</div>
 				<div class="col-lg-6 col-md-6 pl-5 pr-5">
-					<h2 class="mt-5 mb-5">
-						We Provide Lovable Experiment in the Real<br> Estate Field
-					</h2>
+					<h2 class="mt-5 mb-5">We Help Unite Beer Lovers</h2>
 					<h5 class="mt-2">Our Vision</h5>
-					<p>It is a long established fact that a reader will be
-						distracted by the readable content of a page when looking at its
-						layout. The point of using Lorem Ipsum is that it has a
-						more-or-less normal distribution of letters, as opposed to using
-						'Content here,</p>
+					<p>It is well-known that there are too many craft breweries and
+						beers for one person to keep up with. We help beer lovers share
+						favorite locations and beers and provide this data to those
+						searching for a new beer or brewery, or trying to remember an old
+						favorite.</p>
+					<!-- 
 					<h5 class="mt-4">Our Goal</h5>
 					<p>When looking at its layout. The point of using Lorem Ipsum
 						is that it has a more-or-less normal distribution of letters, as
-						opposed to using 'Content here,</p>
+						opposed to using 'Content here,</p> -->
 				</div>
 			</div>
 		</div>
@@ -201,20 +201,20 @@
 	<section class="section-padding">
 		<div class="section-title text-center mb-5">
 			<h2>What We Provide?</h2>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+			<p></p>
 		</div>
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-4 col-md-4">
 					<div class="mt-4 mb-4">
-						<i class="text-success mdi mdi-account-box-outline mdi-48px"></i>
+						<i class="text-success mdi mdi-account-multiple-outline mdi-48px"></i>
+						<!--  <i class="text-success mdi mdi-account-box-outline mdi-48px"></i>-->
 					</div>
-					<h5 class="mt-3 mb-3">Presenting Your Proerty</h5>
-					<p>There are many variations of passages of Lorem Ipsum
-						available, but the majority have suffered alteration in some form,
-						by injected humour, or randomised words which don't look even
-						slightly believable. If you are going to use a passage of Lorem
-						Ipsum</p>
+					<h5 class="mt-3 mb-3">Crowd-sourced Data</h5>
+					<p>We know there are many variations of beers and many
+						breweries to try. By empowering our users to provide new beers and
+						breweries as they explore, we are able to draw on the knowledge
+						and passion of the beer community to increase our library.</p>
 				</div>
 				<div class="col-lg-4 col-md-4">
 					<div class="mt-4 mb-4">
@@ -264,7 +264,7 @@
 					<div class="mt-4 mb-4">
 						<i class="text-success mdi mdi-comment-alert-outline mdi-48px"></i>
 					</div>
-					<h5 class="mt-3 mb-3">Presenting Your Proerty</h5>
+					<h5 class="mt-3 mb-3">Presenting Your Property</h5>
 					<p>It is a long established fact that a reader will be
 						distracted by the readable content of a page when looking at its
 						layout. The point of using Lorem Ipsum is that it has a
@@ -280,7 +280,6 @@
 	<section class="section-padding bg-white">
 		<div class="section-title text-center mb-5">
 			<h2>Development Team</h2>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
 		</div>
 		<div class="container">
 			<div class="row">
@@ -296,8 +295,7 @@
 				<div class="col-lg-3 col-md-3">
 					<div class="agents-card text-center">
 						<img class="img-fluid mb-4" src="img/alan.jpeg" alt="">
-						<p class="mb-4">Lorem Ipsum is simply dummy text of the
-							printing and typesetting industry. Lorem Ipsum has been.</p>
+						<p class="mb-4">In dog beers, I've only had one.</p>
 						<h6 class="mb-0 text-success">- Alan Frederick</h6>
 						<small>Developer</small>
 					</div>
@@ -331,11 +329,13 @@
 			Reserved</p>
 		<small class="mt-0 mb-0"> Made with <i
 			class="mdi mdi-heart text-danger"></i> by <a class="text-dark"
-			target="_blank" href="https://askbootstrap.com/">Megan, Mark,
+			target="_blank" href="https://skilldistillery.com/">Megan, Mark,
 				Alan and Richard</a>
 		</small>
 	</section>
 	<!-- End Copyright -->
+
+
 	<!-- Bootstrap core JavaScript -->
 	<script src="vendor/jquery/jquery.min.js"></script>
 	<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
