@@ -33,13 +33,17 @@
 
 
 	<form action="editBrewery.do" method="GET">
+	<c:if test="${sessionScope.admin != null}">
 		<input type="hidden" name="id" value="${brewery.id }" /> <input
 			type="submit" value="Update"></input>
+			</c:if>
 	</form>
 
 	<form action="deleteBrewery.do" method="POST">
+	<c:if test="${sessionScope.admin != null}">
 		<input type="hidden" name="id" value="${brewery.id }" /> <input
 			type="submit" value="Delete Brewery">
+			</c:if>
 	</form>
 
 
@@ -64,13 +68,13 @@
 			<%-- <c:if test="${user.id } == ${breweryComment.user.id }"> --%>
 
 		<form action="editBreweryCommentForm.do" action="GET">
-		<c:if test="${user.id == breweryComment.user.id }">
+		<c:if test="${user.id == breweryComment.user.id || sessionScope.admin != null }">
 			<input type="hidden" name="breweryCommentId" value="${breweryComment.id }">
 			<input type="submit" value="Update Comment">
 			</c:if>
 		</form>
 		<form action="deleteBreweryComment.do" action="GET">
-		<c:if test="${user.id == breweryComment.user.id }">
+		<c:if test="${user.id == breweryComment.user.id || sessionScope.admin != null}">
 			<input type="hidden" name="id" value="${breweryComment.id }"> <input
 				type="hidden" name="breweryId" value="${brewery.id }"> <input
 				type="submit" value="Delete Comment">

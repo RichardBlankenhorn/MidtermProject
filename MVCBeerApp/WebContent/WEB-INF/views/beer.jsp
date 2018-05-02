@@ -18,28 +18,42 @@
 	<p>${beer.ibu }</p>
 
 	<form>
+	<c:if test="${sessionScope.admin != null}">
 		<div class="my-2 my-lg-0">
 			<ul class="list-inline main-nav-right">
 				<li class="list-inline-item"><a class="btn btn-link btn-sm"
+				
 					href="updateBeer.do?id=${beer.id }">Update Beer</a></li>
-
+			</ul>
+		</div>
+		</c:if>
+	</form>
+	
+	<%-- <form>
+	<c:if test="${sessionScope.user != null}">
+		<div class="my-2 my-lg-0">
+			<ul class="list-inline main-nav-right">
 				<li class="list-inline-item"><a class="btn btn-success btn-sm"
 					href="addBeerButton.do">Add Beer</a></li>
 			</ul>
 		</div>
-
-	</form>
+	</c:if>
+	</form> --%>
 
 
 	<form action="addBeerComment.do" method="POST">
+	<c:if test="${sessionScope.user != null}">
 		<input type="hidden" name="beerId" value="${beer.id }">  
 		<input type="text" name="beerComment"> <input type="submit"
 			value="Add Comment">
+			</c:if>
 	</form>
 
 	<form action="deleteBeer.do" method="POST">
+	<c:if test="${sessionScope.admin != null}">
 		<input type="hidden" name="id" value="${beer.id }"> <input
 			type="submit" value="Delete Beer">
+			</c:if>
 	</form>
 
 
@@ -51,13 +65,13 @@
 				
 		
 		<form action="editBeerCommentForm.do" action="GET">
-		<c:if test="${user.id == beerComment.user.id }">
+		<c:if test="${user.id == beerComment.user.id || sessionScope.admin != null}">
 			<input type="hidden" name="beerCommentId" value="${beerComment.id }">
 			<input type="submit" value="Update Comment">
 			</c:if>
 		</form>
 		<form action="deleteBeerComment.do" action="GET">
-		<c:if test="${user.id == beerComment.user.id }">
+		<c:if test="${user.id == beerComment.user.id || sessionScope.admin != null}">
 			<input type="hidden" name="id" value="${beerComment.id }">
 			<input type="hidden" name="beerId" value="${beer.id }">
 			<input type="submit" value="Delete Comment">

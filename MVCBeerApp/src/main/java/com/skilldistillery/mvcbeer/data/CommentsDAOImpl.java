@@ -41,7 +41,7 @@ public class CommentsDAOImpl implements CommentsDAO {
 
 	@Override
 	public List<BeerComments> retrieveAllBeerComments(int beerId) {
-		String query = "SELECT bc FROM BeerComments bc WHERE bc.beer.id = :id";
+		String query = "SELECT bc FROM BeerComments bc WHERE bc.beer.id = :id ORDER BY bc.dateTime DESC";
 		List<BeerComments> allBeerComments = em.createQuery(query, BeerComments.class).setParameter("id", beerId)
 				.getResultList();
 		return allBeerComments;
@@ -71,7 +71,7 @@ public class CommentsDAOImpl implements CommentsDAO {
 
 	@Override
 	public List<BreweryComments> retrieveAllBreweryComments(int breweryId) {
-		String query = "SELECT bc FROM BreweryComments bc WHERE bc.brewery.id = :id";
+		String query = "SELECT bc FROM BreweryComments bc WHERE bc.brewery.id = :id ORDER BY bc.dateTime DESC";
 		List<BreweryComments> allBreweryComments = em.createQuery(query, BreweryComments.class).setParameter("id", breweryId).getResultList();
 		return allBreweryComments;
 	}
