@@ -208,7 +208,7 @@
 				<div class="col-lg-4 col-md-4">
 					<div class="mt-4 mb-4">
 						<i class="text-success mdi mdi-account-multiple-outline mdi-48px"></i>
-						<!--  <i class="text-success mdi mdi-account-box-outline mdi-48px"></i>-->
+						<!-- user image <i class="text-success mdi mdi-account-box-outline mdi-48px"></i>-->
 					</div>
 					<h5 class="mt-3 mb-3">Crowd-sourced Data</h5>
 					<p>We know there are many variations of beers and many
@@ -218,26 +218,25 @@
 				</div>
 				<div class="col-lg-4 col-md-4">
 					<div class="mt-4 mb-4">
-						<i class="text-success mdi mdi-check-circle-outline mdi-48px"></i>
+						<i class="text-success mdi mdi-clock mdi-48px"></i>
+						<!-- checkbox image <i class="text-success mdi mdi-check-circle-outline mdi-48px"></i>-->
 					</div>
-					<h5 class="mb-3">Renting or Selling</h5>
-					<p>Lorem Ipsum is simply dummy text of the printing and
-						typesetting industry. Lorem Ipsum has been the industry's standard
-						dummy text ever since the 1500s, when an unknown printer took a
-						galley of type and scrambled it to make a type specimen book.</p>
+					<h5 class="mb-3">Real-Time Feedback</h5>
+					<p>With our comments feature for beers and breweries, users are
+						able to provide feedback on their experience to the community.</p>
 				</div>
+				
 				<div class="col-lg-4 col-md-4">
 					<div class="mt-4 mb-4">
-						<i class="text-success mdi mdi-account-multiple-outline mdi-48px"></i>
+						<i class="text-success mdi mdi-sticker-emoji mdi-48px"></i>
 					</div>
-					<h5 class="mt-3 mb-3">Property Exchange</h5>
-					<p>It is a long established fact that a reader will be
-						distracted by the readable content of a page when looking at its
-						layout. The point of using Lorem Ipsum is that it has a
-						more-or-less normal distribution of letters, as opposed to using
-						'Content here,</p>
+					<h5 class="mt-3 mb-3">Brewery Locator</h5>
+					<p>Don't remember the location of a brewery? Our map
+						functionality will display the location of the brewery with a link
+						to directions.</p>
 				</div>
 			</div>
+			<!--  
 			<div class="row">
 				<div class="col-lg-4 col-md-4">
 					<div class="mt-4 mb-4">
@@ -249,17 +248,7 @@
 						45 BC, making it over 2000 years old. Richard McClintock, a Latin
 						professor at Hampden-Sydney College in Virginia, looked.</p>
 				</div>
-				<div class="col-lg-4 col-md-4">
-					<div class="mt-4 mb-4">
-						<i class="text-success mdi mdi-sticker-emoji mdi-48px"></i>
-					</div>
-					<h5 class="mt-3 mb-3">Renting or Selling</h5>
-					<p>There are many variations of passages of Lorem Ipsum
-						available, but the majority have suffered alteration in some form,
-						by injected humour, or randomised words which don't look even
-						slightly believable. If you are going to use a passage of Lorem
-						Ipsum</p>
-				</div>
+				
 				<div class="col-lg-4 col-md-4">
 					<div class="mt-4 mb-4">
 						<i class="text-success mdi mdi-comment-alert-outline mdi-48px"></i>
@@ -271,7 +260,19 @@
 						more-or-less normal distribution of letters, as opposed to using
 						'Content here,</p>
 				</div>
-			</div>
+				
+				<div class="col-lg-4 col-md-4">
+					<div class="mt-4 mb-4">
+						<i class="text-success mdi mdi-account-multiple-outline mdi-48px"></i>
+					</div>
+					<h5 class="mt-3 mb-3">Property Exchange</h5>
+					<p>It is a long established fact that a reader will be
+						distracted by the readable content of a page when looking at its
+						layout. The point of using Lorem Ipsum is that it has a
+						more-or-less normal distribution of letters, as opposed to using
+						'Content here,</p>
+				</div>
+			</div> -->
 		</div>
 	</section>
 	<!-- End What We Provide -->
@@ -289,7 +290,7 @@
 						<p class="mb-4">Lorem Ipsum is simply dummy text of the
 							printing and typesetting industry. Lorem Ipsum has been.</p>
 						<h6 class="mb-0 text-success">- Richard Blankenhorn</h6>
-						<small>Developer</small>
+						<small>Lead Front End Developer/Middleware Developer</small>
 					</div>
 				</div>
 				<div class="col-lg-3 col-md-3">
@@ -297,7 +298,7 @@
 						<img class="img-fluid mb-4" src="img/alan.jpeg" alt="">
 						<p class="mb-4">In dog beers, I've only had one.</p>
 						<h6 class="mb-0 text-success">- Alan Frederick</h6>
-						<small>Developer</small>
+						<small>Middleware Developer/Associate Front End Developer</small>
 					</div>
 				</div>
 				<div class="col-lg-3 col-md-3">
@@ -306,16 +307,15 @@
 						<p class="mb-4">Lorem Ipsum is simply dummy text of the
 							printing and typesetting industry. Lorem Ipsum has been.</p>
 						<h6 class="mb-0 text-success">- Mark Coleman</h6>
-						<small>Developer</small>
+						<small>Database Administrator/Middleware Developer</small>
 					</div>
 				</div>
 				<div class="col-lg-3 col-md-3">
 					<div class="agents-card text-center">
 						<img class="img-fluid mb-4" src="img/megan.jpeg" alt="">
-						<p class="mb-4">Lorem Ipsum is simply dummy text of the
-							printing and typesetting industry. Lorem Ipsum has been.</p>
+						<p class="mb-4">Dilly dilly!</p>
 						<h6 class="mb-0 text-success">- Megan Arnold</h6>
-						<small>Developer</small>
+						<small>Middleware Developer/Associate Front End Developer</small>
 					</div>
 				</div>
 			</div>
@@ -348,4 +348,4 @@
 	<!-- Custom -->
 	<script src="js/custom.js"></script>
 </body>
-</html> 
+</html>
