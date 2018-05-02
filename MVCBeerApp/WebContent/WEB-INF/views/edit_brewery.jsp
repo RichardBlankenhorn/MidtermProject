@@ -30,7 +30,7 @@
 	<header>
 		<nav class="navbar navbar-expand-lg navbar-light bg-light">
 			<div class="container">
-				<a class="navbar-brand text-success logo" href="home.do"><i
+				<a class="navbar-brand text-success logo" href="index.do"><i
 					class="mdi mdi-home-map-marker"></i> <strong>What's On Tap</strong></a>
 				<button class="navbar-toggler navbar-toggler-right" type="button"
 					data-toggle="collapse" data-target="#navbarResponsive"
@@ -46,77 +46,102 @@
 							aria-haspopup="true" aria-expanded="false"> HOME </a>
 							<div class="dropdown-menu"
 								aria-labelledby="navbarDropdownPortfolio">
-								<a class="dropdown-item" href="index1.html">Home With Search</a>
-								<a class="dropdown-item" href="index2.html">Home With Map</a> <a
-									class="dropdown-item" href="index3.html">Home With Property
-									Info</a>
+								<a class="dropdown-item" href="index.do">Home Page</a>
 							</div></li>
 						<li class="nav-item dropdown"><a
 							class="nav-link dropdown-toggle" href="#"
 							id="navbarDropdownPortfolio" data-toggle="dropdown"
-							aria-haspopup="true" aria-expanded="false"> Properties </a>
+							aria-haspopup="true" aria-expanded="false"> Search </a>
 							<div class="dropdown-menu"
 								aria-labelledby="navbarDropdownPortfolio">
-								<a class="dropdown-item" href="properties-grid.html">Properties
-									Grid</a> <a class="dropdown-item" href="properties-list.html">Properties
-									List</a> <a class="dropdown-item"
-									href="property-single-slider.html">Property Single Slider</a> <a
-									class="dropdown-item" href="property-single-gallery.html">Property
-									Single Gallery</a>
+								<a class="dropdown-item" href="searchBeerByKeyword.do">Search
+									Beer by Keyword</a> <a class="dropdown-item"
+									href="searchBreweriesByKeyword.do">Search Brewery by Keyword</a>
 							</div></li>
-						<li class="nav-item dropdown"><a
+							<c:if test="${sessionScope.user != null}">
+							<li class="nav-item dropdown"><a
 							class="nav-link dropdown-toggle" href="#"
 							id="navbarDropdownPortfolio" data-toggle="dropdown"
-							aria-haspopup="true" aria-expanded="false"> Agency </a>
+							aria-haspopup="true" aria-expanded="false"> Beer & Brewery </a>
 							<div class="dropdown-menu"
 								aria-labelledby="navbarDropdownPortfolio">
-								<a class="dropdown-item" href="agency-list.html">Agency List</a>
-								<a class="dropdown-item" href="agency-profile.html">Agency
-									Profile</a> <a class="dropdown-item" href="agents.html">Agents</a>
-								<a class="dropdown-item" href="agent-profile.html">Agent
-									Profile</a>
-							</div></li>
-						<li class="nav-item dropdown"><a
+								<a class="dropdown-item" href="addBeerButton.do">Add Beer</a> <a
+									class="dropdown-item" href="addBrewery.do">Add
+									Brewery</a>
+							</div></li>	
+							</c:if>
+							<c:if test="${sessionScope.admin != null}">
+							<li class="nav-item dropdown"><a
 							class="nav-link dropdown-toggle" href="#"
 							id="navbarDropdownPortfolio" data-toggle="dropdown"
-							aria-haspopup="true" aria-expanded="false"> Blog </a>
+							aria-haspopup="true" aria-expanded="false"> Beer & Brewery </a>
 							<div class="dropdown-menu"
 								aria-labelledby="navbarDropdownPortfolio">
-								<a class="dropdown-item" href="blog.html">Blog</a> <a
-									class="dropdown-item" href="blog-single.html">Blog Single</a>
-							</div></li>
-						<li class="nav-item dropdown"><a
-							class="nav-link dropdown-toggle" href="#"
-							id="navbarDropdownPortfolio" data-toggle="dropdown"
-							aria-haspopup="true" aria-expanded="false"> My Account </a>
-							<div class="dropdown-menu"
-								aria-labelledby="navbarDropdownPortfolio">
-								<a class="dropdown-item" href="user-profile.html">User
-									Profile</a> <a class="dropdown-item" href="social-profiles.html">Social
-									Profiles</a> <a class="dropdown-item" href="my-properties.html">My
-									Properties</a> <a class="dropdown-item"
-									href="favorite-properties.html">Favorite Properties</a> <a
-									class="dropdown-item" href="add-property.html">Add Property</a>
-							</div></li>
+								<a class="dropdown-item" href="addBeerButton.do">Add Beer</a> <a
+									class="dropdown-item" href="addBrewery.do">Add
+									Brewery</a>
+							</div></li>	
+							</c:if>
+						<c:if test="${sessionScope.user != null}">
+							<li class="nav-item dropdown"><a
+								class="nav-link dropdown-toggle" href="#"
+								id="navbarDropdownPortfolio" data-toggle="dropdown"
+								aria-haspopup="true" aria-expanded="false"> My Account </a>
+								<div class="dropdown-menu"
+									aria-labelledby="navbarDropdownPortfolio">
+									<a class="dropdown-item" href="profile.do">User Profile</a> 
+									<a class="dropdown-item" href="updateProfile.do">Update Profile</a> 
+									<a class="dropdown-item" href="changePassword.do">Change Password</a> 
+									<a class="dropdown-item" href="viewComments.do">My Comments</a> 
+									<a class="dropdown-item" href="viewAllComments.do">All Comments</a>
+								</div></li>
+						</c:if>
+						<c:if test="${sessionScope.admin != null}">
+							<li class="nav-item dropdown"><a
+								class="nav-link dropdown-toggle" href="#"
+								id="navbarDropdownPortfolio" data-toggle="dropdown"
+								aria-haspopup="true" aria-expanded="false"> My Account </a>
+								<div class="dropdown-menu"
+									aria-labelledby="navbarDropdownPortfolio">
+									<a class="dropdown-item" href="profile.do">User Profile</a> 
+									<a class="dropdown-item" href="updateProfile.do">Update Profile</a> 
+									<a class="dropdown-item" href="changePassword.do">Change Password</a> 
+									<a class="dropdown-item" href="viewComments.do">My Comments</a> 
+									<a class="dropdown-item" href="viewAllComments.do">All Comments</a>
+								</div></li>
+						</c:if>
 						<li class="nav-item dropdown"><a
 							class="nav-link dropdown-toggle" href="#"
 							id="navbarDropdownPortfolio" data-toggle="dropdown"
 							aria-haspopup="true" aria-expanded="false"> Pages </a>
 							<div class="dropdown-menu"
 								aria-labelledby="navbarDropdownPortfolio">
-								<a class="dropdown-item" href="about.html">About Us</a> <a
-									class="dropdown-item" href="faq.html">FAQ</a> <a
-									class="dropdown-item" href="contact.html">Contact</a> <a
-									class="dropdown-item" href="not-found.html">404 Page</a>
+								<a class="dropdown-item" href="about.do">About Us</a>
 							</div></li>
 					</ul>
 					<div class="my-2 my-lg-0">
 						<ul class="list-inline main-nav-right">
-							<li class="list-inline-item"><a class="btn btn-link btn-sm"
-								href="login.do">Sign In</a></li>
-							<li class="list-inline-item"><a
-								class="btn btn-success btn-sm" href="createAccount.do">Sign
-									Up</a></li>
+							<c:if test="${sessionScope.user == null}">
+								<c:if test="${sessionScope.admin == null }">
+									<li class="list-inline-item"><a
+										class="btn btn-link btn-sm" href="login.do">Sign In</a></li>
+								</c:if>
+							</c:if>
+							<c:if test="${sessionScope.user != null }">
+								<li class="list-inline-item"><a class="btn btn-link btn-sm"
+									href="logout.do">Logout</a></li>
+							</c:if>
+							<c:if test="${sessionScope.admin != null }">
+								<li class="list-inline-item"><a class="btn btn-link btn-sm"
+									href="logout.do">Logout</a></li>
+							</c:if>
+							<c:if test="${sessionScope.user == null }">
+								<c:if test="${sessionScope.admin == null }">
+									<li class="list-inline-item"><a
+										class="btn btn-success btn-sm" href="createAccount.do">Sign
+											Up</a></li>
+								</c:if>
+							</c:if>
 						</ul>
 					</div>
 				</div>
@@ -175,6 +200,16 @@
 										type="text"  step=".01" class="form-control" value="${brewery.address.phone }"
 										name="phone">
 								</div>
+								<div class="form-group">
+									<label>Latitude<span class="text-danger">*</span></label> <input
+										type="text"  step=".01" class="form-control" value="${brewery.address.latitude }"
+										name="latitude" required pattern="^-?(0|[0-9]\d*)$">
+								</div>
+								<div class="form-group">
+									<label>Longitude<span class="text-danger">*</span></label> <input
+										type="text"  step=".01" class="form-control" value="${brewery.address.longitude }"
+										name="longitude" required pattern="^[0-9]\d*$">
+								</div>
 
 								<button type="submit" class="btn btn-success btn-block" value="Update Brewery">UPDATE</button>
 							</form>
@@ -192,7 +227,7 @@
 			Reserved</p>
 		<small class="mt-0 mb-0"> Made with <i
 			class="mdi mdi-heart text-danger"></i> by <a class="text-dark"
-			target="_blank" href="https://askbootstrap.com/">Ask Bootstrap</a>
+			target="_blank" href="https://askbootstrap.com/">Megan, Mark, Alen and Richard</a>
 		</small>
 	</section>
 	<!-- End Copyright -->

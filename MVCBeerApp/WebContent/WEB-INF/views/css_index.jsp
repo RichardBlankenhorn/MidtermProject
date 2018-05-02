@@ -259,7 +259,6 @@
 	<section class="section-padding bg-white">
 		<div class="section-title text-center mb-5">
 			<h2>Breweries By City</h2>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
 		</div>
 		<div class="container">
 			<div class="row">
@@ -269,7 +268,6 @@
 							src="img/overlay/denver_skyline.jpg" alt="Card image">
 							<div class="card-img-overlay">
 								<h3 class="card-title text-white">Denver</h3>
-								<p class="card-text text-white">16 Properties</p>
 							</div>
 						</a>
 					</div>
@@ -280,7 +278,6 @@
 							alt="Card image">
 							<div class="card-img-overlay">
 								<h3 class="card-title text-white">Los Angeles</h3>
-								<p class="card-text text-white">265 Properties</p>
 							</div>
 						</a>
 					</div>
@@ -293,7 +290,6 @@
 							alt="Card image">
 							<div class="card-img-overlay">
 								<h3 class="card-title text-white">Chicago</h3>
-								<p class="card-text text-white">620 Properties</p>
 							</div>
 						</a> .
 					</div>
@@ -304,7 +300,6 @@
 							alt="Card image">
 							<div class="card-img-overlay">
 								<h3 class="card-title text-white">Philadelphia</h3>
-								<p class="card-text text-white">28 Properties</p>
 							</div>
 						</a>
 					</div>

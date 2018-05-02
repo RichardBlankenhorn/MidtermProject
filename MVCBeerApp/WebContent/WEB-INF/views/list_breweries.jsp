@@ -25,7 +25,8 @@
 <link href="css/osahan.css" rel="stylesheet">
 </head>
 <body>
-	<!-- Navbar -->
+
+<!-- Navbar -->
 	<header>
 		<nav class="navbar navbar-expand-lg navbar-light bg-light">
 			<div class="container">
@@ -40,12 +41,12 @@
 				<div class="collapse navbar-collapse" id="navbarResponsive">
 					<ul class="navbar-nav mr-auto mt-2 mt-lg-0 margin-auto">
 						<li class="nav-item dropdown"><a
-							class="nav-link dropdown-toggle" href="#"
+							class="nav-link dropdown-toggle" href="index.do"
 							id="navbarDropdownPortfolio" data-toggle="dropdown"
 							aria-haspopup="true" aria-expanded="false"> HOME </a>
 							<div class="dropdown-menu"
 								aria-labelledby="navbarDropdownPortfolio">
-								<a class="dropdown-item" href="index.do">Home With Search</a>
+								<a class="dropdown-item" href="index.do">Home Page</a>
 							</div></li>
 						<li class="nav-item dropdown"><a
 							class="nav-link dropdown-toggle" href="#"
@@ -55,22 +56,8 @@
 								aria-labelledby="navbarDropdownPortfolio">
 								<a class="dropdown-item" href="searchBeerByKeyword.do">Search
 									Beer by Keyword</a> <a class="dropdown-item"
-									href="searchBreweriesByKeyword.do">Search Brewery by Keyword</a>
-							</div></li>
-						<li class="nav-item dropdown"><a
-							class="nav-link dropdown-toggle" href="#"
-							id="navbarDropdownPortfolio" data-toggle="dropdown"
-							aria-haspopup="true" aria-expanded="false"> Beer & Brewery </a>
-							<div class="dropdown-menu"
-								aria-labelledby="navbarDropdownPortfolio">
-								<a class="dropdown-item" href="addBeerButton.do">Add Beer</a> <a
-									class="dropdown-item" href="addBrewery.do">Add
-									Brewery</a>
-								<c:if test="${sessionScope.admin != null }">
-									<a class="dropdown-item" href="agents.html">Update Beer</a>
-									<a class="dropdown-item" href="agent-profile.html">Update
-										Brewery</a>
-								</c:if>
+									href="searchBreweriesByKeyword.do">Search Brewery by
+									Keyword</a>
 							</div></li>
 						<c:if test="${sessionScope.user != null}">
 							<li class="nav-item dropdown"><a
@@ -79,11 +66,12 @@
 								aria-haspopup="true" aria-expanded="false"> My Account </a>
 								<div class="dropdown-menu"
 									aria-labelledby="navbarDropdownPortfolio">
-									<a class="dropdown-item" href="profile.do">User Profile</a> 
-									<a class="dropdown-item" href="updateProfile.do">Update Profile</a> 
-									<a class="dropdown-item" href="changePassword.do">Change Password</a> 
-									<a class="dropdown-item" href="favorite-properties.html">My Comments & Ratings</a> 
-									<a class="dropdown-item" href="add-property.html">View Beers & Breweries</a>
+									<a class="dropdown-item" href="profile.do">User Profile</a> <a
+										class="dropdown-item" href="updateProfile.do">Update
+										Profile</a> <a class="dropdown-item" href="changePassword.do">Change
+										Password</a> <a class="dropdown-item" href="viewComments.do">My
+										Comments & Ratings</a> <a class="dropdown-item"
+										href="viewAllComments.do">View All Comments</a>
 								</div></li>
 						</c:if>
 						<c:if test="${sessionScope.admin != null}">
@@ -93,11 +81,12 @@
 								aria-haspopup="true" aria-expanded="false"> My Account </a>
 								<div class="dropdown-menu"
 									aria-labelledby="navbarDropdownPortfolio">
-									<a class="dropdown-item" href="profile.do">User Profile</a> 
-									<a class="dropdown-item" href="updateProfile.do">Update Profile</a> 
-									<a class="dropdown-item" href="changePassword.do">Change Password</a> 
-									<a class="dropdown-item" href="favorite-properties.html">My Comments & Ratings</a> 
-									<a class="dropdown-item" href="add-property.html">View Beers & Breweries</a>
+									<a class="dropdown-item" href="profile.do">User Profile</a> <a
+										class="dropdown-item" href="updateProfile.do">Update
+										Profile</a> <a class="dropdown-item" href="changePassword.do">Change
+										Password</a> <a class="dropdown-item" href="viewComments.do">My
+										Comments</a> <a class="dropdown-item" href="viewAllComments.do">All
+										Comments</a>
 								</div></li>
 						</c:if>
 						<li class="nav-item dropdown"><a
@@ -106,16 +95,16 @@
 							aria-haspopup="true" aria-expanded="false"> Pages </a>
 							<div class="dropdown-menu"
 								aria-labelledby="navbarDropdownPortfolio">
-								<a class="dropdown-item" href="about.html">About Us</a>
+								<a class="dropdown-item" href="about.do">About Us</a>
 							</div></li>
 					</ul>
 					<div class="my-2 my-lg-0">
 						<ul class="list-inline main-nav-right">
 							<c:if test="${sessionScope.user == null}">
-							<c:if test="${sessionScope.admin == null }">
-								<li class="list-inline-item"><a class="btn btn-link btn-sm"
-									href="login.do">Sign In</a></li>
-							</c:if>
+								<c:if test="${sessionScope.admin == null }">
+									<li class="list-inline-item"><a
+										class="btn btn-link btn-sm" href="login.do">Sign In</a></li>
+								</c:if>
 							</c:if>
 							<c:if test="${sessionScope.user != null }">
 								<li class="list-inline-item"><a class="btn btn-link btn-sm"
@@ -126,11 +115,11 @@
 									href="logout.do">Logout</a></li>
 							</c:if>
 							<c:if test="${sessionScope.user == null }">
-							<c:if test="${sessionScope.admin == null }"> 
-								<li class="list-inline-item"><a
-									class="btn btn-success btn-sm" href="createAccount.do">Sign
-										Up</a></li>
-							</c:if>
+								<c:if test="${sessionScope.admin == null }">
+									<li class="list-inline-item"><a
+										class="btn btn-success btn-sm" href="createAccount.do">Sign
+											Up</a></li>
+								</c:if>
 							</c:if>
 						</ul>
 					</div>
@@ -162,8 +151,8 @@
 								<div class="card-body">
 									<h5 class="card-title">${brewery.name }</h5>
 									  <h5 class="card-subtitle mb-2 text-muted">
-										<i class="mdi mdi-home-map-marker"></i>Website:
-										${brewery.webUrl}
+										<!--  <i class="mdi mdi-home-map-marker"></i>Website:
+										${brewery.webUrl}-->
 									</h5> 
 									<h6>${brewery.description }</h6>
 									<!--  <h2 class="text-success mb-0 mt-3">
@@ -187,7 +176,7 @@
 	<section class="section-padding bg-white">
 		<div class="section-title text-center mb-5">
 			<h2>Breweries By City</h2>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+			<p></p>
 		</div>
 		<div class="container">
 			<div class="row">
@@ -197,7 +186,7 @@
 							src="img/overlay/denver_skyline.jpg" alt="Card image">
 							<div class="card-img-overlay">
 								<h3 class="card-title text-white">Denver</h3>
-								<p class="card-text text-white">16 Properties</p>
+								<p class="card-text text-white">31 Breweries</p>
 							</div>
 						</a>
 					</div>
@@ -208,7 +197,7 @@
 							alt="Card image">
 							<div class="card-img-overlay">
 								<h3 class="card-title text-white">Los Angeles</h3>
-								<p class="card-text text-white">265 Properties</p>
+								<p class="card-text text-white">22 Breweries</p>
 							</div>
 						</a>
 					</div>
@@ -221,7 +210,7 @@
 							alt="Card image">
 							<div class="card-img-overlay">
 								<h3 class="card-title text-white">Chicago</h3>
-								<p class="card-text text-white">620 Properties</p>
+								<p class="card-text text-white">20 Breweries</p>
 							</div>
 						</a> .
 					</div>
@@ -232,7 +221,7 @@
 							alt="Card image">
 							<div class="card-img-overlay">
 								<h3 class="card-title text-white">Philadelphia</h3>
-								<p class="card-text text-white">28 Properties</p>
+								<p class="card-text text-white">18 Breweries</p>
 							</div>
 						</a>
 					</div>
@@ -242,67 +231,18 @@
 	</section>
 	<!-- End Properties by City -->
 
-	<!-- Trusted Agents -->
-	<section class="section-padding">
-		<div class="section-title text-center mb-5">
-			<h2>Trusted Agents</h2>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-		</div>
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-4 col-md-4">
-					<div class="agents-card text-center">
-						<img class="img-fluid mb-4" src="img/user/1.jpg" alt="">
-						<p class="mb-4">Lorem Ipsum is simply dummy text of the
-							printing and typesetting industry. Lorem Ipsum has been.</p>
-						<h6 class="mb-0 text-success">- Stave Martin</h6>
-						<small>Buying Agent</small>
-					</div>
-				</div>
-				<div class="col-lg-4 col-md-4">
-					<div class="agents-card text-center">
-						<img class="img-fluid mb-4" src="img/user/2.jpg" alt="">
-						<p class="mb-4">Lorem Ipsum is simply dummy text of the
-							printing and typesetting industry. Lorem Ipsum has been.</p>
-						<h6 class="mb-0 text-success">- Mark Smith</h6>
-						<small>Selling Agent</small>
-					</div>
-				</div>
-				<div class="col-lg-4 col-md-4">
-					<div class="agents-card text-center">
-						<img class="img-fluid mb-4" src="img/user/3.jpg" alt="">
-						<p class="mb-4">Lorem Ipsum is simply dummy text of the
-							printing and typesetting industry. Lorem Ipsum has been.</p>
-						<h6 class="mb-0 text-success">- Ryan Printz</h6>
-						<small>Real Estate Broker</small>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!-- End Trusted Agents -->
+	
 
-	<!-- Join Team -->
-	<section class="section-padding bg-dark text-center">
-		<h2 class="text-white mt-0">
-			Join our professional team & agents<br>to start selling your
-			house
-		</h2>
-		<p class="text-white mb-4">Lorem ipsum dolor sit amet, consectetur
-			adipisicing elit.</p>
-		<button type="button" class="btn btn-success">Contact Us</button>
-		<button type="button" class="btn btn-outline-success">Read
-			More</button>
-	</section>
-	<!-- End Join Team -->
+	
 
 	<!-- Copyright -->
 	<section class="pt-4 pb-4 text-center">
-		<p class="mt-0 mb-0">© Copyright 2018 OsahanLand. All Rights
+		<p class="mt-0 mb-0">© Copyright 2018 What's On Tap. All Rights
 			Reserved</p>
 		<small class="mt-0 mb-0"> Made with <i
 			class="mdi mdi-heart text-danger"></i> by <a class="text-dark"
-			target="_blank" href="https://askbootstrap.com/">Ask Bootstrap</a>
+			target="_blank" href="https://askbootstrap.com/">Megan, Mark,
+				Alan and Richard</a>
 		</small>
 	</section>
 	<!-- End Copyright -->

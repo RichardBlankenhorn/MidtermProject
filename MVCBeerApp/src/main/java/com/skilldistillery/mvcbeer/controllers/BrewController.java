@@ -13,11 +13,15 @@ import com.skilldistillery.jpabeer.entities.Address;
 import com.skilldistillery.jpabeer.entities.AddressDTO;
 import com.skilldistillery.jpabeer.entities.Brewery;
 import com.skilldistillery.mvcbeer.data.BreweryDAO;
+import com.skilldistillery.mvcbeer.data.CommentsDAO;
 
 @Controller
 public class BrewController {
 	@Autowired
 	private BreweryDAO dao;
+	
+	@Autowired
+	private CommentsDAO commentsDAO;
 
 	public BreweryDAO getDao() {
 		return dao;
@@ -65,6 +69,7 @@ public class BrewController {
 		Brewery brewery = dao.retrieveById(id);
 		if (brewery != null) {
 			mv.addObject("brewery", brewery);
+			mv.addObject("listComments", commentsDAO.retrieveAllBreweryComments(id));
 			mv.setViewName("WEB-INF/views/brewery.jsp");
 		} else {
 			mv.setViewName("redirect: index.do");
