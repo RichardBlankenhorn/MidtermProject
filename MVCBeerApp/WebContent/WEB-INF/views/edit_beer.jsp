@@ -142,7 +142,7 @@
 								</div>
 								<div class="form-group">
 									<label>Cost <span class="text-danger">*</span></label> <input
-										type="number" class="form-control" value="${beer.cost }"
+										type="number"  step=".01" class="form-control" value="${beer.cost }"
 										name="cost">
 								</div>
 
