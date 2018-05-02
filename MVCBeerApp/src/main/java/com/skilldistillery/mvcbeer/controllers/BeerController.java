@@ -77,7 +77,7 @@ public class BeerController {
 		}
 		mv.addObject("categories", categories); 
 		mv.addObject("breweries", breweries); 
-		mv.setViewName("redirect: index.do");
+		mv.setViewName("WEB-INF/views/css_index.jsp");
 		return mv;
 	}
 
