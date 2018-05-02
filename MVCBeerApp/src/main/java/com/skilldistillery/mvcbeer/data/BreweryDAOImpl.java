@@ -49,6 +49,8 @@ public class BreweryDAOImpl implements BreweryDAO {
 		a.setState(dto.getState());
 		a.setZip(dto.getZip());
 		a.setPhone(dto.getPhone());
+		a.setLatitude(dto.getLatitude());
+		a.setLongitude(dto.getLongitude());
 		
 		b.setName(dto.getName());
 		b.setDescription(dto.getDescription());
@@ -95,6 +97,8 @@ public class BreweryDAOImpl implements BreweryDAO {
 		a.setState(dto.getState());
 		a.setZip(dto.getZip());
 		a.setPhone(dto.getPhone());
+		a.setLatitude(dto.getLatitude());
+		a.setLongitude(dto.getLongitude());
 		
 		Brewery b = new Brewery();
 		b.setName(dto.getName());

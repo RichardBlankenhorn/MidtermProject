@@ -138,33 +138,33 @@
 								<div class="form-group">
 									<label>Name <span class="text-danger">*</span></label> <input
 										type="text" class="form-control" placeholder="Enter Name"
-										name="beerName" required>
+										name="beerName" required minlength="1" maxlength="45">
 								</div>
 					 			<div class="form-group">
 									<label>Cost <span class="text-danger">*</span></label> <input
 										type="number" step=".01" class="form-control" placeholder="Enter Cost"
-										name="cost">
+										name="cost" required>
 								</div>
 
 								<div class="form-group">
 									<label>ABV <span class="text-danger">*</span></label> <input
 										type="number" step=".1" class="form-control" placeholder="Enter ABV"
-										name="abv">
+										name="abv" required>
 								</div>
 								<div class="form-group">
 									<label>IBU <span class="text-danger">*</span></label> <input
 										type="number" step=".1" class="form-control" placeholder="Enter IBU"
-										name="ibu">
+										name="ibu" required>
 								</div>
 								<div class="form-group">
 									<label>Description <span class="text-danger">*</span></label>
 									<textarea cols="50" rows="4" class="form-control"
-										name="beerDescription" placeholder="Enter Description"></textarea>
+										name="beerDescription" placeholder="Enter Description" required minlength="1" maxlength="500"></textarea>
 								</div>
 								
 								<div class="form-group">
 									<label>Category <span class="text-danger">*</span></label> <select
-										name="categoryName" size="5">
+										name="categoryName" size="5" required>
 										<c:forEach var="category" items="${categoryList }">
 											<option value="${category.name }">${category.name }</option>
 										</c:forEach>
@@ -172,7 +172,7 @@
 								</div>
 								<div class="form-group">
 									<label>Brewery <span class="text-danger">*</span></label> <select
-										name="breweryName" size="5">
+										name="breweryName" size="5" required>
 										<c:forEach var="brewery" items="${breweryList }">
 											<option value="${brewery.name }">${brewery.name }</option>
 										</c:forEach>
