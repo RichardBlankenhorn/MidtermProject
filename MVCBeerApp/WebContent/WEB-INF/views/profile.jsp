@@ -65,8 +65,8 @@
 							aria-haspopup="true" aria-expanded="false"> Beer & Brewery </a>
 							<div class="dropdown-menu"
 								aria-labelledby="navbarDropdownPortfolio">
-								<a class="dropdown-item" href="agency-list.html">Add Beer</a> <a
-									class="dropdown-item" href="agency-profile.html">Add
+								<a class="dropdown-item" href="addBeerButton.do">Add Beer</a> <a
+									class="dropdown-item" href="addBrewery.do">Add
 									Brewery</a>
 								<c:if test="${sessionScope.admin != null }">
 									<a class="dropdown-item" href="agents.html">Update Beer</a>
