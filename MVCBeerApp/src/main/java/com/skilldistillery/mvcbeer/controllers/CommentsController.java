@@ -158,4 +158,37 @@ public class CommentsController {
 		return mv;
 	}
 
+	@RequestMapping(path = "updateBeerComment.do", method = RequestMethod.GET)
+	public ModelAndView updateBeerComment(@RequestParam(name = "id") int id,
+			@RequestParam(name = "comment") String comment, @RequestParam(name = "beerId") int beerId) {
+		ModelAndView mv = new ModelAndView();
+		BeerComments bc = commentsDAO.updateMyBeerComment(id, comment);
+		Beer beer = beerDAO.retrieveById(beerId);
+		if (beer != null) {
+			mv.addObject("beer", beer);
+			mv.addObject("listComments", commentsDAO.retrieveAllBeerComments(beerId));
+			mv.setViewName("WEB-INF/views/beer.jsp");
+		} else {
+			mv.setViewName("WEB-INF/views/list_beers.jsp");
+			// figure out how to send error messages
+		}
+		return mv;
+	}
+	
+	@RequestMapping(path = "removeBeerComment.do", method = RequestMethod.GET)
+	public ModelAndView removeBeerComment(@RequestParam(name = "id") int id, @RequestParam(name = "beerId") int beerId) {
+		ModelAndView mv = new ModelAndView();
+		boolean b = commentsDAO.deleteBeerComment(id);
+		Beer beer = beerDAO.retrieveById(beerId);
+		if (beer != null) {
+			mv.addObject("beer", beer);
+			mv.addObject("listComments", commentsDAO.retrieveAllBeerComments(beerId));
+			mv.setViewName("WEB-INF/views/beer.jsp");
+		} else {
+			mv.setViewName("WEB-INF/views/list_beers.jsp");
+			// figure out how to send error messages
+		}
+		return mv;
+	}
+
 }
