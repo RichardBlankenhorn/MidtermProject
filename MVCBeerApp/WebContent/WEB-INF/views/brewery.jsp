@@ -49,6 +49,11 @@
 			type="text" name="breweryComment"> <input type="submit"
 			value="Add Comment">
 	</form>
+	
+
+	
+	<a href="https://www.google.com/maps/dir//${brewery.address.street },+${brewery.address.city },+${brewery.address.state }+${brewery.address.zip }/@${brewery.address.latitude },${brewery.address.longitude },15z" 
+	target="_blank">Need Directions?</a>
 
 
 	<c:forEach var="breweryComment" items="${listComments }">

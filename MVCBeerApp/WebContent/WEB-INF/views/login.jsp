@@ -98,9 +98,9 @@
 							<h5 class="card-title mb-4">Login</h5>
 							<form action="loginUser.do" method="POST">
 								<div class="form-group">
-									<label>User Name<span class="text-danger">*</span></label> <input
+									<label>Username<span class="text-danger">*</span></label> <input
 										type="text" class="form-control"
-										placeholder="Enter Email address" name="username">
+										placeholder="Enter Username" name="username">
 								</div>
 								<div class="form-group">
 									<label>Password <span class="text-danger">*</span></label> <input
