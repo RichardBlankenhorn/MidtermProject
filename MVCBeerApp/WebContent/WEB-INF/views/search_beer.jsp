@@ -24,6 +24,7 @@
 <link href="css/osahan.css" rel="stylesheet">
 </head>
 <body>
+
 	<!-- Navbar -->
 	<header>
 		<nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -56,6 +57,30 @@
 									Beer by Keyword</a> <a class="dropdown-item"
 									href="searchBreweriesByKeyword.do">Search Brewery by Keyword</a>
 							</div></li>
+							<c:if test="${sessionScope.user != null}">
+							<li class="nav-item dropdown"><a
+							class="nav-link dropdown-toggle" href="#"
+							id="navbarDropdownPortfolio" data-toggle="dropdown"
+							aria-haspopup="true" aria-expanded="false"> Beer & Brewery </a>
+							<div class="dropdown-menu"
+								aria-labelledby="navbarDropdownPortfolio">
+								<a class="dropdown-item" href="addBeerButton.do">Add Beer</a> <a
+									class="dropdown-item" href="addBrewery.do">Add
+									Brewery</a>
+							</div></li>	
+							</c:if>
+							<c:if test="${sessionScope.admin != null}">
+							<li class="nav-item dropdown"><a
+							class="nav-link dropdown-toggle" href="#"
+							id="navbarDropdownPortfolio" data-toggle="dropdown"
+							aria-haspopup="true" aria-expanded="false"> Beer & Brewery </a>
+							<div class="dropdown-menu"
+								aria-labelledby="navbarDropdownPortfolio">
+								<a class="dropdown-item" href="addBeerButton.do">Add Beer</a> <a
+									class="dropdown-item" href="addBrewery.do">Add
+									Brewery</a>
+							</div></li>	
+							</c:if>
 						<c:if test="${sessionScope.user != null}">
 							<li class="nav-item dropdown"><a
 								class="nav-link dropdown-toggle" href="#"
@@ -63,12 +88,11 @@
 								aria-haspopup="true" aria-expanded="false"> My Account </a>
 								<div class="dropdown-menu"
 									aria-labelledby="navbarDropdownPortfolio">
-									<a class="dropdown-item" href="profile.do">User Profile</a> <a
-										class="dropdown-item" href="updateProfile.do">Update
-										Profile</a> <a class="dropdown-item" href="changePassword.do">Change
-										Password</a> <a class="dropdown-item"
-										href="viewComments.do">My Comments & Ratings</a> <a
-										class="dropdown-item" href="viewAllComments.do">View All Comments</a>
+									<a class="dropdown-item" href="profile.do">User Profile</a> 
+									<a class="dropdown-item" href="updateProfile.do">Update Profile</a> 
+									<a class="dropdown-item" href="changePassword.do">Change Password</a> 
+									<a class="dropdown-item" href="viewComments.do">My Comments</a> 
+									<a class="dropdown-item" href="viewAllComments.do">All Comments</a>
 								</div></li>
 						</c:if>
 						<c:if test="${sessionScope.admin != null}">
@@ -91,7 +115,7 @@
 							aria-haspopup="true" aria-expanded="false"> Pages </a>
 							<div class="dropdown-menu"
 								aria-labelledby="navbarDropdownPortfolio">
-								<a class="dropdown-item" href="about.html">About Us</a>
+								<a class="dropdown-item" href="about.do">About Us</a>
 							</div></li>
 					</ul>
 					<div class="my-2 my-lg-0">
@@ -208,67 +232,17 @@
 
 
 
-	<!-- Trusted Agents -->
-	<section class="section-padding">
-		<div class="section-title text-center mb-5">
-			<h2>Trusted Agents</h2>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-		</div>
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-4 col-md-4">
-					<div class="agents-card text-center">
-						<img class="img-fluid mb-4" src="img/user/1.jpg" alt="">
-						<p class="mb-4">Lorem Ipsum is simply dummy text of the
-							printing and typesetting industry. Lorem Ipsum has been.</p>
-						<h6 class="mb-0 text-success">- Stave Martin</h6>
-						<small>Buying Agent</small>
-					</div>
-				</div>
-				<div class="col-lg-4 col-md-4">
-					<div class="agents-card text-center">
-						<img class="img-fluid mb-4" src="img/user/2.jpg" alt="">
-						<p class="mb-4">Lorem Ipsum is simply dummy text of the
-							printing and typesetting industry. Lorem Ipsum has been.</p>
-						<h6 class="mb-0 text-success">- Mark Smith</h6>
-						<small>Selling Agent</small>
-					</div>
-				</div>
-				<div class="col-lg-4 col-md-4">
-					<div class="agents-card text-center">
-						<img class="img-fluid mb-4" src="img/user/3.jpg" alt="">
-						<p class="mb-4">Lorem Ipsum is simply dummy text of the
-							printing and typesetting industry. Lorem Ipsum has been.</p>
-						<h6 class="mb-0 text-success">- Ryan Printz</h6>
-						<small>Real Estate Broker</small>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!-- End Trusted Agents -->
+	
 
-	<!-- Join Team -->
-	<section class="section-padding bg-dark text-center">
-		<h2 class="text-white mt-0">
-			Join our professional team & agents<br>to start selling your
-			house
-		</h2>
-		<p class="text-white mb-4">Lorem ipsum dolor sit amet, consectetur
-			adipisicing elit.</p>
-		<button type="button" class="btn btn-success">Contact Us</button>
-		<button type="button" class="btn btn-outline-success">Read
-			More</button>
-	</section>
-	<!-- End Join Team -->
+	
 
 	<!-- Copyright -->
 	<section class="pt-4 pb-4 text-center">
-		<p class="mt-0 mb-0">© Copyright 2018 OsahanLand. All Rights
+		<p class="mt-0 mb-0">© Copyright 2018 What's On Tap. All Rights
 			Reserved</p>
 		<small class="mt-0 mb-0"> Made with <i
 			class="mdi mdi-heart text-danger"></i> by <a class="text-dark"
-			target="_blank" href="https://askbootstrap.com/">Ask Bootstrap</a>
+			target="_blank" href="https://askbootstrap.com/">Megan, Mark, Alen and Richard</a>
 		</small>
 	</section>
 	<!-- End Copyright -->

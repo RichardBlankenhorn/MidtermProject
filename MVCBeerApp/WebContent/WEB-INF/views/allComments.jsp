@@ -24,7 +24,8 @@
 <link href="css/osahan.css" rel="stylesheet">
 </head>
 <body>
-	<!-- Navbar -->
+
+		<!-- Navbar -->
 	<header>
 		<nav class="navbar navbar-expand-lg navbar-light bg-light">
 			<div class="container">
@@ -44,10 +45,7 @@
 							aria-haspopup="true" aria-expanded="false"> HOME </a>
 							<div class="dropdown-menu"
 								aria-labelledby="navbarDropdownPortfolio">
-								<a class="dropdown-item" href="index1.html">Home With Search</a>
-								<a class="dropdown-item" href="index2.html">Home With Map</a> <a
-									class="dropdown-item" href="index3.html">Home With Property
-									Info</a>
+								<a class="dropdown-item" href="index.do">Home Page</a>
 							</div></li>
 						<li class="nav-item dropdown"><a
 							class="nav-link dropdown-toggle" href="#"
@@ -59,33 +57,58 @@
 									Beer by Keyword</a> <a class="dropdown-item"
 									href="searchBreweriesByKeyword.do">Search Brewery by Keyword</a>
 							</div></li>
-						<li class="nav-item dropdown"><a
+							<c:if test="${sessionScope.user != null}">
+							<li class="nav-item dropdown"><a
 							class="nav-link dropdown-toggle" href="#"
 							id="navbarDropdownPortfolio" data-toggle="dropdown"
 							aria-haspopup="true" aria-expanded="false"> Beer & Brewery </a>
 							<div class="dropdown-menu"
 								aria-labelledby="navbarDropdownPortfolio">
-								<a class="dropdown-item" href="agency-list.html">Add Beer</a> <a
-									class="dropdown-item" href="agency-profile.html">Add
+								<a class="dropdown-item" href="addBeerButton.do">Add Beer</a> <a
+									class="dropdown-item" href="addBrewery.do">Add
 									Brewery</a>
-								<c:if test="${sessionScope.admin != null }">
-									<a class="dropdown-item" href="agents.html">Update Beer</a>
-									<a class="dropdown-item" href="agent-profile.html">Update
-										Brewery</a>
-								</c:if>
-							</div></li>
-						<li class="nav-item dropdown"><a
+							</div></li>	
+							</c:if>
+							<c:if test="${sessionScope.admin != null}">
+							<li class="nav-item dropdown"><a
 							class="nav-link dropdown-toggle" href="#"
 							id="navbarDropdownPortfolio" data-toggle="dropdown"
-							aria-haspopup="true" aria-expanded="false"> My Account </a>
+							aria-haspopup="true" aria-expanded="false"> Beer & Brewery </a>
 							<div class="dropdown-menu"
 								aria-labelledby="navbarDropdownPortfolio">
-								<a class="dropdown-item" href="profile.do">User Profile</a> 
-								<a class="dropdown-item" href="updateProfile.do">Update Profile</a> 
-								<a class="dropdown-item" href="changePassword.do">Change Password</a> 
-								<a class="dropdown-item" href="viewComments.do">My Comments</a> 
-								<a class="dropdown-item" href="viewAllComments.do">All Comments</a>
-							</div></li>
+								<a class="dropdown-item" href="addBeerButton.do">Add Beer</a> <a
+									class="dropdown-item" href="addBrewery.do">Add
+									Brewery</a>
+							</div></li>	
+							</c:if>
+						<c:if test="${sessionScope.user != null}">
+							<li class="nav-item dropdown"><a
+								class="nav-link dropdown-toggle" href="#"
+								id="navbarDropdownPortfolio" data-toggle="dropdown"
+								aria-haspopup="true" aria-expanded="false"> My Account </a>
+								<div class="dropdown-menu"
+									aria-labelledby="navbarDropdownPortfolio">
+									<a class="dropdown-item" href="profile.do">User Profile</a> 
+									<a class="dropdown-item" href="updateProfile.do">Update Profile</a> 
+									<a class="dropdown-item" href="changePassword.do">Change Password</a> 
+									<a class="dropdown-item" href="viewComments.do">My Comments</a> 
+									<a class="dropdown-item" href="viewAllComments.do">All Comments</a>
+								</div></li>
+						</c:if>
+						<c:if test="${sessionScope.admin != null}">
+							<li class="nav-item dropdown"><a
+								class="nav-link dropdown-toggle" href="#"
+								id="navbarDropdownPortfolio" data-toggle="dropdown"
+								aria-haspopup="true" aria-expanded="false"> My Account </a>
+								<div class="dropdown-menu"
+									aria-labelledby="navbarDropdownPortfolio">
+									<a class="dropdown-item" href="profile.do">User Profile</a> 
+									<a class="dropdown-item" href="updateProfile.do">Update Profile</a> 
+									<a class="dropdown-item" href="changePassword.do">Change Password</a> 
+									<a class="dropdown-item" href="viewComments.do">My Comments</a> 
+									<a class="dropdown-item" href="viewAllComments.do">All Comments</a>
+								</div></li>
+						</c:if>
 						<li class="nav-item dropdown"><a
 							class="nav-link dropdown-toggle" href="#"
 							id="navbarDropdownPortfolio" data-toggle="dropdown"
@@ -97,8 +120,27 @@
 					</ul>
 					<div class="my-2 my-lg-0">
 						<ul class="list-inline main-nav-right">
-							<li class="list-inline-item"><a class="btn btn-link btn-sm"
-								href="logout.do">Logout</a></li>
+							<c:if test="${sessionScope.user == null}">
+								<c:if test="${sessionScope.admin == null }">
+									<li class="list-inline-item"><a
+										class="btn btn-link btn-sm" href="login.do">Sign In</a></li>
+								</c:if>
+							</c:if>
+							<c:if test="${sessionScope.user != null }">
+								<li class="list-inline-item"><a class="btn btn-link btn-sm"
+									href="logout.do">Logout</a></li>
+							</c:if>
+							<c:if test="${sessionScope.admin != null }">
+								<li class="list-inline-item"><a class="btn btn-link btn-sm"
+									href="logout.do">Logout</a></li>
+							</c:if>
+							<c:if test="${sessionScope.user == null }">
+								<c:if test="${sessionScope.admin == null }">
+									<li class="list-inline-item"><a
+										class="btn btn-success btn-sm" href="createAccount.do">Sign
+											Up</a></li>
+								</c:if>
+							</c:if>
 						</ul>
 					</div>
 				</div>
