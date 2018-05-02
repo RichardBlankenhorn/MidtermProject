@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -80,11 +81,12 @@
 							aria-haspopup="true" aria-expanded="false"> My Account </a>
 							<div class="dropdown-menu"
 								aria-labelledby="navbarDropdownPortfolio">
-								<a class="dropdown-item" href="profile.do">User Profile</a> 
-								<a class="dropdown-item" href="updateProfile.do">Update Profile</a> 
-								<a class="dropdown-item" href="changePassword.do">Change Password</a> 
-								<a class="dropdown-item" href="viewComments.do">My Comments</a> 
-								<a class="dropdown-item" href="viewAllComments.do">All Comments</a>
+								<a class="dropdown-item" href="profile.do">User Profile</a> <a
+									class="dropdown-item" href="updateProfile.do">Update
+									Profile</a> <a class="dropdown-item" href="changePassword.do">Change
+									Password</a> <a class="dropdown-item" href="viewComments.do">My
+									Comments</a> <a class="dropdown-item" href="viewAllComments.do">All
+									Comments</a>
 							</div></li>
 						<li class="nav-item dropdown"><a
 							class="nav-link dropdown-toggle" href="#"
@@ -148,8 +150,8 @@
 
 	<!-- User Comments -->
 	<section class="section-padding">
-	<h4 class="text-center">My Comments</h4>
-	<br>
+		<h4 class="text-center">My Comments</h4>
+		<br>
 		<div class="container">
 			<div class="row">
 				<c:forEach var="comment" items="${beercomments }">
@@ -167,7 +169,13 @@
 								</h2>
 							</div>
 							<div class="card-footer">
-								<span><i class="mdi "></i> Date <strong>${comment.dateTime }</strong></span>
+								<span><i class="mdi "></i> Date <strong><fmt:formatDate
+											value="${comment.dateTime }" var="formattedDate" type="date"
+											pattern="MM/dd/yy" />${formattedDate }</strong></span> <span><i
+									class="mdi "></i> Edit : <a
+									href="editBeerCommentForm.do?beerCommentId=${comment.id }">Edit</a></span>
+								<span><i class="mdi "></i> Delete : <a
+									href="deleteBeerComment.do?id=${comment.id }&beerId=${comment.beer.id}">Delete</a></span>
 							</div>
 						</div>
 					</div>
@@ -183,11 +191,12 @@
 			Reserved</p>
 		<small class="mt-0 mb-0"> Made with <i
 			class="mdi mdi-heart text-danger"></i> by <a class="text-dark"
-			target="_blank" href="https://askbootstrap.com/">Megan, Mark, Alen and Richard</a>
+			target="_blank" href="https://askbootstrap.com/">Megan, Mark,
+				Alen and Richard</a>
 		</small>
 	</section>
 	<!-- End Copyright -->
-	
+
 	<!-- Bootstrap core JavaScript -->
 	<script src="vendor/jquery/jquery.min.js"></script>
 	<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
