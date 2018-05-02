@@ -233,7 +233,8 @@
 				<h2>List of ${category} Beers</h2>
 			</c:if>
 			<c:if test="${category != null && brewery != null}">
-				<h2>List of ${category} Beers for ${brewery}</h2>
+				<h2>List of ${category} Beers for <a class="company-link"
+						href="brewery.do?id=${breweryId} ">${brewery}</a></h2>
 			</c:if>
 			<c:if test="${category == null && brewery != null }">
 				<h2>

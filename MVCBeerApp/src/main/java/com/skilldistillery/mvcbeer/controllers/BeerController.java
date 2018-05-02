@@ -65,6 +65,7 @@ public class BeerController {
 			mv.addObject("beers", beers);
 			mv.addObject("category", category);
 			mv.addObject("brewery", brewery);
+			mv.addObject("breweryId",beers.get(0).getBrewery().getId());
 		} else if (!category.equals("")) {
 			beers = beerDao.searchBeerByCategeory(category);
 			mv.addObject("beers", beers);
