@@ -44,10 +44,18 @@
 							aria-haspopup="true" aria-expanded="false"> HOME </a>
 							<div class="dropdown-menu"
 								aria-labelledby="navbarDropdownPortfolio">
-								<a class="dropdown-item" href="index1.html">Home With Search</a>
-								<a class="dropdown-item" href="index2.html">Home With Map</a> <a
-									class="dropdown-item" href="index3.html">Home With Property
-									Info</a>
+								<a class="dropdown-item" href="index.do">Home Page</a>
+							</div></li>
+						<li class="nav-item dropdown"><a
+							class="nav-link dropdown-toggle" href="#"
+							id="navbarDropdownPortfolio" data-toggle="dropdown"
+							aria-haspopup="true" aria-expanded="false"> Search </a>
+							<div class="dropdown-menu"
+								aria-labelledby="navbarDropdownPortfolio">
+								<a class="dropdown-item" href="searchBeerByKeyword.do">Search
+									Beer by Keyword</a> <a class="dropdown-item"
+									href="searchBreweriesByKeyword.do">Search Brewery by
+									Keyword</a>
 							</div></li>
 						<c:if test="${sessionScope.user != null}">
 							<li class="nav-item dropdown"><a
@@ -56,11 +64,12 @@
 								aria-haspopup="true" aria-expanded="false"> My Account </a>
 								<div class="dropdown-menu"
 									aria-labelledby="navbarDropdownPortfolio">
-									<a class="dropdown-item" href="profile.do">User Profile</a> 
-									<a class="dropdown-item" href="updateProfile.do">Update Profile</a> 
-									<a class="dropdown-item" href="changePassword.do">Change Password</a> 
-									<a class="dropdown-item" href="viewComments.do">My Comments & Ratings</a> 
-									<a class="dropdown-item" href="viewAllComments.do">View All Comments</a>
+									<a class="dropdown-item" href="profile.do">User Profile</a> <a
+										class="dropdown-item" href="updateProfile.do">Update
+										Profile</a> <a class="dropdown-item" href="changePassword.do">Change
+										Password</a> <a class="dropdown-item" href="viewComments.do">My
+										Comments & Ratings</a> <a class="dropdown-item"
+										href="viewAllComments.do">View All Comments</a>
 								</div></li>
 						</c:if>
 						<li class="nav-item dropdown"><a
@@ -75,10 +84,10 @@
 					<div class="my-2 my-lg-0">
 						<ul class="list-inline main-nav-right">
 							<c:if test="${sessionScope.user == null}">
-							<c:if test="${sessionScope.admin == null }">
-								<li class="list-inline-item"><a class="btn btn-link btn-sm"
-									href="login.do">Sign In</a></li>
-							</c:if>
+								<c:if test="${sessionScope.admin == null }">
+									<li class="list-inline-item"><a
+										class="btn btn-link btn-sm" href="login.do">Sign In</a></li>
+								</c:if>
 							</c:if>
 							<c:if test="${sessionScope.user != null }">
 								<li class="list-inline-item"><a class="btn btn-link btn-sm"
@@ -89,11 +98,11 @@
 									href="logout.do">Logout</a></li>
 							</c:if>
 							<c:if test="${sessionScope.user == null }">
-							<c:if test="${sessionScope.admin == null }"> 
-								<li class="list-inline-item"><a
-									class="btn btn-success btn-sm" href="createAccount.do">Sign
-										Up</a></li>
-							</c:if>
+								<c:if test="${sessionScope.admin == null }">
+									<li class="list-inline-item"><a
+										class="btn btn-success btn-sm" href="createAccount.do">Sign
+											Up</a></li>
+								</c:if>
 							</c:if>
 						</ul>
 					</div>
@@ -102,7 +111,7 @@
 		</nav>
 	</header>
 	<!-- End Navbar -->
-	
+
 	<!-- Inner Header -->
 	<section class="section-padding bg-dark inner-header">
 		<div class="container">
@@ -120,13 +129,14 @@
 		</div>
 	</section>
 	<!-- End Inner Header -->
-	
+
 	<!-- About -->
 	<section class="section-padding bg-white">
 		<div class="container">
 			<div class="row">
 				<div class="pl-4 col-lg-4 col-md-4 pr-4">
-					<img class="rounded img-fluid" style="min-width: 375px; min-height: 475px" src="img/boot.jpeg"
+					<img class="rounded img-fluid"
+						style="min-width: 375px; min-height: 475px" src="img/boot.jpeg"
 						alt="Card image cap">
 				</div>
 				<div class="col-lg-6 col-md-6 pl-5 pr-5">
@@ -148,7 +158,7 @@
 		</div>
 	</section>
 	<!-- End About -->
-	
+
 	<!-- What We Provide -->
 	<section class="section-padding">
 		<div class="section-title text-center mb-5">
@@ -227,7 +237,7 @@
 		</div>
 	</section>
 	<!-- End What We Provide -->
-	
+
 	<!-- Trusted Agents -->
 	<section class="section-padding bg-white">
 		<div class="section-title text-center mb-5">
@@ -276,14 +286,15 @@
 		</div>
 	</section>
 	<!-- End Trusted Agents -->
-	
+
 	<!-- Copyright -->
 	<section class="pt-4 pb-4 text-center">
 		<p class="mt-0 mb-0">© Copyright 2018 What's On Tap. All Rights
 			Reserved</p>
 		<small class="mt-0 mb-0"> Made with <i
 			class="mdi mdi-heart text-danger"></i> by <a class="text-dark"
-			target="_blank" href="https://askbootstrap.com/">Megan, Mark, Alan and Richard</a>
+			target="_blank" href="https://askbootstrap.com/">Megan, Mark,
+				Alan and Richard</a>
 		</small>
 	</section>
 	<!-- End Copyright -->
