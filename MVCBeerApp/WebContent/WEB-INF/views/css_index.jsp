@@ -59,8 +59,8 @@
 									<a class="dropdown-item" href="profile.do">User Profile</a> 
 									<a class="dropdown-item" href="updateProfile.do">Update Profile</a> 
 									<a class="dropdown-item" href="changePassword.do">Change Password</a> 
-									<a class="dropdown-item" href="favorite-properties.html">My Comments & Ratings</a> 
-									<a class="dropdown-item" href="add-property.html">View Beers & Breweries</a>
+									<a class="dropdown-item" href="viewComments.do">My Comments & Ratings</a> 
+									<a class="dropdown-item" href="viewAllComments.do">View All Comments</a>
 								</div></li>
 						</c:if>
 						<c:if test="${sessionScope.admin != null}">
