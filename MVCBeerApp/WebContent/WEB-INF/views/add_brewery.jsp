@@ -140,44 +140,54 @@
 								<div class="form-group">
 								
 									<label>Name <span class="text-danger">*</span></label> <input
-										type="text" class="form-control" placehold="Enter Name"
-										name="name" required>
+										type="text" class="form-control" placeholder="Enter Name"
+										name="name" required minlength="1" maxlength="50">
 								</div>
 								<div class="form-group">
 									<label>Description <span class="text-danger">*</span></label>
 									<textarea cols="50" rows="4" class="form-control"
-										name="description" placeholder="Enter Description"></textarea>
+										name="description" placeholder="Enter Description" required minlength="1" maxlength="500"></textarea>
 								</div>
 					 			<div class="form-group">
 									<label>Address<span class="text-danger">*</span></label> <input
-										type="text" step=".01" class="form-control" placeholder="Enter Line 1
-										name="street">
+										type="text" step=".01" class="form-control" placeholder="Enter Line 1"
+										name="street" required minlength="1" maxlength="50">
 								</div>
 
 								<div class="form-group">
-									<label>Address <span class="text-danger">*</span></label> <input
+									<label>Address <span class="text-danger"></span></label> <input
 										type="text" class="form-control" placeholder="Enter Line 2"
 										name="street2">
 								</div>
 								<div class="form-group">
 									<label>City <span class="text-danger">*</span></label> <input
 										type="text" class="form-control" placeholder="Enter City"
-										name="city">
+										name="city" required minlength="1" maxlength="45">
 								</div>
 								<div class="form-group">
 									<label>State <span class="text-danger">*</span></label> <input
 										type="text" class="form-control" placeholder="Enter State"
-										name="state">
+										name="state" required minlength="2" maxlength="45">
 								</div>
 								<div class="form-group">
 									<label>Zip Code<span class="text-danger">*</span></label> <input
 										type="text" class="form-control" placeholder="Enter Zip"
-										name="zip">
+										name="zip" required minlength="5" maxlength="10">
 								</div>
 								<div class="form-group">
 									<label>Phone <span class="text-danger">*</span></label> <input
 										type="text" class="form-control" placeholder="Enter Phone #"
-										name="phone">
+										name="phone" required minlength="10" maxlength="20">
+								</div>
+								<div class="form-group">
+									<label>Latitude<span class="text-danger">*</span></label> <input
+										type="text"  step=".01" class="form-control" value="${brewery.address.latitude }"
+										name="latitude" required pattern="^(0|[1-9]\d*)(\.\d+)?$">
+								</div>
+								<div class="form-group">
+									<label>Longitude<span class="text-danger">*</span></label> <input
+										type="text" class="form-control" value="${brewery.address.longitude }"
+										name="longitude" required pattern="^[+-]?[0-9]{1,9}(?:\.[0-9]{1,9})?$">
 								</div>
 								
 								<button type="submit" class="btn btn-success">ADD</button>

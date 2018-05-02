@@ -175,6 +175,16 @@
 										type="text"  step=".01" class="form-control" value="${brewery.address.phone }"
 										name="phone">
 								</div>
+								<div class="form-group">
+									<label>Latitude<span class="text-danger">*</span></label> <input
+										type="text"  step=".01" class="form-control" value="${brewery.address.latitude }"
+										name="latitude" required pattern="^-?(0|[0-9]\d*)$">
+								</div>
+								<div class="form-group">
+									<label>Longitude<span class="text-danger">*</span></label> <input
+										type="text"  step=".01" class="form-control" value="${brewery.address.longitude }"
+										name="longitude" required pattern="^[0-9]\d*$">
+								</div>
 
 								<button type="submit" class="btn btn-success btn-block" value="Update Brewery">UPDATE</button>
 							</form>
