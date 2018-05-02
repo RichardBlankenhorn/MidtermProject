@@ -28,7 +28,7 @@
 	<header>
 		<nav class="navbar navbar-expand-lg navbar-light bg-light">
 			<div class="container">
-				<a class="navbar-brand text-success logo" href="home.do"><i
+				<a class="navbar-brand text-success logo" href="index.do"><i
 					class="mdi mdi-home-map-marker"></i> <strong>What's On Tap</strong></a>
 				<button class="navbar-toggler navbar-toggler-right" type="button"
 					data-toggle="collapse" data-target="#navbarResponsive"
@@ -78,13 +78,11 @@
 								aria-haspopup="true" aria-expanded="false"> My Account </a>
 								<div class="dropdown-menu"
 									aria-labelledby="navbarDropdownPortfolio">
-									<a class="dropdown-item" href="profile.do">User Profile</a> <a
-										class="dropdown-item" href="social-profiles.html">Social
-										Profiles</a> <a class="dropdown-item" href="my-properties.html">My
-										Properties</a> <a class="dropdown-item"
-										href="favorite-properties.html">Favorite Properties</a> <a
-										class="dropdown-item" href="add-property.html">Add
-										Property</a>
+									<a class="dropdown-item" href="profile.do">User Profile</a> 
+									<a class="dropdown-item" href="updateProfile.do">Update Profile</a> 
+									<a class="dropdown-item" href="changePassword.do">Change Password</a> 
+									<a class="dropdown-item" href="viewComments.do">My Comments</a> 
+									<a class="dropdown-item" href="viewAllComments.do">All Comments</a>
 								</div></li>
 						</c:if>
 						<li class="nav-item dropdown"><a
