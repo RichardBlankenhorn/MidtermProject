@@ -200,7 +200,7 @@
 	<!-- What We Provide -->
 	<section class="section-padding">
 		<div class="section-title text-center mb-5">
-			<h2>What We Provide?</h2>
+			<h2>What We Provide</h2>
 			<p></p>
 		</div>
 		<div class="container">
@@ -225,7 +225,7 @@
 					<p>With our comments feature for beers and breweries, users are
 						able to provide feedback on their experience to the community.</p>
 				</div>
-				
+
 				<div class="col-lg-4 col-md-4">
 					<div class="mt-4 mb-4">
 						<i class="text-success mdi mdi-sticker-emoji mdi-48px"></i>

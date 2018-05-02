@@ -180,7 +180,7 @@
 						<li class="nav-item"><a class="nav-link active text-success"
 							href="changePassword.do">Change Password</a></li>
 						<li class="nav-item"><a class="nav-link"
-							href="viewComments.do">My Comments & Ratings</a></li>
+							href="viewComments.do">My Comments</a></li>
 						<li class="nav-item"><a class="nav-link"
 							href="viewAllComments.do">View All Comments</a></li>
 					</ul>
@@ -222,7 +222,7 @@
 			Reserved</p>
 		<small class="mt-0 mb-0"> Made with <i
 			class="mdi mdi-heart text-danger"></i> by <a class="text-dark"
-			target="_blank" href="https://askbootstrap.com/">Megan, Mark, Alen and Richard</a>
+			target="_blank" href="https://skilldistillery.com/">Megan, Mark, Alan and Richard</a>
 		</small>
 	</section>
 	<!-- End Copyright -->

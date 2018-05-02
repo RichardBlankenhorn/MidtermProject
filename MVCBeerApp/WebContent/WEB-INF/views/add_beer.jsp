@@ -26,7 +26,7 @@
 </head>
 <body>
 
-<!-- Navbar -->
+	<!-- Navbar -->
 	<header>
 		<nav class="navbar navbar-expand-lg navbar-light bg-light">
 			<div class="container">
@@ -56,7 +56,8 @@
 								aria-labelledby="navbarDropdownPortfolio">
 								<a class="dropdown-item" href="searchBeerByKeyword.do">Search
 									Beer by Keyword</a> <a class="dropdown-item"
-									href="searchBreweriesByKeyword.do">Search Brewery by Keyword</a>
+									href="searchBreweriesByKeyword.do">Search Brewery by
+									Keyword</a>
 							</div></li>
 						<li class="nav-item dropdown"><a
 							class="nav-link dropdown-toggle" href="#"
@@ -65,8 +66,7 @@
 							<div class="dropdown-menu"
 								aria-labelledby="navbarDropdownPortfolio">
 								<a class="dropdown-item" href="addBeerButton.do">Add Beer</a> <a
-									class="dropdown-item" href="addBrewery.do">Add
-									Brewery</a>
+									class="dropdown-item" href="addBrewery.do">Add Brewery</a>
 								<c:if test="${sessionScope.admin != null }">
 									<a class="dropdown-item" href="agents.html">Update Beer</a>
 									<a class="dropdown-item" href="agent-profile.html">Update
@@ -77,12 +77,14 @@
 							class="nav-link dropdown-toggle" href="#"
 							id="navbarDropdownPortfolio" data-toggle="dropdown"
 							aria-haspopup="true" aria-expanded="false"> My Account </a>
-							<div class="dropdown-menu" aria-labelledby="navbarDropdownPortfolio">
-								<a class="dropdown-item" href="profile.do">User Profile</a> 
-								<a class="dropdown-item" href="updateProfile.do">Update Profile</a> 
-								<a class="dropdown-item" href="changePassword.do">Change Password</a> 
-								<a class="dropdown-item" href="viewComments.do">My Comments</a> 
-								<a class="dropdown-item" href="viewAllComments.do">All Comments</a>
+							<div class="dropdown-menu"
+								aria-labelledby="navbarDropdownPortfolio">
+								<a class="dropdown-item" href="profile.do">User Profile</a> <a
+									class="dropdown-item" href="updateProfile.do">Update
+									Profile</a> <a class="dropdown-item" href="changePassword.do">Change
+									Password</a> <a class="dropdown-item" href="viewComments.do">My
+									Comments</a> <a class="dropdown-item" href="viewAllComments.do">All
+									Comments</a>
 							</div></li>
 						<li class="nav-item dropdown"><a
 							class="nav-link dropdown-toggle" href="#"
@@ -121,28 +123,29 @@
 										type="text" class="form-control" placeholder="Enter Name"
 										name="beerName" required minlength="1" maxlength="45">
 								</div>
-					 			<div class="form-group">
+								<div class="form-group">
 									<label>Cost <span class="text-danger">*</span></label> <input
-										type="number" step=".01" class="form-control" placeholder="Enter Cost"
-										name="cost" required>
+										type="number" step=".01" class="form-control"
+										placeholder="Enter Cost" name="cost" required>
 								</div>
 
 								<div class="form-group">
 									<label>ABV <span class="text-danger">*</span></label> <input
-										type="number" step=".1" class="form-control" placeholder="Enter ABV"
-										name="abv" required>
+										type="number" step=".1" class="form-control"
+										placeholder="Enter ABV" name="abv" required>
 								</div>
 								<div class="form-group">
 									<label>IBU <span class="text-danger">*</span></label> <input
-										type="number" step=".1" class="form-control" placeholder="Enter IBU"
-										name="ibu" required>
+										type="number" step=".1" class="form-control"
+										placeholder="Enter IBU" name="ibu" required>
 								</div>
 								<div class="form-group">
 									<label>Description <span class="text-danger">*</span></label>
 									<textarea cols="50" rows="4" class="form-control"
-										name="beerDescription" placeholder="Enter Description" required minlength="1" maxlength="500"></textarea>
+										name="beerDescription" placeholder="Enter Description"
+										required minlength="1" maxlength="500"></textarea>
 								</div>
-								
+
 								<div class="form-group">
 									<label>Category <span class="text-danger">*</span></label> <select
 										name="categoryName" size="5" required>
@@ -164,7 +167,7 @@
 										type="text" class="form-control" placeholder="Enter Image URL"
 										name="imageUrl">
 								</div>
-								
+
 								<button type="submit" class="btn btn-success btn-block">ADD</button>
 							</form>
 						</div>
@@ -181,7 +184,7 @@
 			Reserved</p>
 		<small class="mt-0 mb-0"> Made with <i
 			class="mdi mdi-heart text-danger"></i> by <a class="text-dark"
-			target="_blank" href="https://askbootstrap.com/">Megan, Mark,
+			target="_blank" href="https://skilldistillery.com/">Megan, Mark,
 				Alan and Richard</a>
 		</small>
 	</section>

@@ -43,16 +43,16 @@ public class BeerController {
 		List<Beer> beers = beerDao.retrieveAllBeer();
 		List<Brewery> breweries = breweryDao.retrieveAllBreweries();
 		List<Category> categories = catDao.retrieveAllCategories();
-		mv.addObject("categories", categories); 
-//		session.setAttribute("categories", categories);
-		mv.addObject("breweries", breweries); 
-//		session.setAttribute("breweries", breweries);
-		mv.addObject("beers", beers); 
-//		session.setAttribute("beers", beers);
+		mv.addObject("categories", categories);
+		// session.setAttribute("categories", categories);
+		mv.addObject("breweries", breweries);
+		// session.setAttribute("breweries", breweries);
+		mv.addObject("beers", beers);
+		// session.setAttribute("beers", beers);
 		mv.setViewName("WEB-INF/views/css_index.jsp");
 		return mv;
 	}
-	
+
 	@RequestMapping(path = "index.do", method = RequestMethod.GET, params = { "brewery", "category" })
 	public ModelAndView index(@RequestParam(name = "brewery") String brewery,
 			@RequestParam(name = "category") String category) {
@@ -65,6 +65,7 @@ public class BeerController {
 			mv.addObject("beers", beers);
 			mv.addObject("category", category);
 			mv.addObject("brewery", brewery);
+			mv.addObject("breweryId", beers.get(0).getBrewery().getId());
 		} else if (!category.equals("")) {
 			beers = beerDao.searchBeerByCategeory(category);
 			mv.addObject("beers", beers);
@@ -73,10 +74,13 @@ public class BeerController {
 			beers = beerDao.searchBeerByBrewery(brewery);
 			mv.addObject("beers", beers);
 			mv.addObject("brewery", brewery);
-			mv.addObject("breweryId",beers.get(0).getBrewery().getId());
+			mv.addObject("breweryId", beers.get(0).getBrewery().getId());
+		} else if (category.equals("") && brewery.equals("")) {
+			beers = beerDao.retrieveAllBeer();
+			mv.addObject("beers", beers);
 		}
-		mv.addObject("categories", categories); 
-		mv.addObject("breweries", breweries); 
+		mv.addObject("categories", categories);
+		mv.addObject("breweries", breweries);
 		mv.setViewName("WEB-INF/views/css_index.jsp");
 		return mv;
 	}
@@ -90,8 +94,8 @@ public class BeerController {
 			List<Category> categories = catDao.retrieveAllCategories();
 			if (beers != null) {
 				mv.addObject("beers", beers);
-				mv.addObject("categories", categories); 
-				mv.addObject("breweries", breweries); 
+				mv.addObject("categories", categories);
+				mv.addObject("breweries", breweries);
 				mv.setViewName("WEB-INF/views/css_index.jsp");
 			} else {
 				mv.setViewName("redirect: index.do");
@@ -109,9 +113,10 @@ public class BeerController {
 		}
 		return mv;
 	}
-	@RequestMapping(path="searchBeerByKeyword.do", method = RequestMethod.GET)
+
+	@RequestMapping(path = "searchBeerByKeyword.do", method = RequestMethod.GET)
 	public ModelAndView searchBeer() {
-		ModelAndView mv = new ModelAndView(); 
+		ModelAndView mv = new ModelAndView();
 		mv.setViewName("WEB-INF/views/search_beer.jsp");
 		return mv;
 	}
@@ -140,63 +145,63 @@ public class BeerController {
 
 		return mv;
 	}
-	
+
 	@RequestMapping(path = "updateBeer.do", method = RequestMethod.GET)
 	public ModelAndView updateBeer(@RequestParam(name = "id") int id) {
 		ModelAndView mv = new ModelAndView();
 		Beer beer = beerDao.retrieveById(id);
 		List<Category> categories = catDao.retrieveAllCategories();
-		mv.addObject("categoryList", categories); 
-//		session.setAttribute("categoryList", categories);
+		mv.addObject("categoryList", categories);
+		// session.setAttribute("categoryList", categories);
 		mv.addObject("beer", beer);
 		mv.setViewName("WEB-INF/views/edit_beer.jsp");
 		return mv;
 	}
-	
+
 	@RequestMapping(path = "updateBeer.do", method = RequestMethod.POST)
-	public ModelAndView updateBeerDB(@RequestParam(name="id")int id, BeerDTO dto) {
+	public ModelAndView updateBeerDB(@RequestParam(name = "id") int id, BeerDTO dto) {
 		ModelAndView mv = new ModelAndView();
-		mv.addObject("beer", beerDao.updateBeer(id, dto)); 
+		mv.addObject("beer", beerDao.updateBeer(id, dto));
 		mv.setViewName("WEB-INF/views/beer.jsp");
 		return mv;
 	}
-	
-	@RequestMapping( path= "addBeerButton.do", method = RequestMethod.GET) 
+
+	@RequestMapping(path = "addBeerButton.do", method = RequestMethod.GET)
 	public ModelAndView addBeerGet() {
 		ModelAndView mv = new ModelAndView();
 		List<Category> categories = catDao.retrieveAllCategories();
 		List<Brewery> breweries = breweryDao.retrieveAllBreweries();
-		
-		mv.addObject("breweryList", breweries); 
-		mv.addObject("categoryList", categories); 
+
+		mv.addObject("breweryList", breweries);
+		mv.addObject("categoryList", categories);
 		mv.setViewName("WEB-INF/views/add_beer.jsp");
 		return mv;
 	}
-	
-	@RequestMapping( path= "addBeer.do", method = RequestMethod.POST) 
-		public ModelAndView addBeerPost(BeerDTO dto) {
-			ModelAndView mv = new ModelAndView();
-			Beer beer = beerDao.createBeer(dto); 
-			mv.addObject("beer", beer); 
-			mv.setViewName("WEB-INF/views/beer.jsp");
-			return mv;
-		}
-	
-	@RequestMapping(path="deleteBeer.do", method = RequestMethod.POST)
-	public ModelAndView deleteBeer(@RequestParam(name="id") int id) {
+
+	@RequestMapping(path = "addBeer.do", method = RequestMethod.POST)
+	public ModelAndView addBeerPost(BeerDTO dto) {
+		ModelAndView mv = new ModelAndView();
+		Beer beer = beerDao.createBeer(dto);
+		mv.addObject("beer", beer);
+		mv.setViewName("WEB-INF/views/beer.jsp");
+		return mv;
+	}
+
+	@RequestMapping(path = "deleteBeer.do", method = RequestMethod.POST)
+	public ModelAndView deleteBeer(@RequestParam(name = "id") int id) {
 		ModelAndView mv = new ModelAndView();
 		boolean b = beerDao.deleteBeer(id);
 		mv.addObject("deleted", b);
 		mv.setViewName("redirect: index.do");
-		
+
 		return mv;
 	}
-	
+
 	@RequestMapping(path = "about.do", method = RequestMethod.GET)
 	public ModelAndView about() {
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("WEB-INF/views/about.jsp");
 		return mv;
 	}
-	
+
 }

@@ -193,7 +193,7 @@
 
 	<!-- User Comments -->
 	<section>
-		<h4 class="text-center text-success">${beer.name }Comments</h4>
+		<h4 class="text-center text-success">${beer.name } Comments</h4>
 		<br>
 		<c:if test="${listComments.isEmpty() }">
 			<h6 class="text-center">No Comments At This Time</h6>
@@ -276,7 +276,7 @@
 			Reserved</p>
 		<small class="mt-0 mb-0"> Made with <i
 			class="mdi mdi-heart text-danger"></i> by <a class="text-dark"
-			target="_blank" href="https://askbootstrap.com/">Megan, Mark,
+			target="_blank" href="https://skilldistillery.com/">Megan, Mark,
 				Alan and Richard</a>
 		</small>
 	</section>
