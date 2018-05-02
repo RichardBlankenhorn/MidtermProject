@@ -183,7 +183,7 @@ public class BeerController {
 		ModelAndView mv = new ModelAndView();
 		boolean b = beerDao.deleteBeer(id);
 		mv.addObject("deleted", b);
-		mv.setViewName("WEB-INF/views/delete_beer.jsp");
+		mv.setViewName("redirect: index.do");
 		
 		return mv;
 	}
