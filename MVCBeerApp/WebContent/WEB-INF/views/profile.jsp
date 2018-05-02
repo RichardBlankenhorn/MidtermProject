@@ -44,10 +44,7 @@
 							aria-haspopup="true" aria-expanded="false"> HOME </a>
 							<div class="dropdown-menu"
 								aria-labelledby="navbarDropdownPortfolio">
-								<a class="dropdown-item" href="index1.html">Home With Search</a>
-								<a class="dropdown-item" href="index2.html">Home With Map</a> <a
-									class="dropdown-item" href="index3.html">Home With Property
-									Info</a>
+								<a class="dropdown-item" href="index.do">Home Page</a>
 							</div></li>
 						<li class="nav-item dropdown"><a
 							class="nav-link dropdown-toggle" href="#"
