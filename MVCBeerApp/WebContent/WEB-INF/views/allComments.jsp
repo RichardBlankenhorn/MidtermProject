@@ -179,7 +179,7 @@
 						<li class="nav-item"><a class="nav-link"
 							href="changePassword.do">Change Password</a></li>
 						<li class="nav-item"><a class="nav-link"
-							href="viewComments.do">My Comments & Ratings</a></li>
+							href="viewComments.do">My Comments</a></li>
 						<li class="nav-item"><a class="nav-link active text-success"
 							href="viewAllComments.do">View All Comments</a></li>
 					</ul>
