@@ -28,7 +28,7 @@
 	<header>
 		<nav class="navbar navbar-expand-lg navbar-light bg-light">
 			<div class="container">
-				<a class="navbar-brand text-success logo" href="home.do"><i
+				<a class="navbar-brand text-success logo" href="index.do"><i
 					class="mdi mdi-home-map-marker"></i> <strong>What's On Tap</strong></a>
 				<button class="navbar-toggler navbar-toggler-right" type="button"
 					data-toggle="collapse" data-target="#navbarResponsive"
@@ -362,11 +362,11 @@
 
 	<!-- Copyright -->
 	<section class="pt-4 pb-4 text-center">
-		<p class="mt-0 mb-0">© Copyright 2018 OsahanLand. All Rights
+		<p class="mt-0 mb-0">© Copyright 2018 What's On Tap. All Rights
 			Reserved</p>
 		<small class="mt-0 mb-0"> Made with <i
 			class="mdi mdi-heart text-danger"></i> by <a class="text-dark"
-			target="_blank" href="https://askbootstrap.com/">Ask Bootstrap</a>
+			target="_blank" href="https://askbootstrap.com/">Megan, Mark, Alan and Richard</a>
 		</small>
 	</section>
 	<!-- End Copyright -->

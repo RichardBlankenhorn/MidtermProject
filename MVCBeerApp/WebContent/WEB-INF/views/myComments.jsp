@@ -80,12 +80,11 @@
 							aria-haspopup="true" aria-expanded="false"> My Account </a>
 							<div class="dropdown-menu"
 								aria-labelledby="navbarDropdownPortfolio">
-								<a class="dropdown-item" href="user-profile.html">User
-									Profile</a> <a class="dropdown-item" href="social-profiles.html">Social
-									Profiles</a> <a class="dropdown-item" href="my-properties.html">My
-									Properties</a> <a class="dropdown-item"
-									href="favorite-properties.html">Favorite Properties</a> <a
-									class="dropdown-item" href="add-property.html">Add Property</a>
+								<a class="dropdown-item" href="profile.do">User Profile</a> 
+								<a class="dropdown-item" href="updateProfile.do">Update Profile</a> 
+								<a class="dropdown-item" href="changePassword.do">Change Password</a> 
+								<a class="dropdown-item" href="viewComments.do">My Comments</a> 
+								<a class="dropdown-item" href="viewAllComments.do">All Comments</a>
 							</div></li>
 						<li class="nav-item dropdown"><a
 							class="nav-link dropdown-toggle" href="#"
@@ -116,7 +115,7 @@
 					<h1 class="mt-0 mb-3 text-white">Hello ${profile.firstName }!</h1>
 					<div class="breadcrumbs">
 						<p class="mb-0 text-white">
-							<a class="text-white" href="home.do">Home</a> / <span
+							<a class="text-white" href="index.do">Home</a> / <span
 								class="text-success">${profile.firstName }'s Profile</span>
 						</p>
 					</div>
@@ -138,7 +137,7 @@
 						<li class="nav-item"><a class="nav-link"
 							href="changePassword.do">Change Password</a></li>
 						<li class="nav-item"><a class="nav-link active text-success"
-							href="myComments.do">My Comments & Ratings</a></li>
+							href="viewComments.do">My Comments & Ratings</a></li>
 						<li class="nav-item"><a class="nav-link"
 							href="viewAllComments.do">View All Comments</a></li>
 					</ul>
