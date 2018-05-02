@@ -58,6 +58,8 @@ public class BeerController {
 			@RequestParam(name = "category") String category) {
 		ModelAndView mv = new ModelAndView();
 		List<Beer> beers;
+		List<Brewery> breweries = breweryDao.retrieveAllBreweries();
+		List<Category> categories = catDao.retrieveAllCategories();
 		if (!category.equals("") && !brewery.equals("")) {
 			beers = beerDao.searchBeerByBreweryAndCategory(category, brewery);
 			mv.addObject("beers", beers);
@@ -73,6 +75,8 @@ public class BeerController {
 			mv.addObject("brewery", brewery);
 			mv.addObject("breweryId",beers.get(0).getBrewery().getId());
 		}
+		mv.addObject("categories", categories); 
+		mv.addObject("breweries", breweries); 
 		mv.setViewName("WEB-INF/views/css_index.jsp");
 		return mv;
 	}
