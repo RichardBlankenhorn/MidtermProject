@@ -39,15 +39,12 @@
 				<div class="collapse navbar-collapse" id="navbarResponsive">
 					<ul class="navbar-nav mr-auto mt-2 mt-lg-0 margin-auto">
 						<li class="nav-item dropdown"><a
-							class="nav-link dropdown-toggle" href="#"
+							class="nav-link dropdown-toggle" href="index.do"
 							id="navbarDropdownPortfolio" data-toggle="dropdown"
 							aria-haspopup="true" aria-expanded="false"> HOME </a>
 							<div class="dropdown-menu"
 								aria-labelledby="navbarDropdownPortfolio">
-								<a class="dropdown-item" href="index1.html">Home With Search</a>
-								<a class="dropdown-item" href="index2.html">Home With Map</a> <a
-									class="dropdown-item" href="index3.html">Home With Property
-									Info</a>
+								<a class="dropdown-item" href="index.do">Home Page</a>
 							</div></li>
 						<c:if test="${sessionScope.user != null}">
 							<li class="nav-item dropdown"><a
@@ -70,13 +67,11 @@
 								aria-haspopup="true" aria-expanded="false"> My Account </a>
 								<div class="dropdown-menu"
 									aria-labelledby="navbarDropdownPortfolio">
-									<a class="dropdown-item" href="profile.do">User Profile</a> <a
-										class="dropdown-item" href="social-profiles.html">Social
-										Profiles</a> <a class="dropdown-item" href="my-properties.html">My
-										Properties</a> <a class="dropdown-item"
-										href="favorite-properties.html">Favorite Properties</a> <a
-										class="dropdown-item" href="add-property.html">Add
-										Property</a>
+									<a class="dropdown-item" href="profile.do">User Profile</a> 
+									<a class="dropdown-item" href="updateProfile.do">Update Profile</a> 
+									<a class="dropdown-item" href="changePassword.do">Change Password</a> 
+									<a class="dropdown-item" href="viewComments.do">My Comments</a> 
+									<a class="dropdown-item" href="viewAllComments.do">All Comments</a>
 								</div></li>
 						</c:if>
 						<li class="nav-item dropdown"><a
@@ -306,57 +301,15 @@
 	</section>
 	<!-- End Properties by City -->
 
-	<!-- Trusted Agents -->
-	<section class="section-padding">
-		<div class="section-title text-center mb-5">
-			<h2>Trusted Agents</h2>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-		</div>
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-4 col-md-4">
-					<div class="agents-card text-center">
-						<img class="img-fluid mb-4" src="img/user/1.jpg" alt="">
-						<p class="mb-4">Lorem Ipsum is simply dummy text of the
-							printing and typesetting industry. Lorem Ipsum has been.</p>
-						<h6 class="mb-0 text-success">- Stave Martin</h6>
-						<small>Buying Agent</small>
-					</div>
-				</div>
-				<div class="col-lg-4 col-md-4">
-					<div class="agents-card text-center">
-						<img class="img-fluid mb-4" src="img/user/2.jpg" alt="">
-						<p class="mb-4">Lorem Ipsum is simply dummy text of the
-							printing and typesetting industry. Lorem Ipsum has been.</p>
-						<h6 class="mb-0 text-success">- Mark Smith</h6>
-						<small>Selling Agent</small>
-					</div>
-				</div>
-				<div class="col-lg-4 col-md-4">
-					<div class="agents-card text-center">
-						<img class="img-fluid mb-4" src="img/user/3.jpg" alt="">
-						<p class="mb-4">Lorem Ipsum is simply dummy text of the
-							printing and typesetting industry. Lorem Ipsum has been.</p>
-						<h6 class="mb-0 text-success">- Ryan Printz</h6>
-						<small>Real Estate Broker</small>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!-- End Trusted Agents -->
-
 	<!-- Join Team -->
 	<section class="section-padding bg-dark text-center">
 		<h2 class="text-white mt-0">
-			Join our professional team & agents<br>to start selling your
-			house
+			Learn more about our development team<br>by visiting our About page
 		</h2>
-		<p class="text-white mb-4">Lorem ipsum dolor sit amet, consectetur
-			adipisicing elit.</p>
-		<button type="button" class="btn btn-success">Contact Us</button>
-		<button type="button" class="btn btn-outline-success">Read
-			More</button>
+		<p class="text-white mb-4">Cheers!</p>
+		<form action="about.do" method="GET">
+		<button type="submit" class="btn btn-success">About Us</button>
+		</form>
 	</section>
 	<!-- End Join Team -->
 

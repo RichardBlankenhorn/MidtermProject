@@ -135,7 +135,8 @@
 						<div class="card-body">
 							<h5 class="card-title mb-4">Add Brewery</h5>
 							<form action="addBrewery.do" method="POST">
-								<input type="hidden" value="${brewery.id }" name="id">
+								<input type="hidden" value="39.608785" name="lat">
+								<input type="hidden" value="-104.90272" name="long">
 								<div class="form-group">
 								
 									<label>Name <span class="text-danger">*</span></label> <input

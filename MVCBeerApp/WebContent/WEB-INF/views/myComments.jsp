@@ -163,20 +163,27 @@
 									<i class="mdi mdi-home-map-marker"></i>Brewery:
 									${comment.beer.brewery.name}
 								</h5>
-								<h6>${comment.description }</h6>
-								<h2 class="text-success mb-0 mt-3">
-									<small></small>
-								</h2>
+								<form action="updateMyBeerComment.do" method="GET">
+									<input type="hidden" value="${comment.id }" name="id">
+									<label>(click in comment to edit)</label>
+									<h6>
+										<textarea style="border: none" cols="30" rows="5"
+											name="comment">${comment.description }</textarea>
+									</h6>
+									<h6>
+										<button type="submit" class="btn btn-success "
+											style="height: 30px; text-align: center; display: inline-block">Edit</button>
+									</h6>
+								</form>
 							</div>
 							<div class="card-footer">
 								<span><i class="mdi "></i> Date <strong><fmt:formatDate
 											value="${comment.dateTime }" var="formattedDate" type="date"
 											pattern="MM/dd/yy" />${formattedDate }</strong></span> <span><i
-									class="mdi "></i> Edit : <a
-									href="editBeerCommentForm.do?beerCommentId=${comment.id }">Edit</a></span>
-								<span><i class="mdi "></i> Delete : <a href="deleteMyBeerComment.do?id=${comment.id }">Delete</a></span>
-									<!--  href="deleteBeerComment.do?id=${comment.id }&beerId=${comment.beer.id}">Delete</a></span> -->
-									
+									class="mdi "></i><a
+									href="deleteMyBeerComment.do?id=${comment.id }">Delete
+										Comment</a></span>
+
 							</div>
 						</div>
 					</div>

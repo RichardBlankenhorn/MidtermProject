@@ -19,7 +19,7 @@ public interface CommentsDAO {
 	
 	public BeerComments retrieveBeerCommentById(int id);
 	
-	
+	public BeerComments updateMyBeerComment(int id, String beerComment);
 	
 	//breweries
 	public BreweryComments createBreweryComments(int id, int breweryId, String breweryComment);
