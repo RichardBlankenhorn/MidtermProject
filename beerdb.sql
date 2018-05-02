@@ -313,15 +313,15 @@ COMMIT;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `beerdb`;
-INSERT INTO `brewery` (`id`, `web_url`, `address_id`, `name`, `description`, `rating`, `img_url`) VALUES (1, 'https://drydockbrewing.com/', 1, 'Dry Dock', 'Brewery', 5, '');
-INSERT INTO `brewery` (`id`, `web_url`, `address_id`, `name`, `description`, `rating`, `img_url`) VALUES (2, 'http://renegadebrewing.com/', 2, 'Renegade', 'Brewery', 5, '');
-INSERT INTO `brewery` (`id`, `web_url`, `address_id`, `name`, `description`, `rating`, `img_url`) VALUES (3, 'http://ratiobeerworks.com/', 3, 'Ratio Beerworks', 'Brewery', 5, '');
-INSERT INTO `brewery` (`id`, `web_url`, `address_id`, `name`, `description`, `rating`, `img_url`) VALUES (4, 'http://strangecraft.com/', 4, 'Strange Craft', 'Brewery', 5, '');
-INSERT INTO `brewery` (`id`, `web_url`, `address_id`, `name`, `description`, `rating`, `img_url`) VALUES (5, 'https://prostbrewing.com/', 5, 'Prost', 'Brewery', 5, '');
-INSERT INTO `brewery` (`id`, `web_url`, `address_id`, `name`, `description`, `rating`, `img_url`) VALUES (6, 'http://www.fictionbeer.com/', 6, 'Fiction', 'Brewery', 5, '');
-INSERT INTO `brewery` (`id`, `web_url`, `address_id`, `name`, `description`, `rating`, `img_url`) VALUES (7, 'https://www.declarationbrewing.com/', 7, 'Declaration', 'Brewery', 5, '');
-INSERT INTO `brewery` (`id`, `web_url`, `address_id`, `name`, `description`, `rating`, `img_url`) VALUES (8, 'http://www.plattparkbrewing.com/', 8, 'Platt Park', 'Brewery', 5, '');
-INSERT INTO `brewery` (`id`, `web_url`, `address_id`, `name`, `description`, `rating`, `img_url`) VALUES (9, 'http://mockerybrewing.com/', 9, 'Mockery', 'Brewery', 5, '');
+INSERT INTO `brewery` (`id`, `web_url`, `address_id`, `name`, `description`, `rating`, `img_url`) VALUES (1, 'https://drydockbrewing.com/', 1, 'Dry Dock', 'Brewery', 5, 'https://s3-media3.fl.yelpcdn.com/bphoto/6b5wc6ZTWASVk5sH70M3hQ/o.jpg');
+INSERT INTO `brewery` (`id`, `web_url`, `address_id`, `name`, `description`, `rating`, `img_url`) VALUES (2, 'http://renegadebrewing.com/', 2, 'Renegade', 'Brewery', 5, 'https://s3-media2.fl.yelpcdn.com/bphoto/qCN5EC2LuAWXEWkQtth8oA/o.jpg');
+INSERT INTO `brewery` (`id`, `web_url`, `address_id`, `name`, `description`, `rating`, `img_url`) VALUES (3, 'http://ratiobeerworks.com/', 3, 'Ratio Beerworks', 'Brewery', 5, 'https://s3-media1.fl.yelpcdn.com/bphoto/nSb83C9eQTrPKdtHac-H6A/o.jpg');
+INSERT INTO `brewery` (`id`, `web_url`, `address_id`, `name`, `description`, `rating`, `img_url`) VALUES (4, 'http://strangecraft.com/', 4, 'Strange Craft', 'Brewery', 5, 'https://s3-media2.fl.yelpcdn.com/bphoto/f13ZvDTyWgUdOe_dUujtjw/o.jpg');
+INSERT INTO `brewery` (`id`, `web_url`, `address_id`, `name`, `description`, `rating`, `img_url`) VALUES (5, 'https://prostbrewing.com/', 5, 'Prost', 'Brewery', 5, 'https://s3-media4.fl.yelpcdn.com/bphoto/6glcwwsoCTa_attxKIb1xQ/o.jpg');
+INSERT INTO `brewery` (`id`, `web_url`, `address_id`, `name`, `description`, `rating`, `img_url`) VALUES (6, 'http://www.fictionbeer.com/', 6, 'Fiction', 'Brewery', 5, 'https://s3-media2.fl.yelpcdn.com/bphoto/3s-G6u9f3jbkmUGnrQXupQ/o.jpg');
+INSERT INTO `brewery` (`id`, `web_url`, `address_id`, `name`, `description`, `rating`, `img_url`) VALUES (7, 'https://www.declarationbrewing.com/', 7, 'Declaration', 'Brewery', 5, 'https://s3-media2.fl.yelpcdn.com/bphoto/GatejP-5M3Sjl3AJImPmdw/o.jpg');
+INSERT INTO `brewery` (`id`, `web_url`, `address_id`, `name`, `description`, `rating`, `img_url`) VALUES (8, 'http://www.plattparkbrewing.com/', 8, 'Platt Park', 'Brewery', 5, 'https://s3-media2.fl.yelpcdn.com/bphoto/qWT_FAoYjZ5XbwGIlYTkuA/o.jpg');
+INSERT INTO `brewery` (`id`, `web_url`, `address_id`, `name`, `description`, `rating`, `img_url`) VALUES (9, 'http://mockerybrewing.com/', 9, 'Mockery', 'Brewery', 5, 'http://www.mockerybrewing.com/assets/images/slider/1000-8227.jpg');
 
 COMMIT;
 

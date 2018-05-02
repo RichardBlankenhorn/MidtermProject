@@ -30,7 +30,10 @@
 	<p>${brewery.address.state }</p>
 	<p>${brewery.address.zip }</p>
 	<p>${brewery.address.phone }</p>
+	<img src="${brewery.imageUrl }"> <br>
 	<p> <a href="${brewery.webUrl}" target="_blank">${brewery.name}'s Website</a>
+	<br>
+	<br>
 
 
 	<form action="editBrewery.do" method="GET">
@@ -50,9 +53,11 @@
 
 
 	<form action="addBreweryComment.do" method="POST">
+	<c:if test="${sessionScope.admin != null || sessionScope.user != null }">
 		<input type="hidden" name="breweryId" value="${brewery.id }"> <input
 			type="text" name="breweryComment"> <input type="submit"
 			value="Add Comment">
+			</c:if>
 	</form>
 	
 
