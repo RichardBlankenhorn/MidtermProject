@@ -3,10 +3,10 @@
 ## Midterm Project for Skill Distillery
 
 ### Team Members and Roles
-Megan Arnold - Middleware Developer/Associate Front End Developer
-Mark Coleman - Database Administrator/Middleware Developer
-Alan Frederick - Middleware Developer/Associate Front End Developer 
-Richard Blankenhorn - Lead Front End Developer/Middleware Developer
+* Megan Arnold - Middleware Developer/Associate Front End Developer
+* Mark Coleman - Database Administrator/Middleware Developer
+* Alan Frederick - Middleware Developer/Associate Front End Developer 
+* Richard Blankenhorn - Lead Front End Developer/Middleware Developer
 
 #### Description
 
