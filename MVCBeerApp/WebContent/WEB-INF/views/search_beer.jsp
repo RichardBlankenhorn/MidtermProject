@@ -44,10 +44,17 @@
 							aria-haspopup="true" aria-expanded="false"> HOME </a>
 							<div class="dropdown-menu"
 								aria-labelledby="navbarDropdownPortfolio">
-								<a class="dropdown-item" href="index1.html">Home With Search</a>
-								<a class="dropdown-item" href="index2.html">Home With Map</a> <a
-									class="dropdown-item" href="index3.html">Home With Property
-									Info</a>
+								<a class="dropdown-item" href="index.do">Home Page</a>
+							</div></li>
+						<li class="nav-item dropdown"><a
+							class="nav-link dropdown-toggle" href="#"
+							id="navbarDropdownPortfolio" data-toggle="dropdown"
+							aria-haspopup="true" aria-expanded="false"> Search </a>
+							<div class="dropdown-menu"
+								aria-labelledby="navbarDropdownPortfolio">
+								<a class="dropdown-item" href="searchBeerByKeyword.do">Search
+									Beer by Keyword</a> <a class="dropdown-item"
+									href="searchBreweriesByKeyword.do">Search Brewery by Keyword</a>
 							</div></li>
 						<c:if test="${sessionScope.user != null}">
 							<li class="nav-item dropdown"><a
@@ -60,9 +67,8 @@
 										class="dropdown-item" href="updateProfile.do">Update
 										Profile</a> <a class="dropdown-item" href="changePassword.do">Change
 										Password</a> <a class="dropdown-item"
-										href="favorite-properties.html">My Comments & Ratings</a> <a
-										class="dropdown-item" href="add-property.html">View Beers
-										& Breweries</a>
+										href="viewComments.do">My Comments & Ratings</a> <a
+										class="dropdown-item" href="viewAllComments.do">View All Comments</a>
 								</div></li>
 						</c:if>
 						<c:if test="${sessionScope.admin != null}">
