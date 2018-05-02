@@ -55,9 +55,9 @@
 							aria-haspopup="true" aria-expanded="false"> Search </a>
 							<div class="dropdown-menu"
 								aria-labelledby="navbarDropdownPortfolio">
-								<a class="dropdown-item" href="properties-grid.html">Search
+								<a class="dropdown-item" href="searchBeerByKeyword.do">Search
 									Beer by Keyword</a> <a class="dropdown-item"
-									href="properties-list.html">Search Brewery by Keyword</a>
+									href="searchBreweriesByKeyword.do">Search Brewery by Keyword</a>
 							</div></li>
 						<li class="nav-item dropdown"><a
 							class="nav-link dropdown-toggle" href="#"
