@@ -12,7 +12,7 @@
 <meta name="author" content="Askbootstrap">
 <title>What's On Tap - Beer</title>
 <!-- Favicon Icon -->
-<link rel="icon" type="image/png" href="images/favicon.png">
+<link rel="icon" type="image/png" href="img/static1.squarespace.png">
 <!-- Bootstrap core CSS -->
 <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 <!-- Material Design Icons -->
@@ -25,6 +25,7 @@
 <link href="css/osahan.css" rel="stylesheet">
 </head>
 <body>
+	
 	<!-- Navbar -->
 	<header>
 		<nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -40,7 +41,7 @@
 				<div class="collapse navbar-collapse" id="navbarResponsive">
 					<ul class="navbar-nav mr-auto mt-2 mt-lg-0 margin-auto">
 						<li class="nav-item dropdown"><a
-							class="nav-link dropdown-toggle" href="index.do"
+							class="nav-link dropdown-toggle" href="#"
 							id="navbarDropdownPortfolio" data-toggle="dropdown"
 							aria-haspopup="true" aria-expanded="false"> HOME </a>
 							<div class="dropdown-menu"
@@ -55,9 +56,32 @@
 								aria-labelledby="navbarDropdownPortfolio">
 								<a class="dropdown-item" href="searchBeerByKeyword.do">Search
 									Beer by Keyword</a> <a class="dropdown-item"
-									href="searchBreweriesByKeyword.do">Search Brewery by
-									Keyword</a>
+									href="searchBreweriesByKeyword.do">Search Brewery by Keyword</a>
 							</div></li>
+							<c:if test="${sessionScope.user != null}">
+							<li class="nav-item dropdown"><a
+							class="nav-link dropdown-toggle" href="#"
+							id="navbarDropdownPortfolio" data-toggle="dropdown"
+							aria-haspopup="true" aria-expanded="false"> Beer & Brewery </a>
+							<div class="dropdown-menu"
+								aria-labelledby="navbarDropdownPortfolio">
+								<a class="dropdown-item" href="addBeerButton.do">Add Beer</a> <a
+									class="dropdown-item" href="addBrewery.do">Add
+									Brewery</a>
+							</div></li>	
+							</c:if>
+							<c:if test="${sessionScope.admin != null}">
+							<li class="nav-item dropdown"><a
+							class="nav-link dropdown-toggle" href="#"
+							id="navbarDropdownPortfolio" data-toggle="dropdown"
+							aria-haspopup="true" aria-expanded="false"> Beer & Brewery </a>
+							<div class="dropdown-menu"
+								aria-labelledby="navbarDropdownPortfolio">
+								<a class="dropdown-item" href="addBeerButton.do">Add Beer</a> <a
+									class="dropdown-item" href="addBrewery.do">Add
+									Brewery</a>
+							</div></li>	
+							</c:if>
 						<c:if test="${sessionScope.user != null}">
 							<li class="nav-item dropdown"><a
 								class="nav-link dropdown-toggle" href="#"
@@ -65,12 +89,11 @@
 								aria-haspopup="true" aria-expanded="false"> My Account </a>
 								<div class="dropdown-menu"
 									aria-labelledby="navbarDropdownPortfolio">
-									<a class="dropdown-item" href="profile.do">User Profile</a> <a
-										class="dropdown-item" href="updateProfile.do">Update
-										Profile</a> <a class="dropdown-item" href="changePassword.do">Change
-										Password</a> <a class="dropdown-item" href="viewComments.do">My
-										Comments & Ratings</a> <a class="dropdown-item"
-										href="viewAllComments.do">View All Comments</a>
+									<a class="dropdown-item" href="profile.do">User Profile</a> 
+									<a class="dropdown-item" href="updateProfile.do">Update Profile</a> 
+									<a class="dropdown-item" href="changePassword.do">Change Password</a> 
+									<a class="dropdown-item" href="viewComments.do">My Comments</a> 
+									<a class="dropdown-item" href="viewAllComments.do">All Comments</a>
 								</div></li>
 						</c:if>
 						<c:if test="${sessionScope.admin != null}">
@@ -80,12 +103,11 @@
 								aria-haspopup="true" aria-expanded="false"> My Account </a>
 								<div class="dropdown-menu"
 									aria-labelledby="navbarDropdownPortfolio">
-									<a class="dropdown-item" href="profile.do">User Profile</a> <a
-										class="dropdown-item" href="updateProfile.do">Update
-										Profile</a> <a class="dropdown-item" href="changePassword.do">Change
-										Password</a> <a class="dropdown-item" href="viewComments.do">My
-										Comments</a> <a class="dropdown-item" href="viewAllComments.do">All
-										Comments</a>
+									<a class="dropdown-item" href="profile.do">User Profile</a> 
+									<a class="dropdown-item" href="updateProfile.do">Update Profile</a> 
+									<a class="dropdown-item" href="changePassword.do">Change Password</a> 
+									<a class="dropdown-item" href="viewComments.do">My Comments</a> 
+									<a class="dropdown-item" href="viewAllComments.do">All Comments</a>
 								</div></li>
 						</c:if>
 						<li class="nav-item dropdown"><a

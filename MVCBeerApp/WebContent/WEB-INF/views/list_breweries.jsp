@@ -12,7 +12,7 @@
 <meta name="author" content="Askbootstrap">
 <title>What's On Tap</title>
 <!-- Favicon Icon -->
-<link rel="icon" type="image/png" href="images/favicon.png">
+<link rel="icon" type="image/png" href="img/static1.squarespace.png">
 <!-- Bootstrap core CSS -->
 <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 <!-- Material Design Icons -->
