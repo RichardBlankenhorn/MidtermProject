@@ -161,28 +161,28 @@
 								<div class="form-group">
 									<label>First Name <span class="text-danger">*</span></label> <input
 										type="text" class="form-control"
-										placeholder="Enter First Name" name="firstName">
+										placeholder="Enter First Name" name="firstName" required minlength="1" maxlength="50">
 								</div>
 								<div class="form-group">
 									<label>Last Name <span class="text-danger">*</span></label> <input
 										type="text" class="form-control" placeholder="Enter Last Name"
-										name="lastName">
+										name="lastName" required minlength="1" maxlength="50" >
 								</div>
 
 								<div class="form-group">
 									<label>Email Address <span class="text-danger">*</span></label>
 									<input type="email" class="form-control"
-										placeholder="Enter Email Address" name="email">
+										placeholder="Enter Email Address" name="email" required minlength="1" maxlength="50">
 								</div>
 								<div class="form-group">
 									<label>User Name <span class="text-danger">*</span></label> <input
 										type="text" class="form-control" placeholder="Enter User Name"
-										name="username">
+										name="username" required minlength="1" maxlength="50" >
 								</div>
 								<div class="form-group">
 									<label>Password <span class="text-danger">*</span></label> <input
 										type="password" class="form-control" placeholder="Enter Password"
-										name="password">
+										name="password" required minlength="1" maxlength="50" >
 								</div>
 								<button type="submit" class="btn btn-success btn-block">REGISTER</button>
 							</form>
