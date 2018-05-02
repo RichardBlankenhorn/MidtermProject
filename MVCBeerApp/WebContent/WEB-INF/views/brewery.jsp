@@ -30,6 +30,7 @@
 	<p>${brewery.address.state }</p>
 	<p>${brewery.address.zip }</p>
 	<p>${brewery.address.phone }</p>
+	<p> <a href="${brewery.webUrl}" target="_blank">${brewery.name}'s Website</a>
 
 
 	<form action="editBrewery.do" method="GET">
