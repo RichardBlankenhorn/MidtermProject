@@ -11,7 +11,9 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.skilldistillery.jpabeer.entities.Address;
 import com.skilldistillery.jpabeer.entities.AddressDTO;
+import com.skilldistillery.jpabeer.entities.Beer;
 import com.skilldistillery.jpabeer.entities.Brewery;
+import com.skilldistillery.mvcbeer.data.BeerDAO;
 import com.skilldistillery.mvcbeer.data.BreweryDAO;
 import com.skilldistillery.mvcbeer.data.CommentsDAO;
 
@@ -22,6 +24,9 @@ public class BrewController {
 	
 	@Autowired
 	private CommentsDAO commentsDAO;
+	
+	@Autowired
+	private BeerDAO beerDAO;
 
 	public BreweryDAO getDao() {
 		return dao;
@@ -67,8 +72,10 @@ public class BrewController {
 	public ModelAndView brewery(@RequestParam(name = "id") int id) {
 		ModelAndView mv = new ModelAndView();
 		Brewery brewery = dao.retrieveById(id);
+		List<Beer> beers = beerDAO.searchBeerByBrewery(brewery.getName());
 		if (brewery != null) {
 			mv.addObject("brewery", brewery);
+			mv.addObject("beers", beers);
 			mv.addObject("listComments", commentsDAO.retrieveAllBreweryComments(id));
 			mv.setViewName("WEB-INF/views/brewery.jsp");
 		} else {
