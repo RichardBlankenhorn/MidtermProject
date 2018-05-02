@@ -91,7 +91,7 @@
 							aria-haspopup="true" aria-expanded="false"> Pages </a>
 							<div class="dropdown-menu"
 								aria-labelledby="navbarDropdownPortfolio">
-								<a class="dropdown-item" href="about.html">About Us</a>
+								<a class="dropdown-item" href="about.do">About Us</a>
 							</div></li>
 					</ul>
 					<div class="my-2 my-lg-0">

@@ -188,4 +188,11 @@ public class BeerController {
 		return mv;
 	}
 	
+	@RequestMapping(path = "about.do", method = RequestMethod.GET)
+	public ModelAndView about() {
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("WEB-INF/views/about.jsp");
+		return mv;
+	}
+	
 }
