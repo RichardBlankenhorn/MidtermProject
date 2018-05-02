@@ -200,7 +200,7 @@
 	<!-- What We Provide -->
 	<section class="section-padding">
 		<div class="section-title text-center mb-5">
-			<h2>What We Provide?</h2>
+			<h2>What We Provide</h2>
 			<p></p>
 		</div>
 		<div class="container">
