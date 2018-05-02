@@ -114,7 +114,11 @@
 										type="password" class="form-control"
 										placeholder="Enter Password" name="password">
 								</div>
-
+								<section class="text-center">
+												<c:if test="${not empty failed }">
+												<p> Invalid Username or Password</p>
+												</c:if>
+												</section>
 								<button type="submit" class="btn btn-success btn-block">SIGN
 									IN</button>
 							</form>
@@ -124,15 +128,16 @@
 			</div>
 		</div>
 	</section>
+	
 	<!-- End Login -->
 
 	<!-- Copyright -->
 	<section class="pt-4 pb-4 text-center">
-		<p class="mt-0 mb-0">© Copyright 2018 OsahanLand. All Rights
+		<p class="mt-0 mb-0">© Copyright 2018 What's On Tap. All Rights
 			Reserved</p>
 		<small class="mt-0 mb-0"> Made with <i
 			class="mdi mdi-heart text-danger"></i> by <a class="text-dark"
-			target="_blank" href="https://askbootstrap.com/">Ask Bootstrap</a>
+			target="_blank" href="https://skilldistillery.com/">Megan, Mark, Alan, and Richard</a>
 		</small>
 	</section>
 	<!-- End Copyright -->
