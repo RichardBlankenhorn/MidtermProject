@@ -162,8 +162,8 @@
 								<div class="card-body">
 									<h5 class="card-title">${brewery.name }</h5>
 									  <h5 class="card-subtitle mb-2 text-muted">
-										<i class="mdi mdi-home-map-marker"></i>Website:
-										${brewery.webUrl}
+										<!--  <i class="mdi mdi-home-map-marker"></i>Website:
+										${brewery.webUrl}-->
 									</h5> 
 									<h6>${brewery.description }</h6>
 									<!--  <h2 class="text-success mb-0 mt-3">
