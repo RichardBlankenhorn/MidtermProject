@@ -190,6 +190,21 @@
 		</div>
 	</section>
 	<!-- End Beer Info -->
+	
+	<form action="deleteBeer.do" method="POST">
+	<c:if test="${sessionScope.admin != null }">
+	<input type="hidden" name="id" value="${beer.id }">
+	<input type="submit" value = "Delete Beer">
+	</c:if>
+	</form>
+	
+	<form action="updateBeer.do" method="GET">
+	<c:if test="${sessionScope.admin != null }">
+	<input type="hidden" name="id" value="${beer.id }">
+	<input type="hidden" name="beerName" value="${beer.name }">
+	<input type="submit" value="Update Beer">
+	</c:if>
+	</form>
 
 	<!-- User Comments -->
 	<section>
