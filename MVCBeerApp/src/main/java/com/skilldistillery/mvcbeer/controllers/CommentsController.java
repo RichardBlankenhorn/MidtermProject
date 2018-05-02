@@ -138,6 +138,12 @@ public class CommentsController {
 		
 	}
 	
-	
+	@RequestMapping(path = "deleteMyBeerComment.do", method = RequestMethod.GET)
+	public ModelAndView deleteMyBreweryComment(@RequestParam(name = "id") int id) {
+		ModelAndView mv = new ModelAndView();
+		boolean b = commentsDAO.deleteBeerComment(id);
+		mv.setViewName("redirect:viewComments.do");
+		return mv;
+	}
 
 }

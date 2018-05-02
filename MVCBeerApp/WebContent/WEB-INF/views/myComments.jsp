@@ -174,8 +174,9 @@
 											pattern="MM/dd/yy" />${formattedDate }</strong></span> <span><i
 									class="mdi "></i> Edit : <a
 									href="editBeerCommentForm.do?beerCommentId=${comment.id }">Edit</a></span>
-								<span><i class="mdi "></i> Delete : <a
-									href="deleteBeerComment.do?id=${comment.id }&beerId=${comment.beer.id}">Delete</a></span>
+								<span><i class="mdi "></i> Delete : <a href="deleteMyBeerComment.do?id=${comment.id }">Delete</a></span>
+									<!--  href="deleteBeerComment.do?id=${comment.id }&beerId=${comment.beer.id}">Delete</a></span> -->
+									
 							</div>
 						</div>
 					</div>
