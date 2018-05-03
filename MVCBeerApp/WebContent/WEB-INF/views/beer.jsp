@@ -189,7 +189,7 @@
 								<h2 class="text-center text-success">${beer.name }</h2>
 								<p class="text-center">${beer.description }</p>
 								<h5 class="card-title mb-4 text-center">Brewery:
-									${beer.brewery.name }</h5>
+									<a href="brewery.do?id=${beer.brewery.id}">${beer.brewery.name }</a></h5>
 								<div class="form-group">
 									<label>ABV: <span class="text-success">
 											${beer.abv }% </span></label>
@@ -202,7 +202,7 @@
 								</div>
 								<div class="form-group">
 									<label>Cost: <span class="text-success">$${beer.cost
-											}</span></label>
+											}0</span></label>
 								</div>
 							</div>
 						</div>
@@ -273,8 +273,7 @@
 										<c:if
 											test="${user.id == comment.user.id || sessionScope.admin != null}">
 											<h6>
-												<button type="submit" class="btn btn-success align-self-end"
-													style="height: 30px; text-align: center; display: inline-block;">Edit</button>
+												<button type="submit" class="btn btn-success">Edit</button>
 											</h6>
 										</c:if>
 									</form>
@@ -312,9 +311,12 @@
 									<label for="comment">Comment<span class="text-danger">*</span></label>
     								<textarea class="form-control" id="comment" rows="3" name="beerComment"></textarea>
 								</div>
+								<div class= "col lg-4 col-md-4 mx-auto">
+								<br>
+									<button type="submit" class="btn btn-success text-center">Add Comment</button>
+								</div>
 							</div>
 						</div>
-						<button type="submit" class="btn btn-success">Submit</button>
 					</form>
 				</div>
 			</div>

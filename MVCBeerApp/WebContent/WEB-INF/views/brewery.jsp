@@ -236,7 +236,6 @@
 	
 	
 	<section>
-	<br>
 		<div class="container">
 			<h4 class="text-center text-success">${brewery.name } Beers</h4>
 			<br>
@@ -264,10 +263,16 @@
 			</form>
 		</div>
 	</section>
+	<br>
 
 	<br>
 	<!-- User Comments -->
 	<section>
+		<div class="container" style="padding-top: 25px;">
+			<div class="row">
+				<div class="col-lg-12 col-md-12 mx-auto">
+	<div class="card">
+	<div class="card-body text-center">
 		<h4 class="text-center text-success">${brewery.name } Comments</h4>
 		<br>
 		<c:if test="${listComments.isEmpty() }">
@@ -307,8 +312,7 @@
 										<c:if
 											test="${user.id == comment.user.id || sessionScope.admin != null}">
 											<h6>
-												<button type="submit" class="btn btn-success align-self-end"
-													style="height: 30px; text-align: center; display: inline-block;">Edit</button>
+												<button type="submit" class="btn btn-success">Edit</button>
 											</h6>
 										</c:if>
 									</form>
@@ -327,7 +331,13 @@
 				</div>
 			</div>
 		</c:if>
+		</div>
+		</div>
+		</div>
+		</div>
+		</div>
 	</section>
+	
 
 	<c:if test="${sessionScope.user != null || sessionScope.admin != null }"> 
 	<!-- User Profile -->
@@ -344,9 +354,12 @@
 									<label for="comment">Comment<span class="text-danger">*</span></label>
     								<textarea class="form-control" id="comment" rows="3" name="breweryComment"></textarea>
 								</div>
+								<div class= "col lg-4 col-md-4 mx-auto">
+								<br>
+									<button type="submit" class="btn btn-success text-center">Add Comment</button>
+								</div>
 							</div>
 						</div>
-						<button type="submit" class="btn btn-success">Submit</button>
 					</form>
 				</div>
 			</div>
@@ -371,7 +384,7 @@
         var map = new google.maps.Map(document.getElementById('map'), {
           zoom: 15,
           center: {lat: ${brewery.address.latitude}, lng: ${brewery.address.longitude}}
-        });
+});
 
         marker = new google.maps.Marker({
           map: map,
