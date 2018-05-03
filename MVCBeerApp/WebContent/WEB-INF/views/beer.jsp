@@ -202,7 +202,7 @@
 								</div>
 								<div class="form-group">
 									<label>Cost: <span class="text-success">$${beer.cost
-											}0</span></label>
+											}</span></label>
 								</div>
 							</div>
 						</div>

@@ -262,7 +262,7 @@
 									</h5>
 									<h6>${beer.description }</h6>
 									<h2 class="text-success mb-0 mt-3">
-										$${beer.cost }0 <small></small>
+										$${beer.cost } <small></small>
 									</h2>
 								</div>
 								<div class="card-footer">
