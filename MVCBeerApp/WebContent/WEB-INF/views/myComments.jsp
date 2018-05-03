@@ -12,7 +12,7 @@
 <meta name="author" content="Askbootstrap">
 <title>What's On Tap - My Comments</title>
 <!-- Favicon Icon -->
-<link rel="icon" type="image/png" href="images/favicon.png">
+<link rel="icon" type="image/png" href="img/static1.squarespace.png">
 <!-- Bootstrap core CSS -->
 <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 <!-- Material Design Icons -->
@@ -25,6 +25,7 @@
 <link href="css/osahan.css" rel="stylesheet">
 </head>
 <body>
+	
 	<!-- Navbar -->
 	<header>
 		<nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -45,10 +46,7 @@
 							aria-haspopup="true" aria-expanded="false"> HOME </a>
 							<div class="dropdown-menu"
 								aria-labelledby="navbarDropdownPortfolio">
-								<a class="dropdown-item" href="index1.html">Home With Search</a>
-								<a class="dropdown-item" href="index2.html">Home With Map</a> <a
-									class="dropdown-item" href="index3.html">Home With Property
-									Info</a>
+								<a class="dropdown-item" href="index.do">Home Page</a>
 							</div></li>
 						<li class="nav-item dropdown"><a
 							class="nav-link dropdown-toggle" href="#"
@@ -66,27 +64,20 @@
 							aria-haspopup="true" aria-expanded="false"> Beer & Brewery </a>
 							<div class="dropdown-menu"
 								aria-labelledby="navbarDropdownPortfolio">
-								<a class="dropdown-item" href="agency-list.html">Add Beer</a> <a
-									class="dropdown-item" href="agency-profile.html">Add
+								<a class="dropdown-item" href="addBeerButton.do">Add Beer</a> <a
+									class="dropdown-item" href="addBrewery.do">Add
 									Brewery</a>
-								<c:if test="${sessionScope.admin != null }">
-									<a class="dropdown-item" href="agents.html">Update Beer</a>
-									<a class="dropdown-item" href="agent-profile.html">Update
-										Brewery</a>
-								</c:if>
 							</div></li>
 						<li class="nav-item dropdown"><a
 							class="nav-link dropdown-toggle" href="#"
 							id="navbarDropdownPortfolio" data-toggle="dropdown"
 							aria-haspopup="true" aria-expanded="false"> My Account </a>
-							<div class="dropdown-menu"
-								aria-labelledby="navbarDropdownPortfolio">
-								<a class="dropdown-item" href="profile.do">User Profile</a> <a
-									class="dropdown-item" href="updateProfile.do">Update
-									Profile</a> <a class="dropdown-item" href="changePassword.do">Change
-									Password</a> <a class="dropdown-item" href="viewComments.do">My
-									Comments</a> <a class="dropdown-item" href="viewAllComments.do">All
-									Comments</a>
+							<div class="dropdown-menu" aria-labelledby="navbarDropdownPortfolio">
+								<a class="dropdown-item" href="profile.do">User Profile</a> 
+								<a class="dropdown-item" href="updateProfile.do">Update Profile</a> 
+								<a class="dropdown-item" href="changePassword.do">Change Password</a> 
+								<a class="dropdown-item" href="viewComments.do">My Comments</a> 
+								<a class="dropdown-item" href="viewAllComments.do">All Comments</a>
 							</div></li>
 						<li class="nav-item dropdown"><a
 							class="nav-link dropdown-toggle" href="#"
