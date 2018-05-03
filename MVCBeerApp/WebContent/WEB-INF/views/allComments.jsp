@@ -169,8 +169,7 @@
 									</h6>
 									<h6>
 										<c:if test="${user.id == comment.user.id || sessionScope.admin != null}">
-										<button type="submit" class="btn btn-success "
-											style="height: 30px; text-align: center; display: inline-block">Edit</button>
+										<button type="submit" class="btn btn-success">Edit</button>
 										</c:if>
 									</h6>
 								</form>

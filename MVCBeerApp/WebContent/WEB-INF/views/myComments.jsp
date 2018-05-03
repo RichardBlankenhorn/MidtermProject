@@ -164,8 +164,7 @@
 											name="comment">${comment.description }</textarea>
 									</h6>
 									<h6>
-										<button type="submit" class="btn btn-success "
-											style="height: 30px; text-align: center; display: inline-block">Edit</button>
+										<button type="submit" class="btn btn-success">Edit</button>
 									</h6>
 								</form>
 							</div>
