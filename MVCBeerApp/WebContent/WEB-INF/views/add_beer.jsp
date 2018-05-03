@@ -126,18 +126,18 @@
 								<div class="form-group">
 									<label>Cost <span class="text-danger">*</span></label> <input
 										type="number" step=".01" class="form-control"
-										placeholder="Enter Cost" name="cost" required>
+										placeholder="Enter Cost" name="cost" required minlength="1" maxlength="5">
 								</div>
 
 								<div class="form-group">
 									<label>ABV <span class="text-danger">*</span></label> <input
 										type="number" step=".1" class="form-control"
-										placeholder="Enter ABV" name="abv" required>
+										placeholder="Enter ABV" name="abv" required minlength="1" maxlength="5">
 								</div>
 								<div class="form-group">
 									<label>IBU <span class="text-danger">*</span></label> <input
 										type="number" step=".1" class="form-control"
-										placeholder="Enter IBU" name="ibu" required>
+										placeholder="Enter IBU" name="ibu" required minlength="1" maxlength="45">
 								</div>
 								<div class="form-group">
 									<label>Description <span class="text-danger">*</span></label>
@@ -163,9 +163,9 @@
 									</select>
 								</div>
 								<div class="form-group">
-									<label>Image URL <span class="text-danger">*</span></label> <input
+									<label>Image URL <span class="text-danger"></span></label> <input
 										type="text" class="form-control" placeholder="Enter Image URL"
-										name="imageUrl">
+										name="imageUrl" >
 								</div>
 
 								<button type="submit" class="btn btn-success btn-block">ADD</button>
