@@ -10,6 +10,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.skilldistillery.jpabeer.entities.BeerComments;
+import com.skilldistillery.jpabeer.entities.BreweryComments;
 import com.skilldistillery.jpabeer.entities.Profile;
 import com.skilldistillery.jpabeer.entities.User;
 import com.skilldistillery.jpabeer.entities.UserDTO;
@@ -146,6 +147,13 @@ public class UserDAOImpl implements UserDAO {
 	public List<BeerComments> retrieveAllBeerComments() {
 		String query = "SELECT c FROM BeerComments c";
 		List<BeerComments> comments = em.createQuery(query, BeerComments.class).getResultList();
+		return comments;
+	}
+
+	@Override
+	public List<BreweryComments> retreiveBreweryCommentsByUser(int userId) {
+		String query = "SELECT c FROM BreweryComments c WHERE c.user.id = :userId";
+		List<BreweryComments> comments = em.createQuery(query, BreweryComments.class).setParameter("userId", userId).getResultList();
 		return comments;
 	}
 

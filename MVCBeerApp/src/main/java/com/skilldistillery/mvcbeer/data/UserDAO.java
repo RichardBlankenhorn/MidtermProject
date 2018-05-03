@@ -3,6 +3,7 @@ package com.skilldistillery.mvcbeer.data;
 import java.util.List;
 
 import com.skilldistillery.jpabeer.entities.BeerComments;
+import com.skilldistillery.jpabeer.entities.BreweryComments;
 import com.skilldistillery.jpabeer.entities.Profile;
 import com.skilldistillery.jpabeer.entities.User;
 import com.skilldistillery.jpabeer.entities.UserDTO;
@@ -33,5 +34,7 @@ public interface UserDAO {
 	public List<BeerComments> retrieveBeerCommentsByUser(int userId);
 	
 	public List<BeerComments> retrieveAllBeerComments();
+	
+	public List<BreweryComments> retreiveBreweryCommentsByUser(int userId);
 
 }

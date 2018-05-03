@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.skilldistillery.jpabeer.entities.BeerComments;
+import com.skilldistillery.jpabeer.entities.BreweryComments;
 import com.skilldistillery.jpabeer.entities.Profile;
 import com.skilldistillery.jpabeer.entities.User;
 import com.skilldistillery.jpabeer.entities.UserDTO;
@@ -168,7 +169,9 @@ public class UserController {
 		ModelAndView mv = new ModelAndView();
 		User u = (User) session.getAttribute("user");
 		List<BeerComments> comments = dao.retrieveBeerCommentsByUser(u.getId());
+		List<BreweryComments> breweryComments = dao.retreiveBreweryCommentsByUser(u.getId());
 		mv.addObject("beercomments", comments);
+		mv.addObject("brewerycomments",breweryComments);
 		mv.setViewName("WEB-INF/views/myComments.jsp");
 		return mv;
 	}

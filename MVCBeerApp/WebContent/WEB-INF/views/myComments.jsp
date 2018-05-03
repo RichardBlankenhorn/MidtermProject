@@ -25,7 +25,7 @@
 <link href="css/osahan.css" rel="stylesheet">
 </head>
 <body>
-	
+
 	<!-- Navbar -->
 	<header>
 		<nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -56,7 +56,8 @@
 								aria-labelledby="navbarDropdownPortfolio">
 								<a class="dropdown-item" href="searchBeerByKeyword.do">Search
 									Beer by Keyword</a> <a class="dropdown-item"
-									href="searchBreweriesByKeyword.do">Search Brewery by Keyword</a>
+									href="searchBreweriesByKeyword.do">Search Brewery by
+									Keyword</a>
 							</div></li>
 						<li class="nav-item dropdown"><a
 							class="nav-link dropdown-toggle" href="#"
@@ -65,19 +66,20 @@
 							<div class="dropdown-menu"
 								aria-labelledby="navbarDropdownPortfolio">
 								<a class="dropdown-item" href="addBeerButton.do">Add Beer</a> <a
-									class="dropdown-item" href="addBrewery.do">Add
-									Brewery</a>
+									class="dropdown-item" href="addBrewery.do">Add Brewery</a>
 							</div></li>
 						<li class="nav-item dropdown"><a
 							class="nav-link dropdown-toggle" href="#"
 							id="navbarDropdownPortfolio" data-toggle="dropdown"
 							aria-haspopup="true" aria-expanded="false"> My Account </a>
-							<div class="dropdown-menu" aria-labelledby="navbarDropdownPortfolio">
-								<a class="dropdown-item" href="profile.do">User Profile</a> 
-								<a class="dropdown-item" href="updateProfile.do">Update Profile</a> 
-								<a class="dropdown-item" href="changePassword.do">Change Password</a> 
-								<a class="dropdown-item" href="viewComments.do">My Comments</a> 
-								<a class="dropdown-item" href="viewAllComments.do">All Comments</a>
+							<div class="dropdown-menu"
+								aria-labelledby="navbarDropdownPortfolio">
+								<a class="dropdown-item" href="profile.do">User Profile</a> <a
+									class="dropdown-item" href="updateProfile.do">Update
+									Profile</a> <a class="dropdown-item" href="changePassword.do">Change
+									Password</a> <a class="dropdown-item" href="viewComments.do">My
+									Comments</a> <a class="dropdown-item" href="viewAllComments.do">All
+									Comments</a>
 							</div></li>
 						<li class="nav-item dropdown"><a
 							class="nav-link dropdown-toggle" href="#"
@@ -141,7 +143,7 @@
 
 	<!-- User Comments -->
 	<section class="section-padding">
-		<h4 class="text-center">My Comments</h4>
+		<h4 class="text-center">My Beer Comments</h4>
 		<br>
 		<div class="container">
 			<div class="row">
@@ -174,7 +176,50 @@
 									class="mdi "></i><a
 									href="deleteMyBeerComment.do?id=${comment.id }">Delete
 										Comment</a></span>
-
+							</div>
+						</div>
+					</div>
+				</c:forEach>
+			</div>
+		</div>
+	</section>
+	<!-- End User Comments -->
+	
+	<!-- User Comments -->
+	<section class="section-padding">
+		<h4 class="text-center">My Brewery Comments</h4>
+		<br>
+		<div class="container">
+			<div class="row">
+				<c:forEach var="comment" items="${brewerycomments }">
+					<div class="col-lg-4 col-md-4 d-flex align-items-stretch">
+						<div class="card card-list" style="min-width: 350px">
+							<div class="card-body">
+								<h5 class="card-title">Comment for ${comment.brewery.name }</h5>
+								<h5 class="card-subtitle mb-2 text-muted">
+									<i class="mdi mdi-home-map-marker"></i>Brewery:
+									${comment.brewery.name}
+								</h5>
+								<form action="updateMyBreweryComment2.do" method="GET">
+									<input type="hidden" value="${comment.id }" name="id">
+									<label>(click in comment to edit)</label>
+									<h6>
+										<textarea style="border: none" cols="30" rows="5"
+											name="comment">${comment.description }</textarea>
+									</h6>
+									<h6>
+										<button type="submit" class="btn btn-success "
+											style="height: 30px; text-align: center; display: inline-block">Edit</button>
+									</h6>
+								</form>
+							</div>
+							<div class="card-footer">
+								<span><i class="mdi "></i> Date <strong><fmt:formatDate
+											value="${comment.dateTime }" var="formattedDate" type="date"
+											pattern="MM/dd/yy" />${formattedDate }</strong></span> <span><i
+									class="mdi "></i><a
+									href="deleteMyBreweryComment.do?id=${comment.id }">Delete
+										Comment</a></span>
 							</div>
 						</div>
 					</div>
@@ -190,7 +235,8 @@
 			Reserved</p>
 		<small class="mt-0 mb-0"> Made with <i
 			class="mdi mdi-heart text-danger"></i> by <a class="text-dark"
-			target="_blank" href="https://skilldistillery.com/">Megan, Mark, Alan and Richard</a>
+			target="_blank" href="https://skilldistillery.com/">Megan, Mark,
+				Alan and Richard</a>
 		</small>
 	</section>
 	<!-- End Copyright -->

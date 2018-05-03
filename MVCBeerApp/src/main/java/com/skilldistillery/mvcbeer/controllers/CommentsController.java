@@ -159,9 +159,17 @@ public class CommentsController {
 		return mv;
 
 	}
-
-	@RequestMapping(path = "deleteMyBeerComment.do", method = RequestMethod.GET)
+	
+	@RequestMapping(path = "deleteMyBreweryComment.do", method = RequestMethod.GET)
 	public ModelAndView deleteMyBreweryComment(@RequestParam(name = "id") int id) {
+		ModelAndView mv = new ModelAndView();
+		boolean b = commentsDAO.deleteBreweryComment(id);
+		mv.setViewName("redirect:viewComments.do");
+		return mv;
+	}
+	// editing the name of this method
+	@RequestMapping(path = "deleteMyBeerComment.do", method = RequestMethod.GET)
+	public ModelAndView deleteMyBeerComment(@RequestParam(name = "id") int id) {
 		ModelAndView mv = new ModelAndView();
 		boolean b = commentsDAO.deleteBeerComment(id);
 		mv.setViewName("redirect:viewComments.do");
@@ -173,6 +181,15 @@ public class CommentsController {
 			@RequestParam(name = "comment") String comment) {
 		ModelAndView mv = new ModelAndView();
 		BeerComments bc = commentsDAO.updateMyBeerComment(id, comment);
+		mv.setViewName("redirect:viewComments.do");
+		return mv;
+	}
+	
+	@RequestMapping(path = "updateMyBreweryComment2.do", method = RequestMethod.GET)
+	public ModelAndView updateMyBreweryComment2(@RequestParam(name = "id") int id,
+			@RequestParam(name = "comment") String comment) {
+		ModelAndView mv = new ModelAndView();
+		BreweryComments bc = commentsDAO.updateMyBreweryComment(id, comment);
 		mv.setViewName("redirect:viewComments.do");
 		return mv;
 	}
