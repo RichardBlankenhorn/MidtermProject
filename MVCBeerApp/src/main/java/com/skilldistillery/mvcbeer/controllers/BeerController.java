@@ -62,10 +62,16 @@ public class BeerController {
 		List<Category> categories = catDao.retrieveAllCategories();
 		if (!category.equals("") && !brewery.equals("")) {
 			beers = beerDao.searchBeerByBreweryAndCategory(category, brewery);
-			mv.addObject("beers", beers);
-			mv.addObject("category", category);
-			mv.addObject("brewery", brewery);
-			mv.addObject("breweryId", beers.get(0).getBrewery().getId());
+			if (!beers.isEmpty()) {
+				mv.addObject("beers", beers);
+				mv.addObject("category", category);
+				mv.addObject("brewery", brewery);
+				mv.addObject("breweryId", beers.get(0).getBrewery().getId());
+			}
+			else {
+				mv.addObject("message", "no results found");
+			}
+			
 		} else if (!category.equals("")) {
 			beers = beerDao.searchBeerByCategeory(category);
 			mv.addObject("beers", beers);

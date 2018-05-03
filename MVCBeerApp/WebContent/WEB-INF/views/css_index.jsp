@@ -242,6 +242,7 @@
 						href="brewery.do?id=${breweryId} ">${brewery }</a>
 				</h2>
 			</c:if>
+			<c:if test="${message != null }" >No Beers Found, Try Modifying Your Search </c:if>
 			<p>- “Whoever drinks beer, he is quick to sleep; whoever sleeps
 				long, does not sin; whoever does not sin, enters Heaven! Thus, let
 				us drink beer!”</p>
