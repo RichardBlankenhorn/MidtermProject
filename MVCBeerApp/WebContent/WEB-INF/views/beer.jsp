@@ -293,6 +293,34 @@
 		</c:if>
 	</section>
 	
+	<c:if test="${sessionScope.user != null || sessionScope.admin != null }"> 
+	<!-- User Profile -->
+	<section class="section-padding">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 col-md-8 mx-auto">
+					<form action="addBeerComment.do" method="POST">
+						<div class="card padding-card">
+							<div class="card-body">
+								<h5 class="card-title mb-4 text-center">Add Comment for ${beer.name }</h5>
+								<div class="form-group">
+									<input type="hidden" value="${beer.id }" name="beerId">
+									<label for="comment">Comment<span class="text-danger">*</span></label>
+    								<textarea class="form-control" id="comment" rows="3" name="beerComment"></textarea>
+								</div>
+							</div>
+						</div>
+						<button type="submit" class="btn btn-success">Submit</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- End User Profile -->
+	<br>
+	<br>
+	</c:if>
+	
 	<!-- Join Team -->
 	<section class="section-padding bg-dark text-center">
 		<h2 class="text-white mt-0">
