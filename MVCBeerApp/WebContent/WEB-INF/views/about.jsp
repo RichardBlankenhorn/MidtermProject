@@ -168,15 +168,14 @@
 		</div>
 	</section>
 	<!-- End Inner Header -->
-
 	<!-- About -->
 	<section class="section-padding bg-white">
 		<div class="container">
 			<div class="row">
 				<div class="pl-4 col-lg-4 col-md-4 pr-4">
-					<img class="rounded img-fluid"
-						style="min-width: 375px; min-height: 475px" src="img/boot.jpeg"
-						alt="Card image cap">
+				<br>
+				<br>
+ 					<img class="rounded img-fluid" src="img/5420538-beer-wallpapers.jpg" alt="Card image cap">
 				</div>
 				<div class="col-lg-6 col-md-6 pl-5 pr-5">
 					<h2 class="mt-5 mb-5">We Help Unite Beer Lovers</h2>

@@ -17,6 +17,8 @@ import com.skilldistillery.jpabeer.entities.BreweryComments;
 import com.skilldistillery.jpabeer.entities.Profile;
 import com.skilldistillery.jpabeer.entities.User;
 import com.skilldistillery.jpabeer.entities.UserDTO;
+import com.skilldistillery.mvcbeer.data.BeerDAO;
+import com.skilldistillery.mvcbeer.data.BreweryDAO;
 import com.skilldistillery.mvcbeer.data.UserDAO;
 
 @Controller
@@ -24,6 +26,12 @@ public class UserController {
 
 	@Autowired
 	private UserDAO dao;
+	
+	@Autowired
+	private BeerDAO beerDAO;
+
+	@Autowired
+	private BreweryDAO breweryDAO;
 
 	@RequestMapping(path = "login.do", method = RequestMethod.GET)
 	public ModelAndView login() {

@@ -37,8 +37,13 @@ public class CommentsController {
 			@RequestParam(name = "beerComment") String beerComment) {
 		ModelAndView mv = new ModelAndView();
 		User u = (User) session.getAttribute("user");
-		commentsDAO.createBeerComments(u.getId(), beerId, beerComment);
-
+		User admin = (User) session.getAttribute("admin");
+		if (admin != null) {
+			commentsDAO.createBeerComments(admin.getId(), beerId, beerComment);
+		}
+		else if (u != null) {
+			commentsDAO.createBeerComments(u.getId(), beerId, beerComment);
+		}
 		mv.addObject("beer", beerDAO.retrieveById(beerId));
 		mv.addObject("listComments", commentsDAO.retrieveAllBeerComments(beerId));
 		mv.setViewName("WEB-INF/views/beer.jsp");

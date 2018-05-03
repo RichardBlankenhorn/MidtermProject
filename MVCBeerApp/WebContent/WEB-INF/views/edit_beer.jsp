@@ -56,32 +56,31 @@
 								aria-labelledby="navbarDropdownPortfolio">
 								<a class="dropdown-item" href="searchBeerByKeyword.do">Search
 									Beer by Keyword</a> <a class="dropdown-item"
-									href="searchBreweriesByKeyword.do">Search Brewery by Keyword</a>
+									href="searchBreweriesByKeyword.do">Search Brewery by
+									Keyword</a>
 							</div></li>
-							<c:if test="${sessionScope.user != null}">
+						<c:if test="${sessionScope.user != null}">
 							<li class="nav-item dropdown"><a
-							class="nav-link dropdown-toggle" href="#"
-							id="navbarDropdownPortfolio" data-toggle="dropdown"
-							aria-haspopup="true" aria-expanded="false"> Beer & Brewery </a>
-							<div class="dropdown-menu"
-								aria-labelledby="navbarDropdownPortfolio">
-								<a class="dropdown-item" href="addBeerButton.do">Add Beer</a> <a
-									class="dropdown-item" href="addBrewery.do">Add
-									Brewery</a>
-							</div></li>	
-							</c:if>
-							<c:if test="${sessionScope.admin != null}">
+								class="nav-link dropdown-toggle" href="#"
+								id="navbarDropdownPortfolio" data-toggle="dropdown"
+								aria-haspopup="true" aria-expanded="false"> Beer & Brewery </a>
+								<div class="dropdown-menu"
+									aria-labelledby="navbarDropdownPortfolio">
+									<a class="dropdown-item" href="addBeerButton.do">Add Beer</a> <a
+										class="dropdown-item" href="addBrewery.do">Add Brewery</a>
+								</div></li>
+						</c:if>
+						<c:if test="${sessionScope.admin != null}">
 							<li class="nav-item dropdown"><a
-							class="nav-link dropdown-toggle" href="#"
-							id="navbarDropdownPortfolio" data-toggle="dropdown"
-							aria-haspopup="true" aria-expanded="false"> Beer & Brewery </a>
-							<div class="dropdown-menu"
-								aria-labelledby="navbarDropdownPortfolio">
-								<a class="dropdown-item" href="addBeerButton.do">Add Beer</a> <a
-									class="dropdown-item" href="addBrewery.do">Add
-									Brewery</a>
-							</div></li>	
-							</c:if>
+								class="nav-link dropdown-toggle" href="#"
+								id="navbarDropdownPortfolio" data-toggle="dropdown"
+								aria-haspopup="true" aria-expanded="false"> Beer & Brewery </a>
+								<div class="dropdown-menu"
+									aria-labelledby="navbarDropdownPortfolio">
+									<a class="dropdown-item" href="addBeerButton.do">Add Beer</a> <a
+										class="dropdown-item" href="addBrewery.do">Add Brewery</a>
+								</div></li>
+						</c:if>
 						<c:if test="${sessionScope.user != null}">
 							<li class="nav-item dropdown"><a
 								class="nav-link dropdown-toggle" href="#"
@@ -89,11 +88,12 @@
 								aria-haspopup="true" aria-expanded="false"> My Account </a>
 								<div class="dropdown-menu"
 									aria-labelledby="navbarDropdownPortfolio">
-									<a class="dropdown-item" href="profile.do">User Profile</a> 
-									<a class="dropdown-item" href="updateProfile.do">Update Profile</a> 
-									<a class="dropdown-item" href="changePassword.do">Change Password</a> 
-									<a class="dropdown-item" href="viewComments.do">My Comments</a> 
-									<a class="dropdown-item" href="viewAllComments.do">All Comments</a>
+									<a class="dropdown-item" href="profile.do">User Profile</a> <a
+										class="dropdown-item" href="updateProfile.do">Update
+										Profile</a> <a class="dropdown-item" href="changePassword.do">Change
+										Password</a> <a class="dropdown-item" href="viewComments.do">My
+										Comments</a> <a class="dropdown-item" href="viewAllComments.do">All
+										Comments</a>
 								</div></li>
 						</c:if>
 						<c:if test="${sessionScope.admin != null}">
@@ -103,11 +103,12 @@
 								aria-haspopup="true" aria-expanded="false"> My Account </a>
 								<div class="dropdown-menu"
 									aria-labelledby="navbarDropdownPortfolio">
-									<a class="dropdown-item" href="profile.do">User Profile</a> 
-									<a class="dropdown-item" href="updateProfile.do">Update Profile</a> 
-									<a class="dropdown-item" href="changePassword.do">Change Password</a> 
-									<a class="dropdown-item" href="viewComments.do">My Comments</a> 
-									<a class="dropdown-item" href="viewAllComments.do">All Comments</a>
+									<a class="dropdown-item" href="profile.do">User Profile</a> <a
+										class="dropdown-item" href="updateProfile.do">Update
+										Profile</a> <a class="dropdown-item" href="changePassword.do">Change
+										Password</a> <a class="dropdown-item" href="viewComments.do">My
+										Comments</a> <a class="dropdown-item" href="viewAllComments.do">All
+										Comments</a>
 								</div></li>
 						</c:if>
 						<li class="nav-item dropdown"><a
@@ -160,6 +161,7 @@
 							<h5 class="card-title mb-4">Update Beer</h5>
 							<form action="updateBeer.do" method="POST">
 								<input type="hidden" value="${beer.id }" name="id">
+								<input type="hidden" value="${beer.brewery.name }" name="breweryName">
 								<div class="form-group">
 									<label>Name <span class="text-danger">*</span></label> <input
 										type="text" class="form-control" value="${beer.name }"
@@ -167,37 +169,38 @@
 								</div>
 								<div class="form-group">
 									<label>Cost <span class="text-danger">*</span></label> <input
-										type="number"  step=".01" class="form-control" value="${beer.cost }"
-										name="cost">
+										type="number" step=".01" class="form-control"
+										value="${beer.cost }" name="cost">
 								</div>
 
 								<div class="form-group">
 									<label>ABV <span class="text-danger">*</span></label> <input
-										type="number" step=".1" class="form-control" value="${beer.abv }"
-										name="abv">
+										type="number" step=".1" class="form-control"
+										value="${beer.abv }" name="abv">
 								</div>
 								<div class="form-group">
 									<label>Description <span class="text-danger">*</span></label>
 									<textarea cols="50" rows="4" class="form-control"
-										name="description" placeholder="${beer.description }"></textarea>
+										name="beerDescription" placeholder="${beer.description }" value="${beer.description }"></textarea>
 								</div>
 								<div class="form-group">
 									<label>Image URL <span class="text-danger">*</span></label> <input
 										type="text" class="form-control" value="Enter Image URL"
 										name="imageUrl">
 								</div>
+								
 								<div class="form-group">
-									<label>Category <span class="text-danger">*</span></label> <select
-										name="category" size="5">
-										<c:forEach var="category" items="${categoryList }">
-											<option value="${category.name }">${category.name }</option>
+									<label for="sel1">Select Beer Category</label> <select
+										class="form-control" name="categoryName" id="sel1">
+										<c:forEach var="category" items="${categoryList }"> 
+										<option value="${category.name }">${category.name }</option>
 										</c:forEach>
 									</select>
 								</div>
 								<div class="form-group">
 									<label>IBU <span class="text-danger">*</span></label> <input
-										type="number" step=".1" class="form-control" value="${beer.ibu }"
-										name="ibu">
+										type="number" step=".1" class="form-control"
+										value="${beer.ibu }" name="ibu">
 								</div>
 								<button type="submit" class="btn btn-success btn-block">UPDATE</button>
 							</form>
@@ -215,7 +218,8 @@
 			Reserved</p>
 		<small class="mt-0 mb-0"> Made with <i
 			class="mdi mdi-heart text-danger"></i> by <a class="text-dark"
-			target="_blank" href="https://skilldistillery.com/">Megan, Mark, Alan and Richard</a>
+			target="_blank" href="https://skilldistillery.com/">Megan, Mark,
+				Alan and Richard</a>
 		</small>
 	</section>
 	<!-- End Copyright -->
