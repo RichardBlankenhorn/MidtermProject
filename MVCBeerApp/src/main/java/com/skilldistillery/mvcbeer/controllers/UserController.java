@@ -190,7 +190,9 @@ public class UserController {
 	public ModelAndView allComments(HttpSession session) {
 		ModelAndView mv = new ModelAndView();
 		List<BeerComments> allComments = dao.retrieveAllBeerComments();
+		List<BreweryComments> allBreweryComments = dao.retrieveAllBreweryComments();
 		mv.addObject("allComments", allComments);
+		mv.addObject("breweryComments", allBreweryComments);
 		mv.setViewName("WEB-INF/views/allComments.jsp");
 		return mv;
 	}

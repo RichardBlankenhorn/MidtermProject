@@ -149,6 +149,13 @@ public class UserDAOImpl implements UserDAO {
 		List<BeerComments> comments = em.createQuery(query, BeerComments.class).getResultList();
 		return comments;
 	}
+	
+	@Override
+	public List<BreweryComments> retrieveAllBreweryComments() {
+		String query = "SELECT c FROM BreweryComments c";
+		List<BreweryComments> comments = em.createQuery(query, BreweryComments.class).getResultList();
+		return comments;
+	}
 
 	@Override
 	public List<BreweryComments> retreiveBreweryCommentsByUser(int userId) {

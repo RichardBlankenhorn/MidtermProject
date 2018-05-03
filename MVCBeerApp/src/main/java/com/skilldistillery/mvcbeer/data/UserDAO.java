@@ -36,5 +36,7 @@ public interface UserDAO {
 	public List<BeerComments> retrieveAllBeerComments();
 	
 	public List<BreweryComments> retreiveBreweryCommentsByUser(int userId);
+	
+	public List<BreweryComments> retrieveAllBreweryComments();
 
 }
