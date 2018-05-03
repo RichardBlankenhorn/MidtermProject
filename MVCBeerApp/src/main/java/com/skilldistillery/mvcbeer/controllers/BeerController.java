@@ -162,6 +162,7 @@ public class BeerController {
 	public ModelAndView updateBeerDB(@RequestParam(name = "id") int id, BeerDTO dto) {
 		ModelAndView mv = new ModelAndView();
 		mv.addObject("beer", beerDao.updateBeer(id, dto));
+		mv.addObject("listComments", commentsDao.retrieveAllBeerComments(id));
 		mv.setViewName("WEB-INF/views/beer.jsp");
 		return mv;
 	}

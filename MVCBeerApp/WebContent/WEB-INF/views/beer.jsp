@@ -261,11 +261,11 @@
 										<input type="hidden" value="${beer.id }" name="beerId">
 										<label>(click in comment to edit)</label>
 										<h6>
-											<c:if test="${user.id == comment.user.id }">
+											<c:if test="${(user.id == comment.user.id) || (sessionScope.admin != null)}">
 												<textarea style="border: none" cols="30" rows="5"
 													name="comment">${comment.description }</textarea>
 											</c:if>
-											<c:if test="${user.id != comment.user.id }">
+											<c:if test="${(user.id != comment.user.id) && (sessionScope.admin == null)}">
 												<textarea style="border: none" cols="30" rows="5"
 													name="comment" disabled>${comment.description }</textarea>
 											</c:if>
