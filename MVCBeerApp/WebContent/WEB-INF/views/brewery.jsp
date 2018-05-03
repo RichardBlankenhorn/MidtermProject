@@ -216,7 +216,7 @@
 	<!-- End Beer Info -->
 	<section>
 		<div class="container">
-			<h4 class="text-center text-success">${brewery.name }Beers</h4>
+			<h4 class="text-center text-success">${brewery.name } Beers</h4>
 			<br>
 			<div class="container text-center">
 				<div class="row">
@@ -246,7 +246,7 @@
 	<br>
 	<!-- User Comments -->
 	<section>
-		<h4 class="text-center text-success">${brewery.name }Comments</h4>
+		<h4 class="text-center text-success">${brewery.name } Comments</h4>
 		<br>
 		<c:if test="${listComments.isEmpty() }">
 			<h6 class="text-center">No Comments At This Time</h6>
