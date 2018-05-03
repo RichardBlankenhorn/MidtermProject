@@ -154,21 +154,21 @@
 									<i class="mdi mdi-home-map-marker"></i>Brewery:
 									${comment.beer.brewery.name}
 								</h5>
-								<form action="updateMyBeerComment.do" method="GET">
+								<form action="updateMyBeerComment2.do" method="GET">
 									<input type="hidden" value="${comment.id }" name="id">
 									<label>(click in comment to edit)</label>
 									<h6>
-										<c:if test="${user.id == comment.user.id }">
+										<c:if test="${(user.id == comment.user.id) || sessionScope.admin != null }">
 										<textarea style="border: none" cols="30" rows="5"
 											name="comment">${comment.description }</textarea>
 										</c:if>
-										<c:if test="${user.id != comment.user.id }">
+										<c:if test="${(user.id != comment.user.id) && sessionScope.admin == null }">
 										<textarea style="border: none" cols="30" rows="5"
 											name="comment" readonly>${comment.description }</textarea>
 										</c:if>
 									</h6>
 									<h6>
-										<c:if test="${user.id == comment.user.id }">
+										<c:if test="${user.id == comment.user.id || sessionScope.admin != null}">
 										<button type="submit" class="btn btn-success "
 											style="height: 30px; text-align: center; display: inline-block">Edit</button>
 										</c:if>
@@ -179,7 +179,7 @@
 								<span><i class="mdi "></i> Date <strong><fmt:formatDate
 										value="${comment.dateTime }" var="formattedDate" type="date"
 										pattern="MM/dd/yy" />${formattedDate }</strong></span> 
-										<c:if test="${user.id == comment.user.id }">	
+										<c:if test="${user.id == comment.user.id || sessionScope.admin != null}">	
 										<span><i class="mdi "></i><a href="deleteMyBeerComment.do?id=${comment.id }">Delete Comment</a></span>
 										</c:if>
 							</div>
