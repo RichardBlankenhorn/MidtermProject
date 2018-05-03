@@ -193,33 +193,34 @@
 	</section>
 	<!-- End Beer Info -->
 	<section>
-	<div class="container">
-	<h4 class="text-center text-success">${brewery.name }Beers</h4>
-	<br>
-	<div class="container text-center">
-		<div class="row">
-			<c:forEach var="beer" items="${beers }">
-				<div class="col-sm-3 col-md-3">
-					<div class="thumbnail">
-						<div class="caption">
-							<h6>${beer.name }</h6>
-							<p>ABV: ${beer.abv }</p>
-							<p>IBU: ${beer.ibu }</p>
+		<div class="container">
+			<h4 class="text-center text-success">${brewery.name }Beers</h4>
+			<br>
+			<div class="container text-center">
+				<div class="row">
+					<c:forEach var="beer" items="${beers }">
+						<div class="col-sm-3 col-md-3">
+							<div class="thumbnail">
+								<div class="caption">
+									<h6>${beer.name }</h6>
+									<p>ABV: ${beer.abv }</p>
+									<p>IBU: ${beer.ibu }</p>
+								</div>
+							</div>
 						</div>
-					</div>
+					</c:forEach>
 				</div>
-			</c:forEach>
+			</div>
+			<br>
+			<form action="addBeerButton.do" method="GET">
+				<div class="col-md-12 text-center">
+					<button type="submit" id="singlebutton" name="singlebutton"
+						class="btn btn-success">Add A New Beer</button>
+				</div>
+			</form>
 		</div>
-	</div>
-	<br>
-	<form action="addBeerButton.do" method="GET">
-	<div class="col-md-12 text-center">
-		<button type="submit" id="singlebutton" name="singlebutton" class="btn btn-success">Add A New Beer</button>
-	</div>
-	</form>
-	</div>
 	</section>
-	
+
 	<br>
 	<!-- User Comments -->
 	<section>
@@ -245,9 +246,9 @@
 									<h5 class="card-subtitle mb-2 text-muted">
 										<i class="mdi"></i>Comment Made On: ${comment.dateTime}
 									</h5>
-									<form action="updateBeerComment.do" method="GET">
+									<form action="updateMyBreweryComment.do" method="GET">
 										<input type="hidden" value="${comment.id }" name="id">
-										<input type="hidden" value="${brewery.id }" name="beerId">
+										<input type="hidden" value="${brewery.id }" name="breweryId">
 										<label>(click in comment to edit)</label>
 										<h6>
 											<c:if test="${user.id == comment.user.id }">
@@ -272,13 +273,10 @@
 									<span><i class="mdi "></i> <c:if
 											test="${user.id == comment.user.id || sessionScope.admin != null}">
 											<a
-												href="removeBeerComment.do?id=${comment.id }&beerId=${beer.id}">Delete
+												href="deleteBreweryComment.do?id=${comment.id }&breweryId=${brewery.id}">Delete
 												Comment</a>
 										</c:if></span>
-
-
 								</div>
-
 							</div>
 						</div>
 					</c:forEach>
@@ -287,7 +285,33 @@
 		</c:if>
 	</section>
 
-
+	<c:if test="${sessionScope.user != null || sessionScope.admin != null }"> 
+	<!-- User Profile -->
+	<section class="section-padding">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 col-md-8 mx-auto">
+					<form action="addBreweryComment.do" method="POST">
+						<div class="card padding-card">
+							<div class="card-body">
+								<h5 class="card-title mb-4 text-center">Add Comment for ${brewery.name }</h5>
+								<div class="form-group">
+									<input type="hidden" value="${brewery.id }" name="breweryId">
+									<label for="comment">Comment<span class="text-danger">*</span></label>
+    								<textarea class="form-control" id="comment" rows="3" name="breweryComment"></textarea>
+								</div>
+							</div>
+						</div>
+						<button type="submit" class="btn btn-success">Submit</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- End User Profile -->
+	<br>
+	<br>
+	</c:if>
 
 	<!-- Map -->
 	<div id="map"></div>

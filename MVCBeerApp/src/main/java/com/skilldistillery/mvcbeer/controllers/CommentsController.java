@@ -1,5 +1,7 @@
 package com.skilldistillery.mvcbeer.controllers;
 
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -91,7 +93,8 @@ public class CommentsController {
 		ModelAndView mv = new ModelAndView();
 		User u = (User) session.getAttribute("user");
 		commentsDAO.createBreweryComments(u.getId(), breweryId, breweryComment);
-
+		List<Beer> beers = beerDAO.searchBeerByBrewery(breweryDAO.retrieveById(breweryId).getName());
+		mv.addObject("beers", beers);
 		mv.addObject("brewery", breweryDAO.retrieveById(breweryId));
 		mv.addObject("listComments", commentsDAO.retrieveAllBreweryComments(breweryId));
 		mv.setViewName("WEB-INF/views/brewery.jsp");
@@ -127,12 +130,28 @@ public class CommentsController {
 
 	}
 
+	@RequestMapping(path = "updateMyBreweryComment.do", method = RequestMethod.GET)
+	public ModelAndView updateMyBreweryComment(@RequestParam(name = "id") int id,
+			@RequestParam(name = "comment") String comment, @RequestParam(name = "breweryId") int breweryId) {
+		ModelAndView mv = new ModelAndView();
+		BreweryComments bc = commentsDAO.updateMyBreweryComment(id, comment);
+		Brewery brewery = breweryDAO.retrieveById(breweryId);
+		List<Beer> beers = beerDAO.searchBeerByBrewery(brewery.getName());
+		mv.addObject("beers", beers);
+		mv.addObject("brewery", brewery);
+		mv.addObject("listComments", commentsDAO.retrieveAllBreweryComments(breweryId));
+		mv.setViewName("WEB-INF/views/brewery.jsp");
+		return mv;
+	}
+
 	@RequestMapping(path = "deleteBreweryComment.do", method = RequestMethod.GET)
 	public ModelAndView deleteBreweryComment(@RequestParam(name = "id") int id,
 			@RequestParam(name = "breweryId") int breweryId) {
 		ModelAndView mv = new ModelAndView();
 		boolean b = commentsDAO.deleteBreweryComment(id);
 		Brewery brewery = breweryDAO.retrieveById(breweryId);
+		List<Beer> beers = beerDAO.searchBeerByBrewery(brewery.getName());
+		mv.addObject("beers", beers);
 		mv.addObject("deletedComment", b);
 		mv.addObject("listComments", commentsDAO.retrieveAllBreweryComments(breweryId));
 		mv.addObject("brewery", brewery);
@@ -174,9 +193,10 @@ public class CommentsController {
 		}
 		return mv;
 	}
-	
+
 	@RequestMapping(path = "removeBeerComment.do", method = RequestMethod.GET)
-	public ModelAndView removeBeerComment(@RequestParam(name = "id") int id, @RequestParam(name = "beerId") int beerId) {
+	public ModelAndView removeBeerComment(@RequestParam(name = "id") int id,
+			@RequestParam(name = "beerId") int beerId) {
 		ModelAndView mv = new ModelAndView();
 		boolean b = commentsDAO.deleteBeerComment(id);
 		Beer beer = beerDAO.retrieveById(beerId);

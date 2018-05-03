@@ -32,5 +32,7 @@ public interface CommentsDAO {
 	
 	public BreweryComments retrieveBreweryCommentById(int id);
 	
+	public BreweryComments updateMyBreweryComment(int id, String breweryComment);
+	
 	
 }

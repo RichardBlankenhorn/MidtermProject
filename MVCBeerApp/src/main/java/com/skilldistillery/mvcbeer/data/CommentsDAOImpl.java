@@ -124,6 +124,14 @@ public class CommentsDAOImpl implements CommentsDAO {
 
 		return bc;
 	}
+	
+	public BreweryComments updateMyBreweryComment(int id, String breweryComment) {
+		BreweryComments bc = em.find(BreweryComments.class, id);
+		bc.setDescription(breweryComment);
+		bc.setDateTime(new Date());
+		
+		return bc;
+	}
 
 	@Override
 	public BeerComments retrieveBeerCommentById(int id) {
