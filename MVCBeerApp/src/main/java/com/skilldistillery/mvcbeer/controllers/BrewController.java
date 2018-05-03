@@ -122,6 +122,9 @@ public class BrewController {
 	@RequestMapping(path="editBreweryForm.do", method = RequestMethod.POST)
 	public ModelAndView editBrewery(@RequestParam(name="id") int id, AddressDTO dto) {
 		ModelAndView mv = new ModelAndView();
+		Brewery brewery = dao.retrieveById(id);
+		List<Beer> beers = beerDAO.searchBeerByBrewery(brewery.getName());
+		mv.addObject("beers", beers);
 		mv.addObject("brewery", dao.updateBrewery(id, dto));
 		mv.setViewName("WEB-INF/views/brewery.jsp");
 		

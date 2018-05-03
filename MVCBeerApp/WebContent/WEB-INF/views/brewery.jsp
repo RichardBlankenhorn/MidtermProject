@@ -179,7 +179,6 @@
 							<div class="card-body text-center">
 								<h2 class="text-center text-success">${brewery.name }
 									Information</h2>
-								<p class="text-center">${brewery.description }</p>
 								<h5 class="card-title mb-4 text-center">Street:
 									${brewery.address.street }</h5>
 								<div class="form-group">
@@ -213,8 +212,31 @@
 
 		</div>
 	</section>
-	<!-- End Beer Info -->
+	<!-- End Brewery Info -->
+	
+	<div class="col-lg-12 text-center">
+	<form action="editBrewery.do" method="GET">
+	<c:if test="${sessionScope.admin != null }">
+	<input type="hidden" name="id" value="${brewery.id }">
+	<input type="hidden" name="breweryName" value="${brewery.name }">
+	<button type="submit" class="btn btn-success">Update Brewery</button>
+	</c:if>
+	</form>
+	</div>
+	<br>
+	<div class="col-lg-12 text-center">
+	<form action="deleteBrewery.do" method="POST">
+	<c:if test="${sessionScope.admin != null }">
+	<input type="hidden" name="id" value="${brewery.id }">
+	<button type="submit" class="btn btn-success">Delete Brewery</button>
+	</c:if>
+	</form>
+	</div>
+	
+	
+	
 	<section>
+	<br>
 		<div class="container">
 			<h4 class="text-center text-success">${brewery.name } Beers</h4>
 			<br>
@@ -237,7 +259,7 @@
 			<form action="addBeerButton.do" method="GET">
 				<div class="col-md-12 text-center">
 					<button type="submit" id="singlebutton" name="singlebutton"
-						class="btn btn-success">Add A New Beer</button>
+						class="btn btn-success">Don't See Your Beer? Add it Here!</button>
 				</div>
 			</form>
 		</div>

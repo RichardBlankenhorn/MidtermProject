@@ -212,24 +212,28 @@
 		</div>
 	</section>
 	<!-- End Beer Info -->
-	
-	<form action="deleteBeer.do" method="POST">
-	<c:if test="${sessionScope.admin != null }">
-	<input type="hidden" name="id" value="${beer.id }">
-	<input type="submit" value = "Delete Beer">
-	</c:if>
-	</form>
-	
+	<div class="col-lg-12 text-center">
 	<form action="updateBeer.do" method="GET">
 	<c:if test="${sessionScope.admin != null }">
 	<input type="hidden" name="id" value="${beer.id }">
 	<input type="hidden" name="beerName" value="${beer.name }">
-	<input type="submit" value="Update Beer">
+	<button type="submit" class="btn btn-success">Update Beer</button>
 	</c:if>
 	</form>
-
+	</div>
+	<br> 
+	<div class="col-lg-12 text-center">
+	<form action="deleteBeer.do" method="POST">
+	<c:if test="${sessionScope.admin != null }">
+	<input type="hidden" name="id" value="${beer.id }">
+	<button type="submit" class="btn btn-success">Delete Beer</button>
+	</c:if>
+	</form>
+	</div>
+	
 	<!-- User Comments -->
 	<section>
+	<br>
 		<h4 class="text-center text-success">${beer.name } Comments</h4>
 		<br>
 		<c:if test="${listComments.isEmpty() }">
