@@ -167,9 +167,13 @@
 										type="text" class="form-control" value="${user.username }"
 										placeholder="Enter User Name" name="username">
 								</div>
+								<div class= "col lg-3 col-md-3 mx-auto">
+								<br>
+									<button type="submit" class="btn btn-success text-center">Update</button>
+								</div>
 							</div>
 						</div>
-						<button type="submit" class="btn btn-success">SAVE EDITS</button>
+						
 					</form>
 				</div>
 			</div>

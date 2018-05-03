@@ -165,7 +165,10 @@
 										name="longitude" required pattern="^[+-]?[0-9]{1,9}(?:\.[0-9]{1,9})?$">
 								</div>
 								
-								<button type="submit" class="btn btn-success">ADD</button>
+								<div class= "col lg-6 col-md-6 mx-auto">
+								<br>
+									<button type="submit" class="btn btn-success text-center">Add Brewery</button>
+								</div>
 							</form>
 						</div>
 					</div>

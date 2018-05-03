@@ -156,9 +156,12 @@
 									<label>Confirm Password <span class="text-danger">*</span></label>
 									<input type="password" name="passwordconfirm" class="form-control" placeholder="" required>
 								</div>
+								<div class= "col lg-4 col-md-4 mx-auto">
+								<br>
+									<button type="submit" class="btn btn-success text-center">Change Password</button>
+								</div>
 							</div>
 						</div>
-						<button type="submit" class="btn btn-success">SAVE EDITS</button>
 					</form>
 				</div>
 			</div>
