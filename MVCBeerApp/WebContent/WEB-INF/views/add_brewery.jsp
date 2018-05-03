@@ -67,11 +67,6 @@
 								<a class="dropdown-item" href="addBeerButton.do">Add Beer</a> <a
 									class="dropdown-item" href="addBrewery.do">Add
 									Brewery</a>
-								<c:if test="${sessionScope.admin != null }">
-									<a class="dropdown-item" href="agents.html">Update Beer</a>
-									<a class="dropdown-item" href="agent-profile.html">Update
-										Brewery</a>
-								</c:if>
 							</div></li>
 						<li class="nav-item dropdown"><a
 							class="nav-link dropdown-toggle" href="#"
