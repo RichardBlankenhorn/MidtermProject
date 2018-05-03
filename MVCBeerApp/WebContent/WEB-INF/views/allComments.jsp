@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -153,13 +154,34 @@
 									<i class="mdi mdi-home-map-marker"></i>Brewery:
 									${comment.beer.brewery.name}
 								</h5>
-								<h6>${comment.description }</h6>
-								<h2 class="text-success mb-0 mt-3">
-									<small></small>
-								</h2>
+								<form action="updateMyBeerComment.do" method="GET">
+									<input type="hidden" value="${comment.id }" name="id">
+									<label>(click in comment to edit)</label>
+									<h6>
+										<c:if test="${user.id == comment.user.id }">
+										<textarea style="border: none" cols="30" rows="5"
+											name="comment">${comment.description }</textarea>
+										</c:if>
+										<c:if test="${user.id != comment.user.id }">
+										<textarea style="border: none" cols="30" rows="5"
+											name="comment" readonly>${comment.description }</textarea>
+										</c:if>
+									</h6>
+									<h6>
+										<c:if test="${user.id == comment.user.id }">
+										<button type="submit" class="btn btn-success "
+											style="height: 30px; text-align: center; display: inline-block">Edit</button>
+										</c:if>
+									</h6>
+								</form>
 							</div>
 							<div class="card-footer">
-								<span><i class="mdi "></i> Date <strong>${comment.dateTime }</strong></span>
+								<span><i class="mdi "></i> Date <strong><fmt:formatDate
+										value="${comment.dateTime }" var="formattedDate" type="date"
+										pattern="MM/dd/yy" />${formattedDate }</strong></span> 
+										<c:if test="${user.id == comment.user.id }">	
+										<span><i class="mdi "></i><a href="deleteMyBeerComment.do?id=${comment.id }">Delete Comment</a></span>
+										</c:if>
 							</div>
 						</div>
 					</div>
