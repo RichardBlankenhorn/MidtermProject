@@ -287,8 +287,7 @@
 				<div class="col-lg-3 col-md-3">
 					<div class="agents-card text-center">
 						<img class="img-fluid mb-4" src="img/richard.jpeg" alt="">
-						<p class="mb-4">Lorem Ipsum is simply dummy text of the
-							printing and typesetting industry. Lorem Ipsum has been.</p>
+						<p class="mb-4">Mmmmm, beer.</p>
 						<h6 class="mb-0 text-success">- Richard Blankenhorn</h6>
 						<small>Lead Front End Developer/Middleware Developer</small>
 					</div>
@@ -304,8 +303,7 @@
 				<div class="col-lg-3 col-md-3">
 					<div class="agents-card text-center">
 						<img class="img-fluid mb-4" src="img/mark.jpeg" alt="">
-						<p class="mb-4">Lorem Ipsum is simply dummy text of the
-							printing and typesetting industry. Lorem Ipsum has been.</p>
+						<p class="mb-4">I don't even really like beer.</p>
 						<h6 class="mb-0 text-success">- Mark Coleman</h6>
 						<small>Database Administrator/Middleware Developer</small>
 					</div>
