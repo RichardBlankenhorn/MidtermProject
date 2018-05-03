@@ -184,6 +184,15 @@ public class CommentsController {
 		mv.setViewName("redirect:viewComments.do");
 		return mv;
 	}
+	//new
+	@RequestMapping(path = "updateMyBeerComment2.do", method = RequestMethod.GET)
+	public ModelAndView updateMyBeerComment2(@RequestParam(name = "id") int id,
+			@RequestParam(name = "comment") String comment) {
+		ModelAndView mv = new ModelAndView();
+		BeerComments bc = commentsDAO.updateMyBeerComment(id, comment);
+		mv.setViewName("redirect:viewAllComments.do");
+		return mv;
+	}
 	
 	@RequestMapping(path = "updateMyBreweryComment2.do", method = RequestMethod.GET)
 	public ModelAndView updateMyBreweryComment2(@RequestParam(name = "id") int id,

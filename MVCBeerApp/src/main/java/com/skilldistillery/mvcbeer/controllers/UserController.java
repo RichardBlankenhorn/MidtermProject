@@ -1,5 +1,6 @@
 package com.skilldistillery.mvcbeer.controllers;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
@@ -163,13 +164,22 @@ public class UserController {
 		mv.setViewName("WEB-INF/views/changePassword.jsp");
 		return mv;
 	}
-	
+	// changes today
 	@RequestMapping(path = "viewComments.do", method = RequestMethod.GET) 
 	public ModelAndView myComments(HttpSession session) {
 		ModelAndView mv = new ModelAndView();
 		User u = (User) session.getAttribute("user");
-		List<BeerComments> comments = dao.retrieveBeerCommentsByUser(u.getId());
-		List<BreweryComments> breweryComments = dao.retreiveBreweryCommentsByUser(u.getId());
+		User admin = (User) session.getAttribute("admin");
+		List<BeerComments> comments = new ArrayList<>();
+		List<BreweryComments> breweryComments = new ArrayList<>();
+		if (admin != null) {
+			comments = dao.retrieveBeerCommentsByUser(admin.getId());
+			breweryComments = dao.retreiveBreweryCommentsByUser(admin.getId());
+		}
+		else if (u != null){
+			comments = dao.retrieveBeerCommentsByUser(u.getId());
+			breweryComments = dao.retreiveBreweryCommentsByUser(u.getId());
+		}
 		mv.addObject("beercomments", comments);
 		mv.addObject("brewerycomments",breweryComments);
 		mv.setViewName("WEB-INF/views/myComments.jsp");
