@@ -139,9 +139,9 @@
 		</div>
 	</section>
 
-	<!-- User Comments -->
+	<!-- User Beer Comments -->
 	<section class="section-padding">
-	<h4 class="text-center">All Comments</h4>
+	<h4 class="text-center">All Beer Comments</h4>
 	<br>
 		<div class="container">
 			<div class="row">
@@ -189,6 +189,47 @@
 		</div>
 	</section>
 	<!-- End User Comments -->
+	
+	<section class="section-padding">
+		<h4 class="text-center">All Brewery Comments</h4>
+		<br>
+		<div class="container">
+			<div class="row">
+				<c:forEach var="comment" items="${breweryComments }">
+					<div class="col-lg-4 col-md-4 d-flex align-items-stretch">
+						<div class="card card-list" style="min-width: 350px">
+							<div class="card-body">
+								<h5 class="card-title">Comment for ${comment.brewery.name }</h5>
+								<h5 class="card-subtitle mb-2 text-muted">
+									<i class="mdi mdi-home-map-marker"></i>Brewery:
+									${comment.brewery.name}
+								</h5>
+								<form action="updateMyBreweryComment2.do" method="GET">
+									<input type="hidden" value="${comment.id }" name="id">
+									<label>(click in comment to edit)</label>
+									<h6>
+										<textarea style="border: none" cols="30" rows="5"
+											name="comment">${comment.description }</textarea>
+									</h6>
+									<h6>
+										<button type="submit" class="btn btn-success">Edit</button>
+									</h6>
+								</form>
+							</div>
+							<div class="card-footer">
+								<span><i class="mdi "></i> Date <strong><fmt:formatDate
+											value="${comment.dateTime }" var="formattedDate" type="date"
+											pattern="MM/dd/yy" />${formattedDate }</strong></span> <span><i
+									class="mdi "></i><a
+									href="deleteMyBreweryComment.do?id=${comment.id }">Delete
+										Comment</a></span>
+							</div>
+						</div>
+					</div>
+				</c:forEach>
+			</div>
+		</div>
+	</section>
 
 	<!-- Copyright -->
 	<section class="pt-4 pb-4 text-center">
