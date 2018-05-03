@@ -257,10 +257,12 @@
 			</div>
 			<br>
 			<form action="addBeerButton.do" method="GET">
+			<c:if test="${sessionScope.admin != null || sessionScope.user != null }">
 				<div class="col-md-12 text-center">
 					<button type="submit" id="singlebutton" name="singlebutton"
 						class="btn btn-success">Don't See Your Beer? Add it Here!</button>
 				</div>
+				</c:if>
 			</form>
 		</div>
 	</section>
